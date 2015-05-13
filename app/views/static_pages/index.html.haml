@@ -1,0 +1,20 @@
+!!!
+%html
+	%head
+		%title Good People LLC - Live-in caregivers & companions
+		// 5/12/15: http://blog.steveklabnik.com/posts/2013-06-25-removing-turbolinks-from-rails-4
+		=stylesheet_link_tag    'application', media: 'all'#, 'data-turbolinks-track' => true
+		=javascript_include_tag 'application'#, 'data-turbolinks-track' => true
+		=csrf_meta_tags
+
+	%body#index
+		#indexWrapper
+			%div
+				=image_tag "GP Logo web1 welcome.gif", border:"0", usemap:"#Map", :class => "aligncenter"
+				%map{ name:"Map" }
+					%area{ shape:"rect", coords:"5,3,443,226", href:"/info/home" }
+			#indexText
+				%p If you - or somebody you love  - need around the clock assistance, and prefer to receive it at home, Good People can help.
+			#indexLink.aligncenter
+				=link_to 'click here to Enter', :action => :intro
+
