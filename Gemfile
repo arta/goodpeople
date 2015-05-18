@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.2.0' #heroku wants to have it
+ruby '2.2.0' #5/18/15: heroku wants to have it
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-gem 'rails_12factor', group: :production # heroku wants to have it
+gem 'rails_12factor', group: :production # 5/18/15: heroku wants to have it
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
