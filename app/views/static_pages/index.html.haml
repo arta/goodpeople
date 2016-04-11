@@ -20,7 +20,11 @@
 					Good People can help
 			#indexLink.aligncenter
 				=link_to 'click here to learn how', :action => :intro
-
+			#indexContact
+				%p
+					or
+					#indexPhone <a href="tel:18006088003">1-800-608-8003</a>
+					#indexEmail= mail_to 'info@goodpeople.us'
 
 			.orbit
 				%ul.orbit-container
@@ -119,3 +123,5 @@
 							%p
 							"... Teri was an angel she did everything mom asked of her and more and never complained.	... I would recommend Good People and Teri to anyone who is in search of someone to care for their loved ones because you can't find anyone better." ~ Sue Nanstad
 							=link_to '... read more', testimonials_path( anchor:4008 )
+
+			#footer &copy; 2001 - #{Date.today.year} Good People, LLC
