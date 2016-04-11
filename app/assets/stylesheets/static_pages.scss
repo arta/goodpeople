@@ -25,14 +25,19 @@ body {
 	margin-top: 60px;
 	font-size: 100%;
 }
+#indexText p {
+	font-size: 170%;
+	line-height: 1.54em;
+}
 #indexText p:first-letter {
-	font-size: 140%;
+	font-size: 160%;
 	color: #FF0000;
 	font-weight: bold;
+	vertical-align: -2px;
 }
 #indexLink {
-	margin-top: 80px;
-	margin-bottom: 80px;
+	margin-top: 40px;
+	margin-bottom: 60px;
 	text-align: center;
 	font-size: 140%;
 	font-weight: bold;
@@ -48,7 +53,19 @@ a:hover, a:active {
 	padding-top: 65px;
 	font-size: 80%;
 }
-
+.orbit ul {
+	list-style: none;
+	margin: 0 0 80px 0;
+	padding: 0;
+	text-align: left;
+	font-style: italic;
+}
+.orbit ul li {
+	margin-top: 30px;
+}
+.orbit .testimonial-excerpt a {
+	float: right;
+}
 /* ------------ interior pages --------------- */
 
 #interiorWrapper {

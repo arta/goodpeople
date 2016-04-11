@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'procedure'     => 'static_pages#procedure'
   get 'servicearea'   => 'static_pages#servicearea'
   get 'cost'          => 'static_pages#cost'
-  get 'testimonials'  => 'static_pages#testimonials'
+  get 'testimonials'  => 'static_pages#testimonials', as: :testimonials # to specify anchor
   get 'contactus'     => 'static_pages#contactus'
   get 'print'         => 'static_pages#print'
 
