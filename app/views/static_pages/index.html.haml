@@ -6,6 +6,13 @@
 		=stylesheet_link_tag    'application', media: 'all'#, 'data-turbolinks-track' => true
 		=javascript_include_tag 'application'#, 'data-turbolinks-track' => true
 		=csrf_meta_tags
+		%script
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+			ga('create', 'UA-76652418-1', 'auto');
+			ga('send', 'pageview');
 
 	%body#index
 		#indexWrapper
@@ -15,11 +22,13 @@
 					%area{ shape:"rect", coords:"5,3,443,226", href:"/intro" }
 			#indexText
 				%p
-					If someone you love needs 24/7 assistance and prefers to receive it at home
+					If you need 24/7 care and
+					%br
+					prefer to receive it at home
 					%br
 					Good People can help
 			#indexLink.aligncenter
-				=link_to 'click here to learn how', :action => :intro
+				=link_to 'click to learn more', :action => :intro
 			#indexContact
 				%p
 					or
