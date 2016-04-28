@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  get 'intro'         => 'static_pages#intro'
+  get 'intro'         => 'static_pages#intro', as: :intro
   get 'care'          => 'static_pages#care'
   get 'caregivers'    => 'static_pages#caregivers'
   get 'procedure'     => 'static_pages#procedure'

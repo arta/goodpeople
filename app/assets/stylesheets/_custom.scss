@@ -1,0 +1,92 @@
+// attemtping to straighten out semantics. WIP.
+// https://medium.com/@drublic/css-naming-conventions-less-rules-more-fun-12af220e949b#.9pmcn86j0
+// http://engineering.appfolio.com/2012/11/16/css-architecture/
+// http://nicolasgallagher.com/about-html-semantics-front-end-architecture/
+
+// ####################################################
+// ############			CSS rules:		#####################
+// ####################################################
+
+@import 'settings'; // to use variables etc.
+
+// body {
+// 	margin: 0px;
+// 	padding: 0px;
+// 	background-color: #FFFFFF;
+// 	font-family: Verdana, Arial, Helvetica, sans-serif;
+// 	font-size: 80%;
+// 	text-align: left;
+// 	color: #333333;
+// }
+footer {
+	text-align: left;
+	color: #999999;
+	font-size: 80%;
+}
+.footer--index { text-align: center; }
+
+// INDEX PAGE
+.index-logo {
+  margin-top: 20px;
+  text-align: center; // centers <image ... >
+}
+.h1--index {
+  margin-top: 50px;
+  text-align: center;
+}
+.index-link {
+  display: block;
+	font-size: 1.4em;
+	font-weight: bold;
+  margin-bottom: 40px;
+  margin-top: 40px;
+	text-align: center;
+}
+.index-contact-info {
+  font-size: 1.4em;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  // margin-bottom: 30px;
+  text-align: center;
+}
+.index-phone, .index-email {
+  color: #333333;
+  font-weight: bold;
+}
+.orbit .orbit-container {
+  height: auto !important; // didn't find any other way (using specificity)
+}
+.orbit .orbit-previous { margin-left: 14px; }
+.orbit .orbit-next { margin-right: 14px; }
+.orbit .orbit-previous, .orbit .orbit-next,
+.orbit .orbit-previous:hover, .orbit .orbit-next:hover,
+.orbit .orbit-previous:focus, .orbit .orbit-next:focus,
+.orbit .orbit-previous:active, .orbit .orbit-next:active  {
+  background-color: #ffe;
+  color: $anchor-color;
+  outline: 0;
+}
+.orbit .orbit-previous:hover, .orbit .orbit-next:hover {
+  color: $anchor-color-hover;
+}
+.testimonial-excerpt {
+  font-style: italic;
+  padding: 20px 60px 50px 60px;
+	border: 1px solid #fed;
+	background: #ffe;
+	font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+	font-size: 1.1em;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  -moz-box-shadow: 2px 2px 8px #ccc;
+  -webkit-box-shadow: 2px 2px 8px #ccc;
+  -khtml-box-shadow: 2px 2px 8px #ccc;
+  margin: 8px;
+}
+.testimonial-excerpt p a {
+  float: right;
+}
+
+.mt--80 { margin-top: 80px; } // applied to footer's own row, the only way taht didn't yield bottom of orbit disappearing on resize

@@ -1,11 +1,15 @@
 !!!
 %html
 	%head
+		%meta{ charset:'utf-8' }
+		%meta{ name:'viewport', content:'width=device-width, initial-scale=1.0' }
+
 		%title Good People LLC - Live-in caregivers & companions
 		// 5/12/15: http://blog.steveklabnik.com/posts/2013-06-25-removing-turbolinks-from-rails-4
-		=stylesheet_link_tag    'application', media: 'all'#, 'data-turbolinks-track' => true
+		=stylesheet_link_tag    'application'#, media: 'all'#, 'data-turbolinks-track' => true
 		=javascript_include_tag 'application'#, 'data-turbolinks-track' => true
 		=csrf_meta_tags
+
 		%script
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -15,122 +19,117 @@
 			ga('send', 'pageview');
 
 	%body#index
-		#indexWrapper
-			%div
-				=image_tag "GP Logo web1 welcome.gif", border:"0", usemap:"#Map", :class => "aligncenter"
-				%map{ name:"Map" }
-					%area{ shape:"rect", coords:"5,3,443,226", href:"/intro" }
-			#indexText
-				%p
-					If you need 24/7 care and
+		.row
+			.column.small-8.small-centered
+				.index-logo
+					=image_tag "GP Logo web1 welcome.gif", border:"0", usemap:"#Map"
+					%map{ name:"Map" }
+						%area{ shape:"rect", coords:"0,0,643,643", href:"/intro" }
+		.row
+			.column.small-8.small-centered
+				%h1.h1--index
+					If you need 24/7 assistance and prefer to
 					%br
-					prefer to receive it at home
+					receive great care in your home,
 					%br
 					Good People can help
-			#indexLink.aligncenter
-				=link_to 'click to learn how', :action => :intro
-			#indexContact
-				%p
-					or
-					#indexPhone <a href="tel:18006088003">1-800-608-8003</a>
-					#indexEmail= mail_to 'info@goodpeople.us'
+				.index-link= link_to 'read about our live-in care program', intro_path
+				.index-contact-info
+					=link_to '1-800-608-8003', "tel:18006088003", class:'index-phone'
+					%br
+					=link_to 'info@goodpeople.us', 'mail_to', class:'index-email'
+		-# .row
+		-# 	.column.small-7.small-centered.index-contact-info.clearfix
+		-# 		=link_to '1-800-608-8003', "tel:18006088003", class:'index-phone float-left'
+		-# 		=link_to 'info@goodpeople.us', 'mail_to', class:'index-email float-right'
 
-			.orbit
-				%ul.orbit-container
-					%li.orbit-slide
-						.testimonial-excerpt
-							%p
-							"... Good People were very thorough in questioning us about Tony’s needs, and extremely caring about who to place with him. We were not disappointed! ...  We were very pleased with everything Good People did to help us make the dream of bringing Tony home a reality." ~ Laura Franciskovich
-							=link_to '... read more', testimonials_path( anchor:3743 )
-					%li.orbit-slide
-						.testimonial-excerpt
-							%p
-							"... Dementia is a very difficult disease. I will always be grateful for the expertise and competence demonstrated by the caregivers located by Good People. They allowed us to keep my wife in her home. ..." ~ Robert Kaupie
-							=link_to '... read more', testimonials_path( anchor:3369 )
-					%li.orbit-slide
-						.testimonial-excerpt
-							%p
-							"... Your company found us a wonderful live in care giver--our family considered her an angel. She was so kind, loving and helpful ..." ~ Jim Caldwell
-							=link_to '... read more', testimonials_path( anchor:2210 )
-					%li.orbit-slide
-						.testimonial-excerpt
-							%p
-							"... Only because of Good People, my aunt was able to stay in her own home.	If any one of my friends need a live-in caregiver, I would recommend Good People.	If any one of my family members need a live-in caregiver, I will call ... Good People myself. ..." ~ John P.
-							=link_to '... read more', testimonials_path( anchor:3099 )
-					%li.orbit-slide
-						.testimonial-excerpt
-							%p
-							"Our family was in a crisis situation, when we found Good People. After an extensive interview, a caregiver moved into my parent’s home within a few days. ... Our current caregiver has been with my parents for over three years and has become a member of our family. ... my parents ... are happy, well cared for and safe ... ~ Jill Proulx
-							=link_to '... read more', testimonials_path( anchor:1212 )
-					%li.orbit-slide
-						.testimonial-excerpt
-							%p
-							"... Hospice Care recommended your program and we are so grateful for that ... Tonga put her own needs aside for several weeks while she got to know my Aunt, her routines and needs, and cooperated fully with the Hospice staff. ... We will recommend you ... to our friends when they find themselves in a similar situation." ~ Wendy Steve
-							=link_to '... read more', testimonials_path( anchor:3945 )
-					%li.orbit-slide
-						.testimonial-excerpt
-							%p
-							"... my mother was hospitalized for a week for pneumonia, among other issues.	The social worker at the hospital gave me excellent references for GoodPeople as a place to find a live in caregiver. ... Only because of Good People, my parents have been able to stay in her own home. ... Thank you for being a blessing to my parents	Keep up the good work!" ~ Phyllis D.
-							=link_to '... read more', testimonials_path( anchor:3711 )
-					%li.orbit-slide
-						.testimonial-excerpt
-							%p
-							"What do you do when you live 1,500 miles away from your aging parents? ... If I had it all to do over again, I would skip all of the institutional alternatives we tried ... This is true in spite some truly caring individuals who work in these organizations; it is a result of the fact that they are institutions and must therefore put the needs of the organization ahead of individual needs. ... We are both so very grateful that we found Good People and the loving caregivers they work with." ~ Jane Beule
-							=link_to '... read more', testimonials_path( anchor:2898 )
-					%li.orbit-slide
-						.testimonial-excerpt
-							%p
-							"I heard about Good People from a friend and it sounded too good to be true! ... I am so grateful to each of my caregivers, they were like sisters to me. They enabled my parents to have the best life possible together, in their final years. ... It would not have been possible without GoodPeople. ..." ~ Barbara Roe
-							=link_to '... read more', testimonials_path( anchor:3775 )
-					%li.orbit-slide
-						.testimonial-excerpt
-							%p
-							"Our mother was hospitalized with end stage idiopathic pulmonary fibrosis ... Inga was the perfect match ... She stepped right in and provided the care our mother needed from the first day. ... Good People followed up after Inga's first day, first week and second week of service to make sure we were all a good match. ... We would highly recommend Good People and Inga" ~ Mary L Wyss
-							=link_to '... read more', testimonials_path( anchor:3852 )
-					%li.orbit-slide
-						.testimonial-excerpt
-							%p
-							"... His presence gave all of the children peace of mind that Mom was okay. We did not have to worry about her safety, her food preparation, her shopping or anything. We had the pleasure of trying out new recipes that our caregiver cooked. ..." ~ Geraldine A. Gorman
-							=link_to '... read more', testimonials_path( anchor:4036 )
-					%li.orbit-slide
-						.testimonial-excerpt
-							%p
-							"... I received references for GoodPeople from a home health social worker at a nearby hospital and from another company that does in home care. I was told that GoodPeople were so efficient, that they would be able to find a 24/7 in home caregiver very quickly. They were ... I would recommend GoodPeople to anyone looking for in home care for their loved ones. ..." ~ Sandy Sweeney
-							=link_to '... read more', testimonials_path( anchor:3767 )
-					%li.orbit-slide
-						.testimonial-excerpt
-							%p
-							"Our caregiver was a Godsend to our family. ... Honestly, I could fill another page with kudos of all of our caregivers skills, kindness, hard work, and sincere compassion for Daddy at this stage of his life. ..." ~ Barb Padbury
-							=link_to '... read more', testimonials_path( anchor:3761 )
-					%li.orbit-slide
-						.testimonial-excerpt
-							%p
-							"... The first person ... did not work. ... We did this 3 more times until ... Bob. My father and Bob were the perfect match. Bob gave my father the independence my father still tried to keep but was always close by just in case he was needed. Bob became part of our family and not only did Bob love caring for my father but also loved playing with all my father's grand kids. ...  My dad's wish was always to pass away at home and not in a nursing home. The Good People help me honor my father's wishes." ~ Katie Osborne
-							=link_to '... read more', testimonials_path( anchor:3555 )
-					%li.orbit-slide
-						.testimonial-excerpt
-							%p
-							"... Over the past three years we have had two different live-in caregivers. Both have been very good and treated my mother-in-law like she was their own family. This gave great comfort to our family and we have always rested easy knowing that she was safe and cared for very well. ..." ~ Ralph S.
-							=link_to '... read more', testimonials_path( anchor:2799 )
-					%li.orbit-slide
-						.testimonial-excerpt
-							%p
-							"... His first desire was to be able to stay at home on his farm ... Good People has been able to answer our needs admirably ... The care has been dedicated, trust worthy, and affordable. ..." ~ Steven Merry MD
-							=link_to '... read more', testimonials_path( anchor:3695 )
-					%li.orbit-slide
-						.testimonial-excerpt
-							%p
-							"... My mother told me that we could not have found a better one I highly recommend you contact Good People if you have a loved one that wants to stay in their own home and needs care. ..." ~ Vernon Strauch
-							=link_to '... read more', testimonials_path( anchor:4135 )
-					%li.orbit-slide
-						.testimonial-excerpt
-							%p
-							"... each caregiver that came to be with Dad was exceptional, and I'm grateful that we found this agency." ~ Elizabeth Wakefield
-							=link_to '... read more', testimonials_path( anchor:3579 )
-					%li.orbit-slide
-						.testimonial-excerpt
-							%p
-							"... Teri was an angel she did everything mom asked of her and more and never complained.	... I would recommend Good People and Teri to anyone who is in search of someone to care for their loved ones because you can't find anyone better." ~ Sue Nanstad
-							=link_to '... read more', testimonials_path( anchor:4008 )
+		.row
+			.column.small-8.small-centered
+				.orbit{ role:'region', 'aria-label':'excerpts of testimonials', data:{ orbit:true } }
+					%ul.orbit-container
+						%button.orbit-previous
+							%span.show-for-sr Previous Slide
+							&#9664;&#xFE0E;
+						%button.orbit-next
+							%span.show-for-sr Next Slide
+							&#9654;&#xFE0E;
+						%li.orbit-slide
+							.testimonial-excerpt
+								%p "... Good People were very thorough in questioning us about Tony’s needs, and extremely caring about who to place with him. ...  We were very pleased with everything Good People did to help us make the dream of bringing Tony home a reality." ~ Laura Franciskovich
+								%p= link_to 'read the letter', testimonials_path( anchor:3743 )
+						%li.orbit-slide
+							.testimonial-excerpt
+								%p "... Dementia is a very difficult disease. I will always be grateful for the expertise and competence demonstrated by the caregivers located by Good People. They allowed us to keep my wife in her home. ..." ~ Robert Kaupie
+								%p= link_to 'read the letter', testimonials_path( anchor:3369 )
+						%li.orbit-slide
+							.testimonial-excerpt
+								%p "... Your company found us a wonderful live in care giver--our family considered her an angel. She was so kind, loving and helpful ..." ~ Jim Caldwell
+								%p= link_to 'read the letter', testimonials_path( anchor:2210 )
+						%li.orbit-slide
+							.testimonial-excerpt
+								%p "... Only because of Good People, my aunt was able to stay in her own home.	If any one of my friends need a live-in caregiver, I would recommend Good People.	If any one of my family members need a live-in caregiver, I will call ... Good People myself. ..." ~ John P.
+								%p= link_to 'read the letter', testimonials_path( anchor:3099 )
+						%li.orbit-slide
+							.testimonial-excerpt
+								%p "Our family was in a crisis situation, when we found Good People. After an extensive interview, a caregiver moved into my parent’s home within a few days. ... Our current caregiver has been with my parents for over three years and has become a member of our family. ... my parents ... are happy, well cared for and safe ... ~ Jill Proulx
+								%p= link_to 'read the letter', testimonials_path( anchor:1212 )
+						%li.orbit-slide
+							.testimonial-excerpt
+								%p "... Hospice Care recommended your program and we are so grateful for that ... Tonga put her own needs aside for several weeks while she got to know my Aunt, her routines and needs, and cooperated fully with the Hospice staff. ... We will recommend you ... to our friends when they find themselves in a similar situation." ~ Wendy Steve
+								%p= link_to 'read the letter', testimonials_path( anchor:3945 )
+						%li.orbit-slide
+							.testimonial-excerpt
+								%p "... my mother was hospitalized for a week for pneumonia, among other issues.	The social worker at the hospital gave me excellent references for GoodPeople as a place to find a live in caregiver. ... Only because of Good People, my parents have been able to stay in her own home. ... Thank you for being a blessing to my parents	Keep up the good work!" ~ Phyllis D.
+								%p= link_to 'read the letter', testimonials_path( anchor:3711 )
+						%li.orbit-slide
+							.testimonial-excerpt
+								%p "What do you do when you live 1,500 miles away from your aging parents? ... If I had it all to do over again, I would skip all of the institutional alternatives we tried ... This is true in spite some truly caring individuals who work in these organizations; it is a result of the fact that they are institutions and must therefore put the needs of the organization ahead of individual needs. ... We are both so very grateful that we found Good People and the loving caregivers they work with." ~ Jane Beule
+								%p= link_to 'read the letter', testimonials_path( anchor:2898 )
+						%li.orbit-slide
+							.testimonial-excerpt
+								%p "I heard about Good People from a friend and it sounded too good to be true! ... I am so grateful to each of my caregivers, they were like sisters to me. They enabled my parents to have the best life possible together, in their final years. ... It would not have been possible without GoodPeople. ..." ~ Barbara Roe
+								%p= link_to 'read the letter', testimonials_path( anchor:3775 )
+						%li.orbit-slide
+							.testimonial-excerpt
+								%p "Our mother was hospitalized with end stage idiopathic pulmonary fibrosis ... Inga was the perfect match ... She stepped right in and provided the care our mother needed from the first day. ... Good People followed up after Inga's first day, first week and second week of service to make sure we were all a good match. ... We would highly recommend Good People and Inga" ~ Mary L Wyss
+								%p= link_to 'read the letter', testimonials_path( anchor:3852 )
+						%li.orbit-slide
+							.testimonial-excerpt
+								%p "... His presence gave all of the children peace of mind that Mom was okay. We did not have to worry about her safety, her food preparation, her shopping or anything. We had the pleasure of trying out new recipes that our caregiver cooked. ..." ~ Geraldine A. Gorman
+								%p= link_to 'read the letter', testimonials_path( anchor:4036 )
+						%li.orbit-slide
+							.testimonial-excerpt
+								%p "... I received references for GoodPeople from a home health social worker at a nearby hospital and from another company that does in home care. I was told that GoodPeople were so efficient, that they would be able to find a 24/7 in home caregiver very quickly. They were ... I would recommend GoodPeople to anyone looking for in home care for their loved ones. ..." ~ Sandy Sweeney
+								%p= link_to 'read the letter', testimonials_path( anchor:3767 )
+						%li.orbit-slide
+							.testimonial-excerpt
+								%p "Our caregiver was a Godsend to our family. ... Honestly, I could fill another page with kudos of all of our caregivers skills, kindness, hard work, and sincere compassion for Daddy at this stage of his life. ..." ~ Barb Padbury
+								%p= link_to 'read the letter', testimonials_path( anchor:3761 )
+						%li.orbit-slide
+							.testimonial-excerpt
+								%p "... The first person ... did not work. ... We did this 3 more times until ... Bob. My father and Bob were the perfect match. Bob gave my father the independence my father still tried to keep but was always close by just in case he was needed. Bob became part of our family and not only did Bob love caring for my father but also loved playing with all my father's grand kids. ...  My dad's wish was always to pass away at home and not in a nursing home. The Good People help me honor my father's wishes." ~ Katie Osborne
+								%p= link_to 'read the letter', testimonials_path( anchor:3555 )
+						%li.orbit-slide
+							.testimonial-excerpt
+								%p "... Over the past three years we have had two different live-in caregivers. Both have been very good and treated my mother-in-law like she was their own family. This gave great comfort to our family and we have always rested easy knowing that she was safe and cared for very well. ..." ~ Ralph S.
+								%p= link_to 'read the letter', testimonials_path( anchor:2799 )
+						%li.orbit-slide
+							.testimonial-excerpt
+								%p "... His first desire was to be able to stay at home on his farm ... Good People has been able to answer our needs admirably ... The care has been dedicated, trust worthy, and affordable. ..." ~ Steven Merry MD
+								%p= link_to 'read the letter', testimonials_path( anchor:3695 )
+						%li.orbit-slide
+							.testimonial-excerpt
+								%p "... My mother told me that we could not have found a better one I highly recommend you contact Good People if you have a loved one that wants to stay in their own home and needs care. ..." ~ Vernon Strauch
+								%p= link_to 'read the letter', testimonials_path( anchor:4135 )
+						%li.orbit-slide
+							.testimonial-excerpt
+								%p "... each caregiver that came to be with Dad was exceptional, and I'm grateful that we found this agency." ~ Elizabeth Wakefield
+								%p= link_to 'read the letter', testimonials_path( anchor:3579 )
+						%li.orbit-slide
+							.testimonial-excerpt
+								%p "... Teri was an angel she did everything mom asked of her and more and never complained.	... I would recommend Good People and Teri to anyone who is in search of someone to care for their loved ones because you can't find anyone better." ~ Sue Nanstad
+								%p= link_to 'read the letter', testimonials_path( anchor:4008 )
 
-			#footer &copy; 2001 - #{Date.today.year} Good People, LLC
+		.row.mt--80
+			.column.small-8.small-centered
+				%footer.footer--index &copy; 2001 - #{Date.today.year} Good People, LLC
