@@ -20,25 +20,28 @@
 
 	%body#index
 		.row
-			.column.small-8.small-centered
+			.columns.small-centered.small-11.medium-8
 				.index-logo
 					=image_tag "GP Logo web1 welcome.gif", border:"0", usemap:"#Map"
 					%map{ name:"Map" }
 						%area{ shape:"rect", coords:"0,0,643,643", href:"/intro" }
 		.row
-			.column.small-8.small-centered
+			.columns.small-centered.small-8.medium-8
 				%h1.h1--index
 					If you require 24/7 assistance and wish
 					%br
 					to receive great care in your home,
 					%br
+					-# Good People
+					-# =link_to 'can help', intro_path
 					Good People can help
-				-# .index-link= link_to 'click here', intro_path
+		.row
+			.columns.small-centered.small-7
 				.index-link= link_to 'click here to read about our live-in care program', intro_path
+				-# .index-link= link_to 'click here', intro_path
 				-# .index-link= link_to 'click to learn how', intro_path
 				.index-contact-info
 					=link_to '1-800-608-8003', "tel:18006088003", class:'index-phone'
-					%br
 					=link_to 'info@goodpeople.us', 'mail_to', class:'index-email'
 		-# .row
 		-# 	.column.small-7.small-centered.index-contact-info.clearfix
@@ -46,7 +49,7 @@
 		-# 		=link_to 'info@goodpeople.us', 'mail_to', class:'index-email float-right'
 
 		.row
-			.column.small-8.small-centered
+			.columns.small-centered.small-12.medium-8
 				.orbit{ role:'region', 'aria-label':'excerpts of testimonials', data:{ orbit:true } }
 					%ul.orbit-container
 						%button.orbit-previous
@@ -132,6 +135,6 @@
 								%p "... Teri was an angel she did everything mom asked of her and more and never complained.	... I would recommend Good People and Teri to anyone who is in search of someone to care for their loved ones because you can't find anyone better." ~ Sue Nanstad
 								%p= link_to 'read the letter', testimonials_path( anchor:4008 )
 
-		.row.mt--80
-			.column.small-8.small-centered
+		.row.mt--60.mb--40
+			.columns.small-centered.small-8
 				%footer.footer--index &copy; 2001 - #{Date.today.year} Good People, LLC

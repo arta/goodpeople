@@ -48,10 +48,14 @@ footer {
   margin-top: 40px;
   // margin-bottom: 30px;
   text-align: center;
+	@include breakpoint( small only ) {
+		font-size: 1.2em;
+	};
 }
 .index-phone, .index-email {
   color: #333333;
   font-weight: bold;
+	display: block;
 }
 .orbit .orbit-container {
   height: auto !important; // didn't find any other way (using specificity)
@@ -84,9 +88,14 @@ footer {
   -webkit-box-shadow: 2px 2px 8px #ccc;
   -khtml-box-shadow: 2px 2px 8px #ccc;
   margin: 8px;
+	@include breakpoint( small only ) {
+		font-size: 1em;
+		// padding: 20px 60px 40px 60px;
+	};
 }
 .testimonial-excerpt p a {
   float: right;
 }
 
-.mt--80 { margin-top: 80px; } // applied to footer's own row, the only way taht didn't yield bottom of orbit disappearing on resize
+.mt--60 { margin-top: 60px; } // applied to footer's own row, the only way taht didn't yield bottom of orbit disappearing on resize
+.mb--40 { margin-bottom: 40px; }
