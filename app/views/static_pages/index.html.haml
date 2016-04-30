@@ -32,21 +32,13 @@
 					%br
 					to receive great care in your home,
 					%br
-					-# Good People
-					-# =link_to 'can help', intro_path
 					Good People can help
 		.row
 			.columns.small-centered.small-7
 				.index-link= link_to 'click here to read about our live-in care program', intro_path
-				-# .index-link= link_to 'click here', intro_path
-				-# .index-link= link_to 'click to learn how', intro_path
 				.index-contact-info
-					=link_to '1-800-608-8003', "tel:18006088003", class:'index-phone'
-					=link_to 'info@goodpeople.us', 'mail_to', class:'index-email'
-		-# .row
-		-# 	.column.small-7.small-centered.index-contact-info.clearfix
-		-# 		=link_to '1-800-608-8003', "tel:18006088003", class:'index-phone float-left'
-		-# 		=link_to 'info@goodpeople.us', 'mail_to', class:'index-email float-right'
+					=link_to '1-800-608-8003', 'tel:18006088003', class:'index-phone'
+					=link_to 'info@goodpeople.us', 'mailto:info@goodpeople.us', class:'index-email'
 
 		.row
 			.columns.small-centered.small-12.medium-8
@@ -58,6 +50,10 @@
 						%button.orbit-next
 							%span.show-for-sr Next Slide
 							&#9654;&#xFE0E;
+						%li.orbit-slide
+							.testimonial-excerpt
+								%p "... From the first phone call until the last day, Good People was true to its name. ... honest and caring. ... and I always felt that if things did not work out, Good People "had my back.". ..." ~ Jane Camerini
+								%p= link_to 'read the letter', testimonials_path( anchor:3523 )
 						%li.orbit-slide
 							.testimonial-excerpt
 								%p "... Good People were very thorough in questioning us about Tony’s needs, and extremely caring about who to place with him. ..." ~ Laura Franciskovich
