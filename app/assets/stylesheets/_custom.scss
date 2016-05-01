@@ -22,40 +22,38 @@ footer {
 	text-align: left;
 	color: #999999;
 	font-size: 80%;
+	margin-top: 60px;
+	margin-bottom: 40px;
 }
-.footer--index { text-align: center; }
 
 // INDEX PAGE
-.index-logo {
+.body--index, .footer--index {
+	text-align: center;
+}
+.logo--index {
   margin-top: 20px;
-  text-align: center; // centers <image ... >
 }
 .h1--index {
   margin-top: 50px;
-  text-align: center;
 }
-.index-link {
+.link-to-enter {
   display: block;
 	font-size: 1.4em;
 	font-weight: bold;
   margin-bottom: 40px;
   margin-top: 40px;
-	text-align: center;
 	@include breakpoint( small only ) {
 		font-size: 1.2em;
 	};
 }
-.index-contact-info {
+.contact-info-wrapper--index {
   font-size: 1.4em;
   margin-bottom: 40px;
-  margin-top: 40px;
-  // margin-bottom: 30px;
-  text-align: center;
 	@include breakpoint( small only ) {
 		font-size: 1.2em;
 	};
 }
-.index-phone, .index-email {
+.contact-info {
   color: #333333;
   font-weight: bold;
 	display: block;
