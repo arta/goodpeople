@@ -11,17 +11,17 @@
 
 		#header
 			= render partial:'header', locals:{ map_ref:'intro' }
-		
+
 		#content
 			%h1= link_to 'Intro', :action => :intro
 			= render 'intro'
 			%br
 			%br
-			
-			%h1= link_to 'Care', :action => :care
+
+			%h1= link_to 'Care', :action => :type_of_care
 			= render 'care'
 			%br
-			
+
 			%h1= link_to 'Caregivers', :action => :caregivers
 			= render 'caregivers'
 			%br
@@ -29,14 +29,14 @@
 			%h1= link_to 'Procedure', :action => :procedure
 			= render 'procedure'
 			%br
-			
+
 			%h1= link_to 'Service area', :action => :servicearea
 			= render 'servicearea'
 			%br
-			
+
 			%h1= link_to 'Cost', :action => :cost
 			= render 'cost'
 			%br
-			
+
 			%h1= link_to 'Contact us', :action => :contactus
 			= render 'contactus'

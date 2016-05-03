@@ -1,6 +1,21 @@
-#headerlogo
+// 6 columns to prevent too early resizing
+.column.small-6
 	=image_tag "GP Logo web1.gif", border:"0", usemap:"#Map", href:"#"
 	%map{ name:"Map" }
 		%area{ shape:"rect", coords:"4,4,298,150", href:map_ref }
-#headerphone toll free <strong>1-800-608-8003</strong>
-#headeremail= mail_to 'info@goodpeople.us'
+// <6 (to get <12 together), this will make the last column float to R
+.column.small-4
+	.contact-info-wrap--desktop-header
+		=link_to '1-800-608-8003', 'tel:18006088003', class:'contact-info'
+		=link_to 'info@goodpeople.us', 'mailto:info@goodpeople.us', class:'contact-info'
+
+
+
+-# .logo--interior
+-# 	=image_tag "GP Logo web1.gif", border:"0", usemap:"#Map", href:"#"
+-# 	%map{ name:"Map" }
+-# 		%area{ shape:"rect", coords:"4,4,298,150", href:map_ref }
+-# .contact-info-wrapper--interior
+-# 	=link_to '1-800-608-8003', 'tel:18006088003', class:'contact-info--header'
+-# 	%br
+-# 	=link_to 'info@goodpeople.us', 'mailto:info@goodpeople.us', class:'contact-info--header'

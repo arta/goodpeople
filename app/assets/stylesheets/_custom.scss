@@ -9,6 +9,10 @@
 
 @import 'settings'; // to use variables etc.
 
+// ####################################################
+// GENERAL
+// ####################################################
+
 // body {
 // 	margin: 0px;
 // 	padding: 0px;
@@ -26,7 +30,10 @@ footer {
 	margin-bottom: 40px;
 }
 
+
+// ####################################################
 // INDEX PAGE
+// ####################################################
 .body--index, .footer--index {
 	text-align: center;
 }
@@ -57,6 +64,7 @@ footer {
   color: #333333;
   font-weight: bold;
 	display: block;
+	line-height: 1.5em;
 }
 .orbit .orbit-container {
   height: auto !important; // didn't find any other way (using specificity)
@@ -98,5 +106,47 @@ footer {
   float: right;
 }
 
+
+
+// ####################################################
+// INTERIOR PAGES
+// ####################################################
+.desktop-header {
+	height: 12em;
+}
+.contact-info-wrap--desktop-header {
+	margin-top: 3em;
+	text-align: right;
+}
+// JS places .current dynamically, replaces CSS control of current menu item hihglight
+.current {
+	background-color: $light-gray; // make it beige, somewhere around EAD29D;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-khtml-border-radius: 3px;
+}
+.print-link {
+	margin-top: 3em;
+}
+.print-link a:link, .print-link a:visited {
+	background: white image-url( 'print.gif' ) no-repeat 0 0.7em;
+	color: #aaa;
+ 	margin: 0 auto 0 auto;
+	padding: 6px 0 6px 22px;
+	width: 9em; /* must be defined for margin centering to work */
+}
+.print-link a:hover {
+	color: #ff9900;
+	background-image: image-url( 'printHover.gif' );
+}
+.h1--interior { margin-bottom: 1em; }
+
+
+
+
+// ####################################################
+// GENERAL OVERRIDES
+// ####################################################
 .mt--60 { margin-top: 60px; } // applied to footer's own row, the only way taht didn't yield bottom of orbit disappearing on resize
 .mb--40 { margin-bottom: 40px; }

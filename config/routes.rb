@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   get 'intro'         => 'static_pages#intro', as: :intro
-  get 'care'          => 'static_pages#care'
+  get 'type_of_care'  => 'static_pages#type_of_care'
   get 'caregivers'    => 'static_pages#caregivers'
   get 'procedure'     => 'static_pages#procedure'
   get 'servicearea'   => 'static_pages#servicearea'

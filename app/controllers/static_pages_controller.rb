@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
 
-	def care
+	def type_of_care
 		@body_id = 'care'
 	end
 
@@ -24,7 +24,7 @@ class StaticPagesController < ApplicationController
 	def intro
 		@body_id = 'intro'
 	end
-	
+
 	def print
 		@body_id = 'print'
 		render :layout => false
@@ -37,7 +37,7 @@ class StaticPagesController < ApplicationController
 	def servicearea
 		@body_id = 'servicearea'
 	end
-	
+
 	def testimonials
 		@body_id = 'testimonials'
 	end

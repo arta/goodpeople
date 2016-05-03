@@ -18,28 +18,61 @@
 			ga('create', 'UA-76652418-1', 'auto');
 			ga('send', 'pageview');
 
-	%body{ id:@body_id }
-		#interiorWrapper
-			#header= render partial:'header', locals:{ map_ref:'/' }
+	%body.body--interior
+		-# %button.button{ type:"button", data:{toggle:"offCanvas"}} Open Menu
+		.off-canvas-wrapper
+			.off-canvas-wrapper-inner{ data:{ off:{ canvas:{ wrapper:true } } } }
+				-# Mobile navigation
+				.off-canvas.position-left{ id:"offCanvas", data:{ off:{ canvas:true } } }
+					-# Close button
+					-# %button.close-button{ 'aria-label':"Close menu", type:"button", data:{ close:true } }
+					-# 	%span{ 'aria-hidden':true } &times;
+					-# Menu
+					%ul.menu.vertical
+						%li= link_to 'Intro', intro_path
+						%li= link_to 'Type of Care', type_of_care_path
+						%li= link_to 'Caregivers', caregivers_path
+						%li= link_to 'Procedure', procedure_path
+						%li= link_to 'Service area', servicearea_path
+						%li= link_to 'Cost', cost_path
+						%li= link_to 'Testimonials', testimonials_path
+						%li= link_to 'Contact us ...', contactus_path
 
-			#navCol
-				#nav
-					%ul
-						%li#intro= 				link_to 'Intro', intro_path
-						%li#care= 				link_to 'Care', care_path
-						%li#caregivers= 	link_to 'Caregivers', caregivers_path
-						%li#procedure= 		link_to 'Procedure', procedure_path
-						%li#servicearea= 	link_to 'Service area', servicearea_path
-						%li#cost= 				link_to 'Cost', cost_path
-						%li#testimonials= link_to 'Testimonials', testimonials_path
-						%li#contactus= 		link_to 'Contact us ...', contactus_path
-						%li &nbsp;
-						-if false
-							%li#carebees= 	link_to '... or &nbsp;&nbsp;&nbsp;&nbsp;<br/>DO IT YOURSELF ...', :action => :carebees
-				#printLink
-					%ul
-						%li= link_to 'Printer Friendly', print_path
+				-# Page content
+				.div.off-canvas-content{ data:{ off:{ canvas:{ content:true } } } }
+					%header
 
-			#content= yield
+						<div class="title-bar show-for-small-only"><button class="menu-icon" type="button" data-toggle="offCanvas"></button><div class="title-bar-title">Menu</div></div>
 
-			#footer &copy; 2001 - #{Date.today.year} Good People, LLC
+						.row.desktop-header.show-for-medium
+							.columns.small-12
+								=render partial:'header', locals:{ map_ref:'/' }
+					-# desktop navigation and main
+					.row.show-for-medium
+						%nav.columns.small-3
+							%ul.menu.vertical.nav-desktop
+								%li= link_to 'Intro', intro_path
+								%li= link_to 'Type of Care', type_of_care_path
+								%li= link_to 'Caregivers', caregivers_path
+								%li= link_to 'Procedure', procedure_path
+								%li= link_to 'Service area', servicearea_path
+								%li= link_to 'Cost', cost_path
+								%li= link_to 'Testimonials', testimonials_path
+								%li= link_to 'Contact us ...', contactus_path
+								%li.print-link= link_to 'Print view', print_path
+						%main.columns.small-9= yield
+
+					.row.show-for-small-only
+						%main.columns.small-12= yield
+
+					%footer.row
+						.columns.small-3
+						.columns.small-9 &copy; 2001 - #{Date.today.year} Good People, LLC
+
+		-# replacing CSS detection of current page with JS detection (may not work well for complicated menus?):
+		-# https://css-tricks.com/snippets/javascript/get-url-and-url-parts-in-javascript/
+		-# https://css-tricks.com/snippets/jquery/add-active-navigation-class-based-on-url/
+		:javascript
+			$loc = location.pathname.split("/").pop();
+			$(function() { $('nav a[href^="/' + $loc + '"]').parent().addClass('current'); });
+//			$(function() { $('nav a[href^="/' + location.pathname.split("/")[1] + '"]').parent().addClass('current'); });
