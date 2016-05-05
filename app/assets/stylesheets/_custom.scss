@@ -164,6 +164,12 @@ footer {
 .sticky {
 	width: 100%; // req'd by Foundation
 }
+// fixing Foundation's shrinking .title-bar when mobile menu (off canvas) is open
+// and user scrolls the page down
+// to find this took an hour ...
+.off-canvas-wrapper-inner.is-open-left .sticky.is-stuck {
+	position: static; // from fixed (read off of Developer Tools)
+}
 .contact-info-wrap--mobile-header {
 	display: inline-block;
 	font-size: .8em;
