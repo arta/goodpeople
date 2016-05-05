@@ -46,7 +46,7 @@
 // ---------
 
 $global-font-size: 100%;
-$global-width: rem-calc(960); //(1200);
+$global-width: rem-calc(960);                               //(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
   primary: #2199e8,
@@ -160,8 +160,8 @@ $code-background: $light-gray;
 $code-border: 1px solid $medium-gray;
 $code-padding: rem-calc(2 5 1);
 
-$anchor-color: #0066cc; // $primary-color;
-$anchor-color-hover: #FF9900; // scale-color($anchor-color, $lightness: -14%);
+$anchor-color: #0066cc;                                     // $primary-color;
+$anchor-color-hover: #FF9900;                               // scale-color($anchor-color, $lightness: -14%);
 
 $anchor-text-decoration: none;
 $anchor-text-decoration-hover: none;
@@ -560,7 +560,7 @@ $titlebar-background: $black;
 $titlebar-color: $white;
 $titlebar-padding: 0.5rem;
 $titlebar-text-font-weight: bold;
-$titlebar-icon-color: $white;
+$titlebar-icon-color: $white; //$black; not needed, use `.dark` instead
 $titlebar-icon-color-hover: $medium-gray;
 $titlebar-icon-spacing: 0.25rem;
 

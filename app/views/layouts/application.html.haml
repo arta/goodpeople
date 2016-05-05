@@ -6,7 +6,7 @@
 
 		%title Good People LLC - Live-in caregivers & companions
 		// 5/12/15: http://blog.steveklabnik.com/posts/2013-06-25-removing-turbolinks-from-rails-4
-		=stylesheet_link_tag    'application'#, media: 'all'#, 'data-turbolinks-track' => true
+		=stylesheet_link_tag		'application'#, media: 'all'#, 'data-turbolinks-track' => true
 		=javascript_include_tag 'application'#, 'data-turbolinks-track' => true
 		=csrf_meta_tags
 
@@ -19,37 +19,54 @@
 			ga('send', 'pageview');
 
 	%body.body--interior
-		-# %button.button{ type:"button", data:{toggle:"offCanvas"}} Open Menu
+		-# %button.button{ type:"button", data:{toggle:"offCanvas"}} Open Menu // just for testing
 		.off-canvas-wrapper
 			.off-canvas-wrapper-inner{ data:{ off:{ canvas:{ wrapper:true } } } }
-				-# Mobile navigation
+				-# Mobile (off-canvas) navigation:
 				.off-canvas.position-left{ id:"offCanvas", data:{ off:{ canvas:true } } }
 					-# Close button
 					-# %button.close-button{ 'aria-label':"Close menu", type:"button", data:{ close:true } }
 					-# 	%span{ 'aria-hidden':true } &times;
-					-# Menu
-					%ul.menu.vertical
-						%li= link_to 'Intro', intro_path
-						%li= link_to 'Type of Care', type_of_care_path
-						%li= link_to 'Caregivers', caregivers_path
-						%li= link_to 'Procedure', procedure_path
-						%li= link_to 'Service area', servicearea_path
-						%li= link_to 'Cost', cost_path
-						%li= link_to 'Testimonials', testimonials_path
-						%li= link_to 'Contact us ...', contactus_path
+					.row
+						.column.small-4.logo--off-canvas
+							=image_tag "GP_Logo house RGB.jpg", border:"0", usemap:"#Map", href:"#"
+							%map{ name:"Map" }
+								%area{ shape:"rect", coords:"4,4,298,150", href:'/' }
+					%nav
+						%ul.menu.vertical
+							%li= link_to 'Welcome', intro_path
+							%li= link_to 'Type of Care', type_of_care_path
+							%li= link_to 'Caregivers', caregivers_path
+							%li= link_to 'Procedure', procedure_path
+							%li= link_to 'Service area', servicearea_path
+							%li= link_to 'Cost', cost_path
+							%li= link_to 'Testimonials', testimonials_path
+							%li= link_to 'Contact us ...', contactus_path
+							%li &nbsp;
+							%li= link_to '1-800-608-8003', 'tel:18006088003', class:'contact-info'
+							%li= link_to 'info@goodpeople.us', 'mailto:info@goodpeople.us', class:'contact-info'
 
-				-# Page content
-				.div.off-canvas-content{ data:{ off:{ canvas:{ content:true } } } }
-					%header
+				-# Page content:
+				.off-canvas-content{ data:{ off:{ canvas:{ content:true } } } }
 
-						<div class="title-bar show-for-small-only"><button class="menu-icon" type="button" data-toggle="offCanvas"></button><div class="title-bar-title">Menu</div></div>
+					-# Mobile header and main (navigation is above):
+					%header( data-sticky-container )
+						.title-bar.mobile-header.show-for-small-only( data-sticky data-margin-top="0" data-sticky-on="small" )
+							.title-bar-left
+								%button.menu-icon.dark{ type:"button", data:{ toggle:'offCanvas' } }
+							.title-bar-right
+								.contact-info-wrap--mobile-header
+									=link_to '1-800-608-8003', 'tel:18006088003', class:'contact-info'
+									=link_to 'info@goodpeople.us', 'mailto:info@goodpeople.us', class:'contact-info'
+					.row.show-for-small-only
+						%main.mt--2em.columns.small-12= yield
 
-						.row.desktop-header.show-for-medium
-							.columns.small-12
-								=render partial:'header', locals:{ map_ref:'/' }
-					-# desktop navigation and main
+					-# Desktop header, navigation and main:
+					%header.desktop-header.show-for-medium
+						.row
+							.column.small-12= render partial:'header', locals:{ map_ref:'/' }
 					.row.show-for-medium
-						%nav.columns.small-3
+						%nav.column.small-3
 							%ul.menu.vertical.nav-desktop
 								%li= link_to 'Intro', intro_path
 								%li= link_to 'Type of Care', type_of_care_path
@@ -60,14 +77,10 @@
 								%li= link_to 'Testimonials', testimonials_path
 								%li= link_to 'Contact us ...', contactus_path
 								%li.print-link= link_to 'Print view', print_path
-						%main.columns.small-9= yield
-
-					.row.show-for-small-only
-						%main.columns.small-12= yield
+						%main.column.small-9= yield
 
 					%footer.row
-						.columns.small-3
-						.columns.small-9 &copy; 2001 - #{Date.today.year} Good People, LLC
+						.columns.small-offset-3.small-9 &copy; 2001 - #{Date.today.year} Good People, LLC
 
 		-# replacing CSS detection of current page with JS detection (may not work well for complicated menus?):
 		-# https://css-tricks.com/snippets/javascript/get-url-and-url-parts-in-javascript/
@@ -75,4 +88,4 @@
 		:javascript
 			$loc = location.pathname.split("/").pop();
 			$(function() { $('nav a[href^="/' + $loc + '"]').parent().addClass('current'); });
-//			$(function() { $('nav a[href^="/' + location.pathname.split("/")[1] + '"]').parent().addClass('current'); });
+			// $(function() { $('nav a[href^="/' + location.pathname.split("/")[1] + '"]').parent().addClass('current'); });
