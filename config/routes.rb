@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'servicearea'   => 'static_pages#servicearea'
   get 'cost'          => 'static_pages#cost'
   get 'testimonials'  => 'static_pages#testimonials', as: :testimonials # to specify anchor
-  get 'contactus'     => 'static_pages#contactus'
+  get 'contactus'     => 'static_pages#contactus', as: :contactus
   get 'print'         => 'static_pages#print'
 
   # You can have the root of your site routed with "root"
