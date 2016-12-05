@@ -1,0 +1,19 @@
+• 12-4-16:
+• implement this HTML5 (general) structure:
+%html
+  %head
+    %title [ %meta %style %link %script ]
+  %body
+    %header
+      .logo
+      .contact
+    %aside
+      %nav
+        %ul
+          %li
+    %main
+      %article
+      %h1 Same as corresponding nav item
+      %p Lorem ipsum ...
+    %footer
+      Copyright ...
