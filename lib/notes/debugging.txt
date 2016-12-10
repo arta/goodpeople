@@ -1,3 +1,5 @@
-5/18/15: 
+###############################################################################
+5/18/15: ######################################################################
 • copy of Procfile from thehouse (web: bundle exec rails server thin -p $PORT -e $RACK_ENV) crashes goodpeople.
 :: Find out the right way @ https://devcenter.heroku.com/articles/ruby-default-web-server
+###############################################################################
