@@ -1,4 +1,16 @@
 ###############################################################################
+12-10-16: #####################################################################
+• Bug: links from /index orbit (or from browser address bar) to bookmarked
+testimonials were broken.
+• Issue: index page contained 2 yield directives !!!!
+: This took me the entire afternoon to trace down and figure out
+  how to fix it since foundation structure for desktop/mobile is involved
+: It works now but I don't like the solution. Make it cleaner.
+###############################################################################
+
+
+
+###############################################################################
 5/18/15: ######################################################################
 • copy of Procfile from thehouse (web: bundle exec rails server thin -p $PORT -e $RACK_ENV) crashes goodpeople.
 :: Find out the right way @ https://devcenter.heroku.com/articles/ruby-default-web-server

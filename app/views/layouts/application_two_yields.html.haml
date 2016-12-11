@@ -19,20 +19,20 @@
 			ga('send', 'pageview');
 
 	%body.body--interior
+		-# %button.button{ type:"button", data:{toggle:"offCanvas"}} Open Menu // just for testing
 		.off-canvas-wrapper
 			.off-canvas-wrapper-inner{ data:{ off:{ canvas:{ wrapper:true } } } }
 
-				-# Mobile header:
-				%header.title-bar.mobile-header.sticky( data-responsive-toggle='figure-it-out' data-hide-for='medium' )
-					.title-bar-left
-						%button.menu-icon.dark{ type:"button", data:{ toggle:'offCanvas' } }
-					.title-bar-right
-						.contact-info-wrap--mobile-header
-							=link_to '1-800-608-8003', 'tel:18006088003', class:'contact-info'
-							=link_to 'info@goodpeople.us', 'mailto:info@goodpeople.us', class:'contact-info'
-
 				-# Mobile (off-canvas) navigation:
 				.off-canvas.position-left{ id:"offCanvas", data:{ off:{ canvas:true } } }
+					-# Close button
+					-# %button.close-button{ 'aria-label':"Close menu", type:"button", data:{ close:true } }
+					-# 	%span{ 'aria-hidden':true } &times;
+					-# .row
+					-# 	.column.small-4.logo--off-canvas
+					-# 		=image_tag "GP_Logo house RGB.jpg", border:"0", usemap:"#Map", href:"#"
+					-# 		%map{ name:"Map" }
+					-# 			%area{ shape:"rect", coords:"4,4,298,150", href:'/' }
 					%nav
 						%ul.menu.vertical
 							%li= link_to image_tag( "GP_Logo house RGB.jpg", size:'50x50'), '/'
@@ -48,17 +48,27 @@
 							%li= link_to '1-800-608-8003', 'tel:18006088003', class:'contact-info'
 							%li= link_to 'info@goodpeople.us', 'mailto:info@goodpeople.us', class:'contact-info'
 
-				-# Page content (with desktop header and navigation):
+				-# Page content:
 				.off-canvas-content{ data:{ off:{ canvas:{ content:true } } } }
 
-					-# Desktop header:
-					.row.show-for-medium
-						%header.desktop-header
-							.column.small-12= render partial:'header', locals:{ map_ref:'/' }
+					-# Mobile header and main (navigation is above):
+					%header( data-sticky-container )
+						.title-bar.mobile-header.sticky.show-for-small-only( data-sticky data-margin-top="0" data-sticky-on="small" )
+							.title-bar-left
+								%button.menu-icon.dark{ type:"button", data:{ toggle:'offCanvas' } }
+							.title-bar-right
+								.contact-info-wrap--mobile-header
+									=link_to '1-800-608-8003', 'tel:18006088003', class:'contact-info'
+									=link_to 'info@goodpeople.us', 'mailto:info@goodpeople.us', class:'contact-info'
+					.row.show-for-small-only
+						%main.mt--2em.columns.small-12= yield
 
-					-# Desktop navigation:
-					.row
-						%nav.column.medium-3.show-for-medium
+					-# Desktop header, navigation and main:
+					%header.desktop-header.show-for-medium
+						.row
+							.column.small-12= render partial:'header', locals:{ map_ref:'/' }
+					.row.show-for-medium
+						%nav.column.small-3
 							%ul.menu.vertical.nav-desktop
 								%li= link_to 'Intro', intro_path
 								%li= link_to 'Type of Care', type_of_care_path
@@ -69,13 +79,7 @@
 								%li= link_to 'Testimonials', testimonials_path
 								%li= link_to 'Contact us ...', contactus_path
 								%li.print-link= link_to 'Print view', print_path
-
-						-# Main:
-						%main
-							.mt--5em.show-for-small-only &nbsp;
-							.column.small-12.medium-9
-								=yield
-
+						%main.column.small-9= yield
 
 					%footer.row
 						.columns.small-offset-3.small-9 &copy; 2001 - #{Date.today.year} Good People, LLC
