@@ -1,5 +1,11 @@
 ###############################################################################
 12-10-16: #####################################################################
+• Bug: FOUC (flash of unstyled content)
+: http://foundation.zurb.com/sites/docs/responsive-navigation.html#preventing-fouc
+: actually, the recommended solution didn't make a damn difference
+: whereas just adding back .show-for-small-only fixed it !!! :)
+
+###############################################################################
 • Bug: links from /index orbit (or from browser address bar) to bookmarked
 testimonials were broken.
 • Issue: index page contained 2 yield directives !!!!
