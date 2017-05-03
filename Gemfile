@@ -1,22 +1,22 @@
 source 'https://rubygems.org'
 
-ruby '2.2.4'
+git_source(:github) do |repo_name|
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  "https://github.com/#{repo_name}.git"
+end
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5'
-# Use postgresql as the database for Active Record
+ruby '2.4.0'
+gem 'rails', '5.0.2'
+
 gem 'pg'
-# Use SCSS for stylesheets
+gem 'puma'
+
 gem 'sass-rails'
-# Use Uglifier as compressor for JavaScript assets
 gem 'uglifier'
-# Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails'
-# Use html.haml instead of html.erb
-gem 'haml-rails'
-# Use jquery as the JavaScript library
 gem 'jquery-rails'
-# 5/18/15: heroku wants to have it
-gem 'rails_12factor', group: :production
-# 4-27-16: adding foundation:
-gem 'foundation-rails'
+# gem 'turbolinks', '~> 5'
+gem 'jbuilder'
+
+gem 'foundation-rails', '6.2.1.0'
+gem 'haml-rails'

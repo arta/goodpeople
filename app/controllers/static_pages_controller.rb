@@ -18,7 +18,7 @@ class StaticPagesController < ApplicationController
 
 	# The root is routed here
 	def index
-		render :layout => false
+		render layout: false
 	end
 
 	def intro
