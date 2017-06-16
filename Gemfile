@@ -5,8 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby '2.4.0'
-gem 'rails', '5.0.2'
+ruby '2.4.1'
+gem 'rails', '5.1.1'
 
 gem 'pg'
 gem 'puma'
@@ -18,5 +18,5 @@ gem 'jquery-rails'
 # gem 'turbolinks', '~> 5'
 gem 'jbuilder'
 
-gem 'foundation-rails', '6.2.1.0'
+gem 'foundation-rails'#, '6.2.1.0'
 gem 'haml-rails'

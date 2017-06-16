@@ -177,9 +177,16 @@ footer {
 	padding-top: 0.4em;
 }
 // makes the .off-canvas-content lighter by default, make it darker ! :)
-.js-off-canvas-exit.is-visible {
+.js-off-canvas-overlay.is-visible {
 	background: rgba(0,0,0,0.1); // rgba(254, 254, 254, 0.25);
-	// background: rgba(254, 254, 254, 0.25);
+}
+// tune up mobile menu shadow
+.position-left.is-transition-push.is-open {
+	@include shadow( 2px, 0, 15px, rgba( 50, 50, 50, 0.74 ) );
+}
+// tune up mobile menu shadow
+.position-left.is-transition-push::after {
+	box-shadow: none;
 }
 .h1--interior {
 	@include breakpoint( small only ) {
@@ -192,6 +199,6 @@ footer {
 // GENERAL OVERRIDES
 // ####################################################
 .mt--2em { margin-top: 2em; }
-.mt--5em { margin-top: 5em; } // temp spacer for %main in the app layout
+.mt--1em { margin-top: 1em; } // temp spacer for %main in the app layout
 .mt--60 { margin-top: 60px; } // applied to footer's own row, the only way taht didn't yield bottom of orbit disappearing on resize
 .mb--40 { margin-bottom: 40px; }

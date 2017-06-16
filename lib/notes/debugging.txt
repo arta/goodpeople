@@ -1,23 +1,52 @@
-###############################################################################
-12-10-16: #####################################################################
+################################################################################
+6-15-17: #######################################################################
+• WHAT:
+  > Sass::SyntaxError at / $color: "foreground(#2199e8)" is not a color for `red'
+
+• WHEN:
+  : bumping up Rails to 5.1 and gem foundation-rails to 6.3
+
+• WHY:
+  : gem foundation-rails 6.3 issue
+    1) https://github.com/airbr/freespot/issues/1
+    2) https://github.com/zurb/foundation-rails/issues/214
+
+• FIX:
+  : Instead of the recommendation in 1): to comment out offending lines in
+    foundation_and_overrides, I ran:
+
+      $ rails g foundation:install
+
+  : This updated (i.e. overrode) foundation_and_overrides and _settings.scss
+  : Following http://foundation.zurb.com/forum/posts/37282#comment_37706
+    : create _settings_overrides to keep changed settings in my own file
+    : import it to foundation_and_overrides
+      : because the same directives placed in _custom don't work (why? dunno)
+
+################################################################################
+
+
+
+################################################################################
+12-10-16: ######################################################################
 • Bug: FOUC (flash of unstyled content)
 : http://foundation.zurb.com/sites/docs/responsive-navigation.html#preventing-fouc
 : actually, the recommended solution didn't make a damn difference
 : whereas just adding back .show-for-small-only fixed it !!! :)
 
-###############################################################################
+################################################################################
 • Bug: links from /index orbit (or from browser address bar) to bookmarked
 testimonials were broken.
 • Issue: index page contained 2 yield directives !!!!
 : This took me the entire afternoon to trace down and figure out
   how to fix it since foundation structure for desktop/mobile is involved
 : It works now but I don't like the solution. Make it cleaner.
-###############################################################################
+################################################################################
 
 
 
-###############################################################################
-5/18/15: ######################################################################
+################################################################################
+5/18/15: #######################################################################
 • copy of Procfile from thehouse (web: bundle exec rails server thin -p $PORT -e $RACK_ENV) crashes goodpeople.
 :: Find out the right way @ https://devcenter.heroku.com/articles/ruby-default-web-server
-###############################################################################
+################################################################################
