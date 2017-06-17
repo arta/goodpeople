@@ -22,8 +22,7 @@
 
       : Blemish: the %main's positioning on page is briefly but visibly delayed
         : Chose 2) first, but it didn't work on heroku too well =>
-        : => tried 1), and it's perfect on heroku; the delay is not visible
-          at all with heroku's precompiled assets
+        : => tried 1), and it's ok on heroku; the delay is so bad
 
   :2) Add data-sticky-on='small' attribute to .sticky, adjust margin-top of
       the text container (%main):
