@@ -159,6 +159,7 @@ footer {
 	@include shadow( 0, 2px, 15px, rgba( 50, 50, 50, .74 ) );
 }
 .sticky { width: 100%; } // req'd by Foundation
+.sticky.is-anchored { position: fixed; }
 .title-bar-left { line-height: 2.4em; } // center the hamburger
 .title-bar-right { font-size: .8em; }
 // makes the .off-canvas-content lighter by default, make it darker instead
@@ -172,7 +173,7 @@ footer {
 }
 main {
 	@include breakpoint( small only ) {
-		margin-top: 2em;
+		margin-top: 6em;
 	};
 }
 
