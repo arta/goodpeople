@@ -24,28 +24,23 @@
 	-webkit-box-shadow:	$x $y $width $color;
 	box-shadow: 				$x $y $width $color;
 }
-* {	outline: 0; } // remove blue glowing outline around clicked imgs ..
+// remove blue glowing outline around clicked imgs, ..:
+* {	outline: 0; } 
 footer {
-	text-align: left;
+	@include breakpoint( small only ) { text-align: center; };
 	color: #999999;
 	font-size: 80%;
-	margin-top: 60px;
-	margin-bottom: 40px;
 }
+p.footer { padding-top: 60px; padding-bottom: 40px; }
 
 
 // ####################################################
 // INDEX PAGE
 // ####################################################
-.body--index, .footer--index {
-	text-align: center;
-}
-.logo--index {
-  margin-top: 20px;
-}
-.h1--index {
-  margin-top: 50px;
-}
+.body--index, .footer--index { text-align: center; }
+.footer--index { padding-top: 60px; padding-bottom: 40px; }
+.logo--index { margin-top: 20px; }
+.h1--index { margin-top: 50px; }
 .link-to-enter {
   display: block;
 	font-size: 1.4em;
@@ -59,9 +54,7 @@ footer {
 .contact-info-wrapper--index {
   font-size: 1.4em;
   margin-bottom: 40px;
-	@include breakpoint( small only ) {
-		font-size: 1.2em;
-	};
+	@include breakpoint( small only ) { font-size: 1.2em; };
 }
 .contact-info {
   color: #333333;
@@ -69,9 +62,8 @@ footer {
 	display: block;
 	line-height: 1.7em;
 }
-.orbit .orbit-container {
-  height: auto !important; // didn't find any other way (using specificity)
-}
+// didn't find a better way; using specificity:
+.orbit .orbit-container { height: auto !important; }
 .orbit .orbit-previous { margin-left: 14px; }
 .orbit .orbit-next { margin-right: 14px; }
 .orbit .orbit-previous, .orbit .orbit-next,
@@ -100,17 +92,13 @@ footer {
 		font-size: 1em;
 	};
 }
-.testimonial-excerpt p a {
-  float: right;
-}
+.testimonial-excerpt p a { float: right; }
 
 
 // ####################################################
 // INTERIOR PAGES
 // ####################################################
-.desktop-header {
-	height: 12em;
-}
+.desktop-header { height: 12em; }
 .contact-info-wrap--desktop-header {
 	margin-top: 3em;
 	text-align: right;
@@ -120,9 +108,7 @@ footer {
 	background-color: $light-gray; // make it beige, somewhere around EAD29D;
 	@include radius( 3px );
 }
-.print-link {
-	margin-top: 3em;
-}
+.print-link { margin-top: 3em; }
 .print-link a:link, .print-link a:visited {
 	background: white image-url( 'print.gif' ) no-repeat 0 0.7em;
 	color: #aaa;
@@ -134,24 +120,18 @@ footer {
 	color: #ff9900;
 	background-image: image-url( 'printHover.gif' );
 }
-.h1--interior {
-	margin-bottom: 1em;
-}
+.h1--interior { margin-bottom: 1em; }
 
 // ####################################################
 // MOBILE
 // ####################################################
-.off-canvas {
-	background: white;
-}
+.off-canvas { background: white; }
 // tune up mobile menu shadow
 .off-canvas.is-transition-push.is-open {
 	@include shadow( 2px, 0, 15px, rgba( 50, 50, 50, 0.74 ) );
 }
 // tune up mobile menu shadow
-.off-canvas.is-transition-push::after {
-	box-shadow: none;
-}
+.off-canvas.is-transition-push::after { box-shadow: none; }
 .title-bar {
 	background-color: white;
 	padding-top: .7em;
@@ -163,32 +143,13 @@ footer {
 .title-bar-left { line-height: 2.4em; } // center the hamburger
 .title-bar-right { font-size: .8em; }
 // makes the .off-canvas-content lighter by default, make it darker instead
-.js-off-canvas-overlay.is-visible {
-	background: rgba(0, 0, 0, .3); // rgba(254, 254, 254, 0.25);
-}
-.h1--interior {
-	@include breakpoint( small only ) {
-		font-size: 1.6em;
-	};
-}
-main {
-	@include breakpoint( small only ) {
-		margin-top: 6em;
-	};
-}
-
+.js-off-canvas-overlay.is-visible { background: rgba(0, 0, 0, .3); } // rgba(254, 254, 254, 0.25);
+.h1--interior { @include breakpoint( small only ) { font-size: 1.6em; }; }
+main { @include breakpoint( small only ) { margin-top: 6em; }; }
 // http://foundation.zurb.com/sites/docs/responsive-navigation.html#preventing-fouc
 .no-js {
-  @include breakpoint(small only) {
-    #show-for-medium {
-      display: none;
-    }
-  }
-  @include breakpoint(medium) {
-    .title-bar {
-      display: none;
-    }
-  }
+  @include breakpoint( small only ) { #show-for-medium { display: none; } }
+  @include breakpoint( medium ) { .title-bar { display: none; } }
 }
 
 
