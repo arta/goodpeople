@@ -1,4 +1,50 @@
 ################################################################################
+6-17-17: #######################################################################
+• WHAT:
+  : .sticky is not sticky when following Foundation instructions
+  : took too long from too many sources to figure out ... grrrr .. just a few:
+  : https://stackoverflow.com/a/29495706/247626
+  : https://github.com/zurb/foundation-sites/issues/9629
+  : https://codepen.io/brettsmason/pen/ygXJYK
+
+• WHY:
+  : Foundation .sticky and .off-canvas don't play nicely together
+
+• FIX: two (three) options:
+  :1) Make .sticky fixed, adjust margin-top of the text container (%main):
+
+      : _custom.scss:
+          ...
+          main { @include breakpoint( small only ) { margin-top: 6em; }; }
+          ...
+          .sticky.is-anchored { position: fixed; }
+          ...
+
+      : Blemish: the %main's positioning on page is briefly but visibly delayed
+
+  :2) Add data-sticky-on='small' attribute to .sticky, adjust margin-top of
+      the text container (%main):
+
+      : application.html.haml:
+          ...
+          .sticky{ data: { sticky: true, sticky_on: 'small', margin_top: 0 } }
+          ...
+
+      : _custom.scss:
+          ...
+          main { @include breakpoint( small only ) { margin-top: 2em; }; }
+          ...
+
+      : Blemish: the .sticky briefly but visibly jerks upon initial scrolling
+        But it's not that unusual behavior; choosing this one
+
+  :3) Real "FIX": don't use off-canvas; use a drop-down menu instead ...
+
+################################################################################
+
+
+
+################################################################################
 6-15-17: #######################################################################
 • WHAT:
   > Sass::SyntaxError at / $color: "foreground(#2199e8)" is not a color for `red'

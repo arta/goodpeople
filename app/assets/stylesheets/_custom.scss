@@ -137,11 +137,6 @@ footer {
 .h1--interior {
 	margin-bottom: 1em;
 }
-main {
-	@include breakpoint( small only ) {
-		margin-top: 2em;
-	};
-}
 
 // ####################################################
 // MOBILE
@@ -163,9 +158,7 @@ main {
 	padding-bottom: .7em;
 	@include shadow( 0, 2px, 15px, rgba( 50, 50, 50, .74 ) );
 }
-// .sticky {
-// 	width: 100%; // req'd by Foundation
-// }
+.sticky { width: 100%; } // req'd by Foundation
 .title-bar-left { line-height: 2.4em; } // center the hamburger
 .title-bar-right { font-size: .8em; }
 // makes the .off-canvas-content lighter by default, make it darker instead
@@ -177,6 +170,12 @@ main {
 		font-size: 1.6em;
 	};
 }
+main {
+	@include breakpoint( small only ) {
+		margin-top: 2em;
+	};
+}
+
 // http://foundation.zurb.com/sites/docs/responsive-navigation.html#preventing-fouc
 .no-js {
   @include breakpoint(small only) {
