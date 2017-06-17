@@ -34,6 +34,10 @@
 : actually, the recommended solution didn't make a damn difference
 : whereas just adding back .show-for-small-only fixed it !!! :)
 
+• 6-16-17 update:
+: now, after upgrading Foundation to 6.3, the proposed solution seems to work
+  better than the .show-for-small-only fix
+
 ################################################################################
 • Bug: links from /index orbit (or from browser address bar) to bookmarked
 testimonials were broken.

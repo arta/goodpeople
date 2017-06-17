@@ -105,7 +105,6 @@ footer {
 }
 
 
-
 // ####################################################
 // INTERIOR PAGES
 // ####################################################
@@ -138,67 +137,61 @@ footer {
 .h1--interior {
 	margin-bottom: 1em;
 }
-
+main {
+	@include breakpoint( small only ) {
+		margin-top: 2em;
+	};
+}
 
 // ####################################################
 // MOBILE
 // ####################################################
-.off-canvas.is-open {
+.off-canvas {
 	background: white;
 }
-// .off-canvas.is-open hack for `Service area` page (shorter than the nav menu)
-.min-height {
-	height: 13em;
-}
-.logo--off-canvas img {
-	height: 38.4px;
-	// padding-bottom: 1em;
-	// padding-left: 1em;
-	// padding-top: 0.6em;
-}
-.mobile-header {
-	background-color: white;
-	height: 4em;
-	line-height: 3em; // centering menu-icon vertically
-	@include shadow( 0, 2px, 15px, rgba( 50, 50, 50, 0.74 ) );
-}
-.sticky {
-	width: 100%; // req'd by Foundation
-}
-// fixing Foundation's shrinking .title-bar when mobile menu (off canvas) is open
-// and user scrolls the page down
-// to find this took an hour ...
-.off-canvas-wrapper-inner.is-open-left .sticky.is-stuck {
-	position: static; // from fixed (read off of Developer Tools)
-}
-.contact-info-wrap--mobile-header {
-	display: inline-block;
-	font-size: .8em;
-	padding-top: 0.4em;
-}
-// makes the .off-canvas-content lighter by default, make it darker ! :)
-.js-off-canvas-overlay.is-visible {
-	background: rgba(0,0,0,0.1); // rgba(254, 254, 254, 0.25);
-}
 // tune up mobile menu shadow
-.position-left.is-transition-push.is-open {
+.off-canvas.is-transition-push.is-open {
 	@include shadow( 2px, 0, 15px, rgba( 50, 50, 50, 0.74 ) );
 }
 // tune up mobile menu shadow
-.position-left.is-transition-push::after {
+.off-canvas.is-transition-push::after {
 	box-shadow: none;
+}
+.title-bar {
+	background-color: white;
+	padding-top: .7em;
+	padding-bottom: .7em;
+	@include shadow( 0, 2px, 15px, rgba( 50, 50, 50, .74 ) );
+}
+// .sticky {
+// 	width: 100%; // req'd by Foundation
+// }
+.title-bar-left { line-height: 2.4em; } // center the hamburger
+.title-bar-right { font-size: .8em; }
+// makes the .off-canvas-content lighter by default, make it darker instead
+.js-off-canvas-overlay.is-visible {
+	background: rgba(0, 0, 0, .3); // rgba(254, 254, 254, 0.25);
 }
 .h1--interior {
 	@include breakpoint( small only ) {
 		font-size: 1.6em;
 	};
 }
+// http://foundation.zurb.com/sites/docs/responsive-navigation.html#preventing-fouc
+.no-js {
+  @include breakpoint(small only) {
+    #show-for-medium {
+      display: none;
+    }
+  }
+  @include breakpoint(medium) {
+    .title-bar {
+      display: none;
+    }
+  }
+}
 
 
 // ####################################################
 // GENERAL OVERRIDES
 // ####################################################
-.mt--2em { margin-top: 2em; }
-.mt--1em { margin-top: 1em; } // temp spacer for %main in the app layout
-.mt--60 { margin-top: 60px; } // applied to footer's own row, the only way taht didn't yield bottom of orbit disappearing on resize
-.mb--40 { margin-bottom: 40px; }
