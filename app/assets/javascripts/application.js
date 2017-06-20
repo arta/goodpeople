@@ -12,11 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require foundation
 // 5/12/15: http://blog.steveklabnik.com/posts/2013-06-25-removing-turbolinks-from-rails-4
 // require turbolinks (removed the leading `=`)
 //= require_tree .
+//= require foundation
 
+// 6-21-17: tried to simplify by using the line from github docs:
+// $(document).foundation(); // but that screws up orbit (hm, code seems ok ..)
 // 4-27-16: $ rails g foundation:install
 $(function(){ $(document).foundation(); });
 // ... and the above `require foundation`
