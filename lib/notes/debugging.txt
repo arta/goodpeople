@@ -1,4 +1,24 @@
 ################################################################################
+6-21-17: #######################################################################
+• WHAT:
+  : .title-bar.sticky will does not display
+
+• WHEN:
+  : clicking a link with anchor (e.g. ../testimonials#3523 from orbit)
+    on small screen
+
+• WHY:
+  : Foundation .sticky issues are "... actually a bit more complicated.
+    A rewrite of sticky is in the works ..." see brettsmason's bottom comments:
+  : https://github.com/zurb/foundation-sites/issues/9842
+
+• FIX: no fix now
+
+################################################################################
+
+
+
+################################################################################
 6-17-17: #######################################################################
 • WHAT:
   : .sticky is not sticky when following Foundation instructions
