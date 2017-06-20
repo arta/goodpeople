@@ -119,103 +119,6 @@ p.footer { padding-top: 60px; padding-bottom: 40px; }
 	background-image: image-url( 'printHover.gif' );
 }
 .h1--interior { margin-bottom: 1em; }
-
-// ####################################################
-// MOBILE
-// ####################################################
-.off-canvas { background: white; }
-// tune up mobile menu shadow
-.off-canvas.is-transition-push.is-open {
-	@include shadow( 2px, 0, 15px, rgba( 50, 50, 50, 0.74 ) );
-}
-// tune up mobile menu shadow
-.off-canvas.is-transition-push::after { box-shadow: none; }
-.title-bar {
-	background-color: white;
-	padding-top: .7em;
-	padding-bottom: .7em;
-	@include shadow( 0, 2px, 15px, rgba( 50, 50, 50, .74 ) );
-}
-.sticky { width: 100%; } // req'd by Foundation
-.sticky.is-anchored { position: fixed; } // hack fix of not so sticky .sticky
-.title-bar-left { line-height: 2.4em; } // center the hamburger
-.title-bar-right { font-size: .8em; }
-// makes the .off-canvas-content lighter by default, make it darker instead
-.js-off-canvas-overlay.is-visible { background: rgba(0, 0, 0, .3); } // rgba(254, 254, 254, 0.25);
-.h1--interior { @include breakpoint( small only ) { font-size: 1.6em; }; }
-main { @include breakpoint( small only ) { margin-top: 6em; }; }
-// http://foundation.zurb.com/sites/docs/responsive-navigation.html#preventing-fouc
-.no-js {
-  @include breakpoint( small only ) { #show-for-medium { display: none; } }
-  @include breakpoint( medium ) { .title-bar { display: none; } }
-}
-
-
-// ####################################################
-// GENERAL OVERRIDES
-// ####################################################
-
-
-/* --------------- entry page --------------- */
-
-#hint {
-	padding-top: 65px;
-	font-size: 80%;
-}
-/* ------------ interior pages --------------- */
-
-#interiorWrapper {
-	position: absolute;
-	width: 750px;
-	top: 20px;
-	left: 20px;
-	background-image: image-url( 'houseInterior.jpg' );
-	background-repeat: no-repeat;
-	background-position: right top;
-}
-
-/* ............. header .............. */
-
-#header {
-	height: 180px;
-	margin-right: 20px;
-	clear: both;
-}
-#headerlogo {
-	float: left;
-}
-#headerphone {
-	float: right;
-	margin-top: 40px;
-}
-#headeremail {
-	float: right;
-	margin-top: 0.5em;
-	clear: right;
-	color: #333333;
-}
-#headeremail a:link, #headeremail a:visited {
-	color: #333333;
-}
-#headeremail a:hover, #headeremail a:active {
-	color: #ff9900;
-}
-
-/* ............. content ................ */
-
-#content {
-	margin: 0 20px 0 180px;
-}
-#content h1 {
-	color: #484848;
-	font-size: 120%;
-	text-align: center;
-	margin-top: 0px;
-}
-#content > ul li {
-	list-style-image: image-url( 'ablbull1check.gif' );
-	margin-left: 0px;
-}
 .signature {
 	margin-top: 18px;
 	margin-left: 18px;
@@ -224,6 +127,12 @@ main { @include breakpoint( small only ) { margin-top: 6em; }; }
 .signature p {
 	margin-top: 0;
   margin-left: 18px;
+}
+.help, acronym, abbr {
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #333333;
+	cursor: help;
 }
 .testimonial {
 	margin-top: 40px;
@@ -266,30 +175,61 @@ main { @include breakpoint( small only ) { margin-top: 6em; }; }
 .signed-by {
   text-align: left;
 }
-.help, acronym, abbr {
-	border-bottom-width: 1px;
-	border-bottom-style: dotted;
-	border-bottom-color: #333333;
-	cursor: help;
-}
-body#print #content {
-	margin: 0 20px 0 0;
-	font-size: 10pt;
-}
 .underline {
 	text-decoration: underline;
 }
 
-/* .............. footer .............. */
 
-#footer {
-	margin: 0px 20px 0 180px;
-	padding: 40px 0 20px 0;
-	clear: both;
-	text-align: left;
-	color: #999999;
-	font-size: 80%;
+// ####################################################
+// MOBILE
+// ####################################################
+.off-canvas { background: white; }
+// tune up mobile menu shadow
+.off-canvas.is-transition-push.is-open {
+	@include shadow( 2px, 0, 15px, rgba( 50, 50, 50, 0.74 ) );
 }
-body#print #footer {
-	margin-left: 0px;
+// tune up mobile menu shadow
+.off-canvas.is-transition-push::after { box-shadow: none; }
+.title-bar {
+	background-color: white;
+	padding-top: .7em;
+	padding-bottom: .7em;
+	@include shadow( 0, 2px, 15px, rgba( 50, 50, 50, .74 ) );
+}
+.sticky { width: 100%; } // req'd by Foundation
+.sticky.is-anchored { position: fixed; } // hack fix of not so sticky .sticky
+.title-bar-left { line-height: 2.4em; } // center the hamburger
+.title-bar-right { font-size: .8em; }
+// makes the .off-canvas-content lighter by default, make it darker instead
+.js-off-canvas-overlay.is-visible { background: rgba(0, 0, 0, .3); } // rgba(254, 254, 254, 0.25);
+.h1--interior { @include breakpoint( small only ) { font-size: 1.6em; }; }
+main { @include breakpoint( small only ) { margin-top: 6em; }; }
+// http://foundation.zurb.com/sites/docs/responsive-navigation.html#preventing-fouc
+.no-js {
+  @include breakpoint( small only ) { #show-for-medium { display: none; } }
+  @include breakpoint( medium ) { .title-bar { display: none; } }
+}
+
+
+// ####################################################
+// PRINT
+// ####################################################
+#header {
+	height: 180px;
+	margin-right: 20px;
+	clear: both;
+}
+#content {
+	margin: 0 20px 0 0;
+	font-size: 10pt;
+  h1 {
+  	color: #484848;
+  	font-size: 130%;
+  	text-align: center;
+  	margin-top: 0px;
+  }
+  ul li {
+  	list-style-image: image-url( 'ablbull1check.gif' );
+  	margin-left: 0px;
+  }
 }
