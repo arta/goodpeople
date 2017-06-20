@@ -13,13 +13,17 @@
   : https://github.com/zurb/foundation-sites/issues/9842
 
 • FIX:
-  : apparently, no fix available until newer Foundation version
-  : but, I tried to slap data-sticky-on: 'small' to .sticky ... and that worked!
+  : apparently, no fix available until newer Foundation version ...
+  : ... but, I tried data-sticky-on='small' on .sticky ... and that worked!
 
   : application.html.haml:
       ...
       .sticky{ data: { sticky: true, sticky_on: 'small', margin_top: 0 } }
-      ...  
+      ...
+  : Blemish: the title-bar.sticky overlaps top portion of the testimonial.
+
+  : TODO: remove the data-sticky-on='small' declaration from .title-bar.sticky
+    when Foundation fixes .sticky in some future release
 
 ################################################################################
 
