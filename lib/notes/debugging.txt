@@ -12,7 +12,14 @@
     A rewrite of sticky is in the works ..." see brettsmason's bottom comments:
   : https://github.com/zurb/foundation-sites/issues/9842
 
-• FIX: no fix now
+• FIX:
+  : apparently, no fix available until newer Foundation version
+  : but, I tried to slap data-sticky-on: 'small' to .sticky ... and that worked!
+
+  : application.html.haml:
+      ...
+      .sticky{ data: { sticky: true, sticky_on: 'small', margin_top: 0 } }
+      ...  
 
 ################################################################################
 
