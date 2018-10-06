@@ -20,4 +20,11 @@ ActiveSupport.to_time_preserves_timezone = true
 Rails.application.config.active_record.belongs_to_required_by_default = true
 
 # Do not halt callback chains when a callback returns false. Previous versions had true.
-ActiveSupport.halt_callback_chains_on_return_false = false
+# 10-5-18: upgrading to Rails 5.2
+# thehouse $ rails s
+# /Users/arta/sites/thehouse/config/initializers/new_framework_defaults.rb:23: i
+# n `<main>': undefined method `halt_callback_chains_on_return_false=' for Activ
+# eSupport:Module (NoMethodError)
+# .. so, commenting it out
+# (also: https://github.com/rails/rails/issues/32653#issuecomment-383063063)
+# ActiveSupport.halt_callback_chains_on_return_false = false

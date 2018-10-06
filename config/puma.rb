@@ -1,3 +1,4 @@
+# 5-3-17: override default config in favor of heroku's:
 workers Integer(ENV['WEB_CONCURRENCY'] || 2)
 threads_count = Integer(ENV['RAILS_MAX_THREADS'] || 5)
 threads threads_count, threads_count
@@ -16,7 +17,8 @@ end
 
 
 ################################################################################
-# 5-3-17, Original, before R5 upgrade,
+# 10-5-18: updated to be in sync w/ R 5.2 contents, just so it's here
+# 5-3-17: Original, before R5 upgrade,
 # commented out completely, certain lines were uncommented (one `#` now):
 
 # # Puma can serve each request in a thread from an internal thread pool.
@@ -47,22 +49,9 @@ end
 # # Use the `preload_app!` method when specifying a `workers` number.
 # # This directive tells Puma to first boot the application and load code
 # # before forking the application. This takes advantage of Copy On Write
-# # process behavior so workers use less memory. If you use this option
-# # you need to make sure to reconnect any threads in the `on_worker_boot`
-# # block.
+# # process behavior so workers use less memory.
 # #
 # # preload_app!
-#
-# # The code in the `on_worker_boot` will be called if you are using
-# # clustered mode by specifying a number of `workers`. After each worker
-# # process is booted this block will be run, if you are using `preload_app!`
-# # option you will want to use this block to reconnect to any threads
-# # or connections that may have been created at application boot, Ruby
-# # cannot share connections between processes.
-# #
-# # on_worker_boot do
-# #   ActiveRecord::Base.establish_connection if defined?(ActiveRecord)
-# # end
 #
 # # Allow puma to be restarted by `rails restart` command.
 # plugin :tmp_restart
