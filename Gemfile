@@ -45,5 +45,6 @@ group :test do
   gem 'chromedriver-helper'
 end
 
-gem 'foundation-rails'#, '6.2.1.0'
+gem 'foundation-rails'
+gem 'autoprefixer-rails'
 gem 'haml-rails'

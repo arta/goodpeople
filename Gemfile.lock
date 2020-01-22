@@ -47,6 +47,8 @@ GEM
     archive-zip (0.12.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
+    autoprefixer-rails (9.7.4)
+      execjs
     awesome_print (1.8.0)
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
@@ -234,6 +236,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autoprefixer-rails
   awesome_print (~> 1.8)
   better_errors
   binding_of_caller

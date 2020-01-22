@@ -6,14 +6,10 @@
 // ####################################################
 // ############			Foundation:		#####################
 // ####################################################
-// 1-21-2020 (upgrading to Rails 6, Ruby 2.7,
-// make variables in _settings.scss available here
-// foundation 6.6.1 stopped reading from _settings (np w/ 6.4.3)
-// real solution: get rid of Foundation
-$primary-color: #1779ba;
-$light-gray: #e6e6e6;
-$anchor-color: $primary-color;
-$anchor-color-hover: scale-color($anchor-color, $lightness: -14%);
+// 1-22-2020 while upgrading to Rails 6, Ruby 2.7.0:
+// Ruby 2.5.3, Rails 5.2.4.1, Foundation 6.6.6.1
+// gem sassc-rails wants this import here and in foundation_and_overrides.scss
+@import 'settings_overrides';
 
 // ####################################################
 // GENERAL
