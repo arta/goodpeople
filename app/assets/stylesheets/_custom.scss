@@ -4,9 +4,16 @@
 // http://nicolasgallagher.com/about-html-semantics-front-end-architecture/
 
 // ####################################################
-// ############			CSS rules:		#####################
+// ############			Foundation:		#####################
 // ####################################################
-
+// 1-21-2020 (upgrading to Rails 6, Ruby 2.7,
+// make variables in _settings.scss available here
+// foundation 6.6.1 stopped reading from _settings (np w/ 6.4.3)
+// real solution: get rid of Foundation
+$primary-color: #1779ba;
+$light-gray: #e6e6e6;
+$anchor-color: $primary-color;
+$anchor-color-hover: scale-color($anchor-color, $lightness: -14%);
 
 // ####################################################
 // GENERAL
@@ -25,7 +32,7 @@
 // remove blue glowing outline around clicked imgs, ..:
 * {	outline: 0; }
 footer {
-	@include breakpoint( small only ) { text-align: center; };
+	@media (max-width: 640px) { text-align: center; }
 	color: #999999;
 	font-size: 80%;
 }
@@ -45,14 +52,12 @@ p.footer { padding-top: 60px; padding-bottom: 40px; }
 	font-weight: bold;
   margin-bottom: 40px;
   margin-top: 40px;
-	@include breakpoint( small only ) {
-		font-size: 1.2em;
-	};
+	@media (max-width: 640px) { font-size: 1.2em; };
 }
 .contact-info-wrapper--index {
   font-size: 1.4em;
   margin-bottom: 40px;
-	@include breakpoint( small only ) { font-size: 1.2em; };
+	@media (max-width: 640px) { font-size: 1.2em; };
 }
 .contact-info {
   color: #333333;
@@ -61,7 +66,6 @@ p.footer { padding-top: 60px; padding-bottom: 40px; }
 	line-height: 1.7em;
 }
 // didn't find a better way; using specificity:
-.orbit .orbit-container { height: auto !important; }
 .orbit .orbit-previous { margin-left: 14px; }
 .orbit .orbit-next { margin-right: 14px; }
 .orbit .orbit-previous, .orbit .orbit-next,
@@ -86,9 +90,7 @@ p.footer { padding-top: 60px; padding-bottom: 40px; }
 	text-align: left;
 	@include radius( 3px );
   @include shadow( 2px, 2px, 8px, #ccc );
-  @include breakpoint( small only ) {
-		font-size: 1em;
-	};
+	@media (max-width: 640px) { font-size: 1em; };
 }
 .testimonial-excerpt p a { float: right; }
 
@@ -206,12 +208,16 @@ a:not([href]) {
 .title-bar-right { font-size: .8em; }
 // makes the .off-canvas-content lighter by default, make it darker instead
 .js-off-canvas-overlay.is-visible { background: rgba(0, 0, 0, .3); } // rgba(254, 254, 254, 0.25);
-.h1--interior { @include breakpoint( small only ) { font-size: 1.6em; }; }
-main { @include breakpoint( small only ) { margin-top: 6em; }; }
+.h1--interior {
+	@media (max-width: 640px) { font-size: 1.6em; }
+}
+main {
+	@media (max-width: 640px) { margin-top: 6em; };
+}
 // http://foundation.zurb.com/sites/docs/responsive-navigation.html#preventing-fouc
 .no-js {
-  @include breakpoint( small only ) { #show-for-medium { display: none; } }
-  @include breakpoint( medium ) { .title-bar { display: none; } }
+	@media (max-width: 640px) { #show-for-medium { display: none; } }
+	@media (min-width: 640px) { .title-bar { display: none; } }
 }
 
 
