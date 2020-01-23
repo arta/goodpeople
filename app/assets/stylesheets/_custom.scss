@@ -6,9 +6,9 @@
 // ####################################################
 // ############			Foundation:		#####################
 // ####################################################
-// 1-22-2020 while upgrading to Rails 6, Ruby 2.7.0:
-// Ruby 2.5.3, Rails 5.2.4.1, Foundation 6.6.6.1
-// gem sassc-rails wants this import here and in foundation_and_overrides.scss
+// 1-23-20: upgraded to Ruby 2.7.0, Rails 6.0.2.1:
+// gem sassc-rails wants these imports in foundation_and_overrides.scss and here
+@import 'settings'; // only for 1) $light-gray, 2) illustrational purposes
 @import 'settings_overrides';
 
 // ####################################################

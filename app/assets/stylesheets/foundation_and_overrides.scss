@@ -1,8 +1,7 @@
 @charset 'utf-8';
 
 @import 'settings';
-// 1-22-2020 while upgrading to Rails 6, Ruby 2.7.0:
-// Ruby 2.5.3, Rails 5.2.4.1, Foundation 6.6.6.1
+// 1-23-20: upgraded to Ruby 2.7.0, Rails 6.0.2.1:
 // gem sassc-rails wants this import here and in _custom.scss
 @import 'settings_overrides';
 @import 'foundation';
