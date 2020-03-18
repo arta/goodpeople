@@ -41,7 +41,10 @@ p.footer { padding-top: 60px; padding-bottom: 40px; }
 .body--index, .footer--index { text-align: center; }
 .footer--index { padding-top: 60px; padding-bottom: 40px; }
 .logo--index { margin-top: 20px; }
-.h1--index { margin-top: 50px; }
+.h1--index {
+	margin-top: 50px;
+	@media (max-width: 640px) { font-size: 1.3em; }
+}
 .btn-to-enter {
 	background: #007b00; //#209620;
 	background-image: linear-gradient(to bottom right, #209620, #0a5d0a);
