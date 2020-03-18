@@ -29,17 +29,23 @@
 			.row
 				.columns.small-centered.small-8
 					%h1.h1--index
-						If you require 24/7 assistance and wish
+						If you require 24/7 assistance
 						%br
-						to receive great care in your home,
+						and wish to receive
+						%strong great care
 						%br
-						Good People can help
+						in
+						%strong your home,
+						%br
+						%strong Good People
+						can help
 
+		- btn_text = raw("Learn about <span class='span-nowrap'>live-in</span> |
+			care now") |
 		%nav
 			.row
 				.columns.small-centered.small-7
-					-# = link_to 'Find out more', intro_path, class:'link-to-enter'
-					=link_to 'click here to read about our live-in care program', intro_path, class:'link-to-enter'
+					= link_to btn_text, intro_path, class:'btn-to-enter'
 
 		%section.contact-info-wrapper--index
 			.row
