@@ -60,6 +60,10 @@ p.footer { padding-top: 60px; padding-bottom: 40px; }
 		margin-top: .3em;
 		margin-left: .8em;
 	}
+	@media (max-width: 640px) {
+		padding: 1.8em;
+		
+	}
 }
 .btn-to-enter {
 	background: #007b00; //#209620;
