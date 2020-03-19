@@ -66,18 +66,7 @@
 								compare to multiple, often new caregivers rotating on a
 								daily basis as provisioned by traditional home care services
 
-		- btn_text = raw("Learn about <span class='span-nowrap'>live-in</span> care")
-
-		.row
-			.columns.small-centered.small-7
-				%nav
-					= link_to btn_text, intro_path, class:'btn-to-enter'
-
-		.row
-			.columns.small-centered.small-12.medium-8
-				%section.contact-info-wrapper--index
-					=link_to '1-800-608-8003', 'tel:18006088003', class:'contact-info'
-					=link_to 'info@goodpeople.us', 'mailto:info@goodpeople.us', class:'contact-info'
+		= render 'index_call_to_action'
 
 		.row.collapse
 			.columns.small-centered.small-11.medium-8.large-6
@@ -173,6 +162,8 @@
 						%li.testimonial-excerpt
 							%p "... Teri was an angel she did everything mom asked of her and more and never complained.	... I would recommend Good People and Teri to anyone who is in search of someone to care for their loved ones because you can't find anyone better." ~Sue Nanstad
 							%p.testimonial-link= link_to 'read the letter', testimonials_path( anchor:4008 )
+
+		= render 'index_call_to_action'
 
 		%footer.row
 			.columns.small-centered.small-8

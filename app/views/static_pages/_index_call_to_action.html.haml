@@ -1,0 +1,12 @@
+- btn_text = raw("Learn about <span class='span-nowrap'>live-in</span> care")
+
+.row
+	.columns.small-centered.small-7
+		%nav
+			= link_to btn_text, intro_path, class:'btn-to-enter'
+
+.row
+	.columns.small-centered.small-12.medium-8
+		%section.contact-info-wrapper--index
+			=link_to '1-800-608-8003', 'tel:18006088003', class:'contact-info'
+			=link_to 'info@goodpeople.us', 'mailto:info@goodpeople.us', class:'contact-info'
