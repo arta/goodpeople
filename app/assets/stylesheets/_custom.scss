@@ -62,7 +62,7 @@ p.footer { padding-top: 60px; padding-bottom: 40px; }
 	}
 	@media (max-width: 640px) {
 		padding: 1.8em;
-		
+
 	}
 }
 .btn-to-enter {
@@ -105,18 +105,9 @@ p.footer { padding-top: 60px; padding-bottom: 40px; }
 	display: block;
 	line-height: 1.7em;
 }
-// didn't find a better way; using specificity:
-.orbit .orbit-previous { margin-left: 14px; }
-.orbit .orbit-next { margin-right: 14px; }
-.orbit .orbit-previous, .orbit .orbit-next,
-.orbit .orbit-previous:hover, .orbit .orbit-next:hover,
-.orbit .orbit-previous:focus, .orbit .orbit-next:focus,
-.orbit .orbit-previous:active, .orbit .orbit-next:active  {
-  background-color: #ffe;
-  color: $anchor-color;
-}
-.orbit .orbit-previous:hover, .orbit .orbit-next:hover {
-  color: $anchor-color-hover;
+.testimonials-excerpts {
+	list-style: none;
+	margin-left: 0;
 }
 .testimonial-excerpt {
 	background: #ffe;
@@ -125,14 +116,14 @@ p.footer { padding-top: 60px; padding-bottom: 40px; }
 	font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
 	font-size: 1.3em;
   font-style: italic;
-	margin: 8px;
-	padding: 20px 60px 50px 60px;
+	margin-bottom: 4em;
+	padding: 2em 2em .6em;
 	text-align: left;
 	@include radius( 3px );
   @include shadow( 2px, 2px, 8px, #ccc );
 	@media (max-width: 640px) { font-size: 1em; };
 }
-.testimonial-excerpt p a { float: right; }
+.testimonial-link { text-align: right; }
 
 
 // ####################################################
