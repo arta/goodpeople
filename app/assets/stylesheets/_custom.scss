@@ -45,6 +45,22 @@ p.footer { padding-top: 60px; padding-bottom: 40px; }
 	margin-top: 50px;
 	@media (max-width: 640px) { font-size: 1.3em; }
 }
+.corona-announcement {
+	background: #fbe3ce;
+	border-radius: 8px;
+	color: black;
+	margin: 2em auto;
+	padding: 2.2em;
+	padding-top: 2.8em;
+	text-align: left;
+	h2 { margin-bottom: 1em; }
+	h3, li { margin-bottom: 1.4em; }
+	em {
+		display: inline-block;
+		margin-top: .3em;
+		margin-left: .8em;
+	}
+}
 .btn-to-enter {
 	background: #007b00; //#209620;
 	background-image: linear-gradient(to bottom right, #209620, #0a5d0a);
