@@ -42,30 +42,7 @@
 
 		.row.collapse
 			.columns.small-centered.small-11.medium-8.large-6
-				%section.corona-announcement
-					%h2 In the wake of coronavirus (COVID-19) events
-					%h3
-						consider
-						%strong two comparative advantages
-						of LIVE-IN home care that help with protecting the health and
-						well-being of your loved ones:
-					%ol
-						%li
-							Exposure to infections is limited by
-							%strong staying at home
-							%br
-							%em
-								compare to a facility where substantially higher levels of
-								personnel traffic and access by general public are inevitable
-						%li
-							Exposure to infections is limited by having a
-							%strong single caregiver
-							living on the premises
-							%br
-							%em
-								compare to multiple, often new caregivers rotating on a
-								daily basis as provisioned by traditional home care services
-
+				= render 'coronavirus_announcement'
 				= render 'remote_eval'
 
 		= render 'index_call_to_action'
