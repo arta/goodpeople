@@ -43,7 +43,7 @@
 		.row.collapse
 			.columns.small-centered.small-11.medium-8.large-6
 				= render 'coronavirus_announcement'
-				= render 'remote_eval'
+				-# = render 'remote_eval'
 
 		= render 'index_call_to_action'
 
@@ -54,15 +54,21 @@
 						%li.testimonial-excerpt
 							%p "... From the first phone call until the last day, Good People was true to its name. ... honest and caring. ... and I always felt that if things did not work out, Good People "had my back.". ..." ~Jane Camerini
 							%p.testimonial-link= link_to 'read the letter', testimonials_path( anchor:3523 )
-						%li.testimonial-excerpt
-							%p "... After just one conversation with Justyna, I immediately felt confident that I could get my father back home ... the care that my father received was top notch. ..." ~Michael Brochtrup
-							%p.testimonial-link= link_to 'read the letter', testimonials_path( anchor: 4141 )
+
+						%li
+							= render 'remote_eval'
+							-# %br
+							-# %br
+
 						%li.testimonial-excerpt
 							%p "... Good People were very thorough in questioning us about Tony’s needs, and extremely caring about who to place with him. ..." ~Laura Franciskovich
 							%p.testimonial-link= link_to 'read the letter', testimonials_path( anchor:3743 )
 						%li.testimonial-excerpt
 							%p "... They showed that whatever they could do for us, it would be all about caring for my sister. ... Paul was absolutely wonderful ... stepped right in and did everything. ... When sister passed he was the anchor we all needed. ..." ~David Marita
 							%p.testimonial-link= link_to 'read the letter', testimonials_path( anchor:4314 )
+						%li.testimonial-excerpt
+							%p "... After just one conversation with Justyna, I immediately felt confident that I could get my father back home ... the care that my father received was top notch. ..." ~Michael Brochtrup
+							%p.testimonial-link= link_to 'read the letter', testimonials_path( anchor: 4141 )
 						%li.testimonial-excerpt
 							%p "... With my father, quality of life ... was critical for his overall well being ... a strong recommendation to anyone considering the services of Good People. ..." ~Kevin Capwell
 							%p.testimonial-link= link_to 'read the letter', testimonials_path( anchor:3517 )

@@ -117,13 +117,14 @@ p.footer { padding-top: 60px; padding-bottom: 40px; }
 	font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
 	font-size: 1.3em;
   font-style: italic;
-	margin-bottom: 4em;
+	margin: 3em auto;
 	padding: 2em 2em .6em;
 	text-align: left;
 	@include radius( 3px );
   @include shadow( 2px, 2px, 8px, #ccc );
 	@media (max-width: 640px) { font-size: 1em; };
 }
+.testimonial-excerpt:first-child { margin-top: 0; }
 .testimonial-link { text-align: right; }
 
 
