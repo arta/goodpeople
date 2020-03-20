@@ -60,6 +60,7 @@ p.footer { padding-top: 60px; padding-bottom: 40px; }
 		margin-top: .3em;
 		margin-left: .8em;
 	}
+	:last-child { margin-bottom: 0; }
 	@media (max-width: 640px) {
 		padding: 1.8em;
 
