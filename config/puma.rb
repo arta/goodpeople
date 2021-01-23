@@ -17,7 +17,7 @@ on_worker_boot do
 end
 
 ################################################################################
-# 1-22-20: updated to be in sync w/ R 6.0.2 contents, just so it's here
+# 1-22-21: updated to be in sync w/ R 6.1.1 contents, just so it's here
 # Below is a brand new rails app puma config
 # commented out completely, certain lines were uncommented (one `#` now):
 
@@ -31,9 +31,14 @@ end
 # min_threads_count = ENV.fetch("RAILS_MIN_THREADS") { max_threads_count }
 # threads min_threads_count, max_threads_count
 #
+# # Specifies the `worker_timeout` threshold that Puma will use to wait before
+# # terminating a worker in development environments.
+# #
+# worker_timeout 3600 if ENV.fetch("RAILS_ENV", "development") == "development"
+#
 # # Specifies the `port` that Puma will listen on to receive requests; default is 3000.
 # #
-# port        ENV.fetch("PORT") { 3000 }
+# port ENV.fetch("PORT") { 3000 }
 #
 # # Specifies the `environment` that Puma will run in.
 # #
