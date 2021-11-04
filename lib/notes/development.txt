@@ -1,4 +1,48 @@
 ################################################################################
+11-4-21: #######################################################################
+• Dev environment (Gemfile, asdf (.tool-versions)) notes:
+
+: Decided to manage Ruby version in Gemfile only
+:: Why?
+:: Heroku selects Ruby version from Gemfile, not from .tool-version
+:: https://devcenter.heroku.com/articles/ruby-versions
+: So there's no need to set a local version by asdf
+: Ok, but removing .tool-version resulted in a whole bunch of
+  `already initialized` and similar warnings upon running server
+
+  In terminal:
+    ..
+    arta@DartBS goodpeople % rails s
+    /Users/arta/.asdf/installs/ruby/3.0.2/lib/ruby/3.0.0/fileutils.rb:105: warni
+    ng: already initialized constant FileUtils::VERSION
+    /Users/arta/.asdf/installs/ruby/3.0.2/lib/ruby/gems/3.0.0/gems/fileutils-1.6
+    .0/lib/fileutils.rb:105: warning: previous definition of VERSION was here
+    /Users/arta/.asdf/installs/ruby/3.0.2/lib/ruby/3.0.0/fileutils.rb:1284: warn
+    ing: already initialized constant FileUtils::Entry_::S_IF_DOOR
+    ..
+    21 more like this .. :)
+
+: Very annoying, found solution:
+
+    arta@DartBS goodpeople % bundle clean --force
+
+: https://stackoverflow.com/a/59449848/247626
+: Now, '% bundle clean --force' fixed it, running server shows no warnings
+:: BUT
+:: It REMOVED ALL GEMS NOT USED in goodpeople project
+:: That is not a big problem only since no other project uses ruby 3.0.2
+   when I did this ... so, no consequences in other projects
+   IF, however, ruby 3.0.2 were used by other projects, it's almost certain
+   this would have caused missing gems
+:: It's possible that `% bundle`, or `% bundle update`, or `% bundle install`
+   would have fixed it (haven't tried), still ..
+:: KEEP THIS IN MIND
+
+################################################################################
+
+
+
+################################################################################
 9-19-21: #######################################################################
 • commit to test GitHub Personal Access Token (PAT)
 
