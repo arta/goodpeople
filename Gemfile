@@ -16,9 +16,7 @@ gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
 gem 'mini_magick'
-# 6-24-22: upon Ruby bump up to 3.1.2, '% rails s' required net-smtp, so:
-# deploy to heroku crashed,
-# add `require: false` per https://stackoverflow.com/a/70631962/247626
+# 6-24-22: for Ruby 3.1.2 (for heroku-22 stack), see debbugging.txt:
 gem 'net-smtp', require: false
 gem 'net-pop', require: false
 gem 'net-imap', require: false

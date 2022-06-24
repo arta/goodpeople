@@ -1,6 +1,31 @@
 ################################################################################
 6-24-22: #######################################################################
+################################################################################
+• WHAT:
+  : deploy to heroku crashed
 
+• WHEN:
+  : upon Heroku stack upgrade to stack-22 (from stack-20)
+  : but heroku-22 required Ruby 3.1.2
+  : but Ruby 3.1.2 required gem 'net-smtp' per local `% rails s` crash output
+  : but adding net-smtp gem to Gemfil still didn't fix the deploy crash
+  : so ..
+
+• FIX:
+  : https://stackoverflow.com/a/70631962/247626
+  : but add `require: false` to gem 'net-smtp' still didn't work, so
+  : per same answer, added the other 2 gems (-pop, -imap)
+
+  : Now heroku stack 22 deploy on Ruby 3.1.2 works:
+
+    Gemfile:
+      gem 'net-smtp', require: false
+      gem 'net-pop', require: false
+      gem 'net-imap', require: false
+
+  : Uh, oh .. man :)
+
+################################################################################
 • All of this (adapted) pasted from thehouse/debugging.txt,
   : Nice! I completely forgot about this
 
