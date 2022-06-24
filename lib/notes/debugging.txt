@@ -1,4 +1,144 @@
 ################################################################################
+6-24-22: #######################################################################
+
+• All of this (adapted) pasted from thehouse/debugging.txt,
+  : Nice! I completely forgot about this
+
+• WHAT:
+    ..
+    remote:        yarn install v1.22.17
+    remote:        warning package.json: No license field
+    remote:        warning No license field
+    remote:        [1/4] Resolving packages...
+    remote:        [2/4] Fetching packages...
+    remote:        [3/4] Linking dependencies...
+    remote:        warning " > webpack-dev-server@3.10.1" has unmet peer depende
+    ncy "webpack@^4.0.0 || ^5.0.0".
+    remote:        warning "webpack-dev-server > webpack-dev-middleware@3.7.2" h
+    as unmet peer dependency "webpack@^4.0.0".
+    remote:        [4/4] Building fresh packages...
+    remote:        error /tmp/build_2cace8fc/node_modules/node-sass: Command fai
+    led.
+    remote:        Exit code: 1
+    ..
+    ..
+    remote:  !
+    remote:  !     Precompiling assets failed.
+    remote:  !
+    remote:  !     Push rejected, failed to compile Ruby app.
+    remote:
+    remote:  !     Push failed
+    remote:  !
+    remote: Verifying deploy...
+    remote:
+    remote: !	Push rejected to goodpeople-staging.
+    remote:
+    To https://git.heroku.com/goodpeople-staging.git
+    ! [remote rejected] master -> master (pre-receive hook declined)
+    error: failed to push some refs to 'https://git.heroku.com/goodpeople-stagin
+    g.git'
+
+• WHEN:
+  : history:
+  : 12-21-21 for thehouse:
+
+    thehouse % yarn install v1.22.17
+
+  : today, 6-24-22, for goodpeople (running the same ruby -v as thehouse):
+
+    goodpeople % git push staging
+
+• WHY:
+  : Outdated nodejs dependencies in local package.json
+    {
+      "dependencies": {
+        "@rails/webpacker": "4.2.2"
+      },
+      "devDependencies": {
+        "webpack-dev-server": "^3.10.1"
+      }
+    }
+  : Not compatible w/ Heroku's new Node version 16.13.1 (was previously 12.16.2)
+  : And that's the problem; Heroku's new Node version does not play nicely w my
+    package.json config
+
+• FIX:
+  : https://www.geeksforgeeks.org/how-to-update-dependency-in-package-json-file/
+    goodpeople % npm outdated
+    Package             Current  Wanted  Latest  Location
+    @rails/webpacker      4.2.2   4.2.2   5.4.3  node_modules/@rails/webpacker
+    webpack-dev-server   3.10.1  3.11.3   4.9.2  node_modules/webpack-dev-server
+    goodpeople % npm install -g npm-check-updates
+    goodpeople % ncu
+    goodpeople % ncu -g          #=> All global packages are up-to-date :)
+    goodpeople % ncu -u
+    Using yarn
+    Upgrading /Users/arta/sites/goodpeople/package.json
+    [====================] 2/2 100%
+
+    @rails/webpacker      4.2.2  →   5.4.3
+    webpack-dev-server  ^3.10.1  →  ^4.9.2
+
+    Run yarn install to install new versions.
+
+      (the above prepared package.json:
+
+        {
+          "dependencies": {
+            "@rails/webpacker": "5.4.3"
+          },
+          "devDependencies": {
+            "webpack-dev-server": "^4.9.2"
+          }
+        }
+
+      for upgrade / install of new versions)
+
+    goodpeople % yarn install  # per the above `Run yarn install to install ..`)
+
+    oops, this returned a whole bunch of nodejs related error(s),
+    a whole slew of "chaotic" upgrades/updates, in response to various prompts:
+    : redid the above
+    : also npm audit fix --force # per prompts
+    : also ended up upgrading homebrew
+    : and then again:
+
+    goodpeople % yarn install         # success Already up-to-date
+
+    : then:
+
+    goodpeople % asdf plugin update yarn
+    goodpeople % asdf global yarn 1.22.19
+    goodpeople % yarn install         # success Already up-to-date
+
+    : Hopefully, deploy will now work:
+
+    goodpeople % git push staging
+
+• NOTE:
+  : According to the (same as the above in WHAT) heroku console output, it looks
+    like I can specify my own nodejs target version somewhere locally
+    (maybe/probably in .tool-version **):
+
+    remote:        gyp verb get node dir no --target version specified, falling
+    back to host node version: 16.13.1
+
+    ** like so (?):
+    goodpeople % asdf local ruby 3.0.2      # `latest` instead of a specific -v
+    goodpeople % asdf local nodejs 17.3.0   # `latest` instead of a specific -v
+    =>
+    .tool-version:
+      ruby 3.0.2
+      nodejs 17.3.0
+
+• NOTE 2:
+  : https://asdf-vm.com/manage/commands.html
+
+################################################################################
+
+
+
+################################################################################
 6-21-17: #######################################################################
 • WHAT:
   : .title-bar.sticky will does not display
