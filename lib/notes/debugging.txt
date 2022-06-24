@@ -115,6 +115,8 @@
 
     goodpeople % git push staging
 
+    : Yes, success, then upgraded heroku stack, made this note for a new deploy
+
 • NOTE:
   : According to the (same as the above in WHAT) heroku console output, it looks
     like I can specify my own nodejs target version somewhere locally
