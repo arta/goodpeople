@@ -20,6 +20,8 @@ gem 'mini_magick'
 # deploy to heroku crashed,
 # add `require: false` per https://stackoverflow.com/a/70631962/247626
 gem 'net-smtp', require: false
+gem 'net-pop', require: false
+gem 'net-imap', require: false
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
