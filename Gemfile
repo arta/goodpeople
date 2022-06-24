@@ -17,7 +17,9 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.7'
 gem 'mini_magick'
 # 6-24-22: upon Ruby bump up to 3.1.2, '% rails s' required net-smtp, so:
-gem 'net-smtp'
+# deploy to heroku crashed,
+# add `require: false` per https://stackoverflow.com/a/70631962/247626
+gem 'net-smtp', require: false
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
