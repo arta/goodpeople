@@ -1,4 +1,41 @@
 ################################################################################
+11-16-23: #######################################################################
+• Downgrade Node.js and webpack:
+  (note: used Copilot for the first time, great.)
+
+: Why?
+:: failed:
+    % heroku push staging
+:: Heroku dependencies issues, ultimately going down to SSL, Node.js, webpack
+
+: Note:
+:: real solutionis to upgrade Node.js to latest, but I chose this route for now
+:: to avoid dealing with the possible cascade of failing dependencies
+
+: Steps:
+: 0. In Heroku dashboard:
+: :: 1. add official Heroku Node.js buildpack
+: :: 2. order it atop so it loads first, before the ruby buildpack
+: :: note: this may not have been necessary after all, it was put in place
+: ::       while trying to use asdf on Heroku but that didn't work
+: 1. % asdf install nodejs 16.13.1 #<= latest Long Term Support (LTS) version
+: 2. % asdf local nodejs 16.13.1   #<= adds it to .tool-versions
+: 3. add "node": 16.13.1 to package.json under "engines": {}
+: 4. add "webpack": 4.46.0 to package.json under "devDependencies": {}
+:    note: this was added as 5.0.0 originally while adding node 16.13.1, but
+:          that webpack 5.0.0 version was in conflict with 4.46.0 in yarn.lock
+:          and so specifying 4.46.0 in package.json may not have been necessary
+:          since it is the one in yarn.lock
+
+: Footnote:
+:: node & webpack specs may be safely removed from package.json
+:: once local Node.js upgraded to latest (?)
+
+################################################################################
+
+
+
+################################################################################
 11-4-21: #######################################################################
 • Dev environment (Gemfile, asdf (.tool-versions)) notes:
 
