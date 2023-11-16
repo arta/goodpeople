@@ -1,5 +1,13 @@
 ################################################################################
-11-16-23: #######################################################################
+11-16-23: ######################################################################
+################################################################################
+• TODO: remember to remove downgrading to Node 16.13.1 when upgrading everything
+: package.json:
+    "engines": { "node": "16.13.1" }              <= manually ?
+    "devDependencies": { "webpack": "^4.46.0" }   <= manually ?
+: .tool-versions: nodejs 16.13.1 <= % asdf unset local (node) or just delete
+
+################################################################################
 • Downgrade Node.js and webpack:
   (note: used Copilot for the first time, great.)
 
