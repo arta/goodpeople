@@ -1,9 +1,10 @@
-- btn_text = raw("Learn about <span class='span-nowrap'>live-in</span> care")
+- btn_text = raw("Learn More")
+-# - btn_text = raw("learn about <span class='span-nowrap'>live-in</span> care")
 
 .row
 	.columns.small-centered.small-7
 		%nav
-			= link_to btn_text, intro_path, class:'btn-to-enter'
+			= link_to btn_text, intro_path, class:'btn-to-enter', id:'btn-to-enter'
 
 .row
 	.columns.small-centered.small-12.medium-8
