@@ -156,10 +156,10 @@
 		:javascript
 			const btnsToEnter = document.getElementsByClassName('btn-to-enter')
 			const btnToEnterText = btnsToEnter[0].textContent;
-			let actionVerb = 'Click'
-			if ('ontouchstart' in window) { actionVerb = 'Tap' }
+			let actionVerb = 'Click here to'
+			if ('ontouchstart' in window) { actionVerb = 'Tap here to' }
 			window.onload = function() {
 				for (let i=0; i<btnsToEnter.length; i++) {
-					btnsToEnter[i].textContent = `${actionVerb} to ${btnToEnterText}`
+					btnsToEnter[i].textContent = `${actionVerb} ${btnToEnterText}`
 				}
 			}
