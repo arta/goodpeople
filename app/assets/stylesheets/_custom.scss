@@ -239,6 +239,12 @@ a:not([href]) {
 .sticky.is-anchored { position: fixed; } // hack fix of not so sticky .sticky
 .title-bar-left { line-height: 2.4em; } // center the hamburger
 .title-bar-right { font-size: .8em; }
+.label-menu {
+	color: #333;
+	display: inline-block;
+	font-size: .875rem;
+	margin-left: 1.75rem;
+}
 // makes the .off-canvas-content lighter by default, make it darker instead
 .js-off-canvas-overlay.is-visible { background: rgba(0, 0, 0, .3); } // rgba(254, 254, 254, 0.25);
 .h1--interior {
