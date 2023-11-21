@@ -238,13 +238,20 @@ a:not([href]) {
 }
 .sticky { width: 100%; } // req'd by Foundation
 .sticky.is-anchored { position: fixed; } // hack fix of not so sticky .sticky
-.title-bar-left { line-height: 2.4em; } // center the hamburger
+.title-bar-left { line-height: 1; } // center burger menu (undo F's global 1.5)
 .title-bar-right { font-size: .8em; }
-.label-menu {
-	color: #333;
-	display: inline-block;
-	font-size: .875rem;
-	margin-left: 1.75rem;
+.menu-border {
+	align-items: center;
+	border: 1px solid #777;
+	padding: .5rem .625rem .625rem .375rem;
+	width: 6rem;
+	@include radius(3px);
+}
+.menu-label {
+	color: #666;
+	font-size: 1rem;
+	margin-right: .25rem;
+	margin-left: 1.875rem;
 }
 // makes the .off-canvas-content lighter by default, make it darker instead
 .js-off-canvas-overlay.is-visible { background: rgba(0, 0, 0, .3); } // rgba(254, 254, 254, 0.25);
