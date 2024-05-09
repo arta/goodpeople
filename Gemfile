@@ -21,12 +21,12 @@ gem 'sassc-rails'
 gem 'webpacker', '~> 5.2', '>= 5.2.1'
 
 group :development do
+  gem 'awesome_print', '~> 1.8'
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'listen', '~> 3.4', '>= 3.4.1'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.1'
-  gem 'better_errors'
-  gem 'binding_of_caller'
-  gem 'awesome_print', '~> 1.8'
 end
 
 group :development, :test do
