@@ -1,4 +1,30 @@
 ################################################################################
+5-9-24: ########################################################################
+• Colorized `% rails app:update` diff output doesn't work
+  : (this is adopted copy from thehouse dev't notes)
+  : was not present in goodpeople (nor thehouse), but was present in rhouse2
+    : missing in VS Code terminal, as well as in Mac OS terminal
+  : could not figure out why
+  : Copee did not know
+  : Cody did not know
+• I manually compared rhouse2 & thehouse Gemfiles and figured it right away:
+  : gem 'solargraph' was missing in goodpeople (and thehouse before, too)
+  : the real culprit may be one of solargraph's numerous dependencies installed
+    : good candidate: 'diff-lcs'
+• Gotcha of sorts:
+  : solargraph is installed as part of VS Code setup for Ruby related extensions
+    : so this surprised me a bit,
+    : is this because solargraph installed by/for VS Code
+      does not install the same dependencies
+      as when it is installed from Gemfile?
+    : certainly plausible (and likely)
+  : Anyway, got green & red colored diff on `% rails app:update` now!
+
+################################################################################
+
+
+
+################################################################################
 11-16-23: ######################################################################
 ################################################################################
 • TODO: remember to remove downgrading to Node 16.13.1 when upgrading everything
