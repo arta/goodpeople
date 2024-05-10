@@ -9,7 +9,7 @@ Bundler.require(*Rails.groups)
 module Goodpeople
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 6.1
+    config.load_defaults 7.0
 
     # Configuration for the application, engines, and railties goes here.
     #
@@ -28,10 +28,10 @@ module Goodpeople
     # Only change this value after your application is fully deployed to Rails 7.0
     # and you have no plans to rollback.
     # When you're ready to change format, add this to `config/application.rb`:
-    # config.active_support.cache_format_version = 7.0
+    config.active_support.cache_format_version = 7.0
     #
     # Disables the deprecated #to_s override in some Ruby core classes
     # See https://guides.rubyonrails.org/configuring.html#config-active-support-disable-to-s-conversion for more information.
-    # config.active_support.disable_to_s_conversion = true
+    config.active_support.disable_to_s_conversion = true
   end
 end
