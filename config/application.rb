@@ -6,7 +6,7 @@ require "rails/all"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module Goodpeople
+module Rails71pg
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.1
@@ -23,29 +23,5 @@ module Goodpeople
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
-
-    # No longer add autoloaded paths into `$LOAD_PATH`. This means that you won't be able
-    # to manually require files that are managed by the autoloader, which you shouldn't do anyway.
-    #
-    # This will reduce the size of the load path, making `require` faster if you don't use bootsnap, or reduce the size
-    # of the bootsnap cache if you use it.
-    #
-    # To set this configuration, add the following line
-    # to `config/application.rb`:
-    config.add_autoload_paths_to_load_path = false
-
-    # ** Please read carefully, this must be configured in config/application.rb **
-    #
-    # Change the format of the cache entry.
-    #
-    # Changing this default means that all new cache entries added to the cache
-    # will have a different format that is not supported by Rails 7.0
-    # applications.
-    #
-    # Only change this value after your application is fully deployed to Rails 7.1
-    # and you have no plans to rollback.
-    # When you're ready to change format, add this to `config/application.rb` (NOT
-    # this file):
-    config.active_support.cache_format_version = 7.1
   end
 end
