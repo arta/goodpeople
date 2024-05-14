@@ -8,16 +8,17 @@ gem 'rails', '~> 7.1.0'
 gem 'pg'
 gem 'puma'
 
-gem 'bootsnap', '~> 1.5', '>= 1.5.1', require: false
+gem 'bootsnap', require: false
 gem 'foundation-rails'
 gem 'haml-rails'
-gem 'jbuilder', '~> 2.7'
+gem 'jbuilder'
 gem 'jquery-rails'
 gem 'mini_magick'
 gem 'net-imap', require: false
 gem 'net-pop', require: false
 gem 'net-smtp', require: false
-gem 'sassc-rails'
+gem 'sassc'
+gem 'sprockets-rails'
 gem 'webpacker', '~> 5.2', '>= 5.2.1'
 
 group :development do
@@ -31,13 +32,12 @@ group :development do
 end
 
 group :development, :test do
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'debug', platforms: :mri
 end
 
 group :test do
-  gem 'capybara', '~> 3.34'
+  gem 'capybara'
   gem 'selenium-webdriver'
-  gem 'webdrivers'
 end
 
 
