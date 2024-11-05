@@ -42,7 +42,8 @@
       ╵
         app/assets/stylesheets/application.scss 1:9  root stylesheet
 
-    Deprecation Warning: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+    Deprecation Warning: Sass @import rules are deprecated and will be removed
+    in Dart Sass 3.0.0.
 
     More info and automated migrator: https://sass-lang.com/d/import
 
