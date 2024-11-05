@@ -1,4 +1,78 @@
 ################################################################################
+11-5-24: #######################################################################
+• Updating Zurb's Foundation
+: extremely laborious in thehouse, less turbulent in goodpeople?
+: abbreviated notes:
+
+  1.  % bin/bundle remove sassc
+  2.  % bin/bundle add dartsass-rails
+  3.  % bin/rails s     #=> LoadError at /intro cannot load such file -- sassc
+
+  : as expected now after thehouse experience
+  : the specific case per
+    https://github.com/rails/dartsass-rails?tab=readme-ov-file#running-locally
+    is running locally with:
+
+      % rails s
+
+  : rather then:
+
+      % bin/dev
+
+  : which has to be installed first following instructions above:
+    https://github.com/rails/dartsass-rails?tab=readme-ov-file#installation
+    to run the Dart Sass process (precompiling our sass files)
+
+  4.  % bin/rails dartsass:install
+
+  : this created a bunch of files & additions/changes to existing files, e.g.:
+    /app/assets/builds/application.css (= precompilation, re-allows `% rails s`)
+    /app/assets/config/manifest.js (adds link to the precompiles in the /builds)
+    /app/bin/dev (allows `% bin/dev`)
+    Procfile.dev (runs `% rails s`, and `% rails dartsass:watch` #= the watcher)
+    .gitignore (ignores the precompilations in the /builds)
+
+  : A long list of detailed deprecation messages was listed next
+    : the # is a line in the always named & linked respective file
+    : uh oh, fixing this will require a major rewrite:
+
+      ╷
+    1 │ @import "foundation_and_overrides";
+      │         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+      ╵
+        app/assets/stylesheets/application.scss 1:9  root stylesheet
+
+    Deprecation Warning: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+    More info and automated migrator: https://sass-lang.com/d/import
+
+    ..
+        ╷
+    116 │   $keep: if(index('keys' 'values', $keep), $keep, 'both');
+        │             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        ╵
+    ..
+        ╷
+    124 │       $values: append($values, $val);
+        │                ^^^^^^^^^^^^^^^^^^^^^
+        ╵
+    ..
+
+  5. Otherwise, that's that, all works !
+
+  : this was just update of gem sassc to gem dartsass-rails
+    : which internally depends on gem sass-embedded
+      : which gem foundation-rails 6.9.x will(?) have as a dependency when fixed
+
+  : = this was NOT an upgrade of foundation-rails 6.6.2 to 6.9.x,
+    : just a dependency upgrade
+    : bumping foundation-rails 6.6.2 to 6.9.x is next step
+
+################################################################################
+
+
+
+################################################################################
 5-9-24: ########################################################################
 • Colorized `% rails app:update` diff output doesn't work
   : (this is adopted copy from thehouse dev't notes)

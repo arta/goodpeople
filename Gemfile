@@ -9,6 +9,7 @@ gem 'pg'
 gem 'puma'
 
 gem 'bootsnap', require: false
+gem "dartsass-rails"
 gem 'foundation-rails'
 gem 'haml-rails'
 gem 'jbuilder'
@@ -17,7 +18,6 @@ gem 'mini_magick'
 gem 'net-imap', require: false
 gem 'net-pop', require: false
 gem 'net-smtp', require: false
-gem 'sassc'
 gem 'sprockets-rails'
 gem 'webpacker', '~> 5.2', '>= 5.2.1'
 
