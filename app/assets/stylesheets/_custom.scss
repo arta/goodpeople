@@ -4,14 +4,6 @@
 // http://nicolasgallagher.com/about-html-semantics-front-end-architecture/
 
 // ####################################################
-// ############			Foundation:		#####################
-// ####################################################
-// 1-23-20: upgraded to Ruby 2.7.0, Rails 6.0.2.1:
-// gem sassc-rails wants these imports in foundation_and_overrides.scss and here
-@import 'settings'; // only for 1) $light-gray, 2) illustrational purposes
-@import 'settings_overrides';
-
-// ####################################################
 // GENERAL
 // ####################################################
 @mixin radius( $radius ) {
