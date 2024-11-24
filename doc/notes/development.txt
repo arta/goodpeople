@@ -1,4 +1,27 @@
 ################################################################################
+11-23-24: ######################################################################
+• git commit message abbreviations, per Copee:
+  Yes, using abbreviations or prefixes in commit messages is a good practice as
+  it helps in quickly understanding the purpose of the commit. This practice is
+  commonly known as Conventional Commits. Here are some of the most common
+  prefixes used:
+
+  : feat: A new feature
+  : fix: A bug fix
+  : docs: Documentation only changes
+  : style: Changes that do not affect the meaning of the code (white-space,
+    formatting, missing semi-colons, etc)
+  : refactor: A code change that neither fixes a bug nor adds a feature
+  : perf: A code change that improves performance
+  : test: Adding missing tests or correcting existing tests
+  : chore: Changes to the build process or auxiliary tools and libraries
+    such as documentation generation
+
+################################################################################
+
+
+
+################################################################################
 11-5-24: #######################################################################
 • Updating Zurb's Foundation
 : extremely laborious in thehouse, less turbulent in goodpeople?
