@@ -86,7 +86,6 @@ p.footer { padding-top: 60px; padding-bottom: 40px; }
 		3px 3px 9px 3px rgba(0,0,0,0.18);
 	color: white;
 }
-.span-nowrap { white-space: nowrap; }
 .contact-info-wrapper--index {
   font-size: 1.4em;
   margin-bottom: 40px;
@@ -252,11 +251,6 @@ a:not([href]) {
 }
 main {
 	@media (max-width: 640px) { margin-top: 6em; };
-}
-// http://foundation.zurb.com/sites/docs/responsive-navigation.html#preventing-fouc
-.no-js {
-	@media (max-width: 640px) { #show-for-medium { display: none; } }
-	@media (min-width: 640px) { .title-bar { display: none; } }
 }
 
 
