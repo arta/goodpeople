@@ -4,28 +4,42 @@
 // http://engineering.appfolio.com/2012/11/16/css-architecture/
 // http://nicolasgallagher.com/about-html-semantics-front-end-architecture/
 
-// ####################################################
-// GENERAL
-// ####################################################
+
+
+// #############################################################################
+// GLOBAL
+// -----------------------------------------------------------------------------
+
+// Remove blue glowing outline around clicked imgs, ..:
+* {	outline: 0; }
+
+footer {
+	@media (max-width: 640px) {
+		text-align: center;
+	}
+
+	color: #999999;
+	font-size: 80%;
+}
+
+p.footer {
+	padding-top: 60px;
+	padding-bottom: 40px;
+}
+
 @mixin radius( $radius ) {
 	border-radius:          $radius;
 	-moz-border-radius:     $radius;
 	-webkit-border-radius:  $radius;
 	-khtml-border-radius:   $radius;
 }
+
 @mixin shadow( $x, $y, $width, $color ) {
 	-moz-box-shadow:		$x $y $width $color;
 	-webkit-box-shadow:	$x $y $width $color;
 	box-shadow: 				$x $y $width $color;
 }
-// remove blue glowing outline around clicked imgs, ..:
-* {	outline: 0; }
-footer {
-	@media (max-width: 640px) { text-align: center; }
-	color: #999999;
-	font-size: 80%;
-}
-p.footer { padding-top: 60px; padding-bottom: 40px; }
+
 
 
 // ####################################################
