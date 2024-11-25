@@ -42,16 +42,58 @@ p.footer {
 
 
 
-// ####################################################
+// #############################################################################
 // INDEX PAGE
-// ####################################################
-.body--index, .footer--index { text-align: center; }
-.footer--index { padding-top: 60px; padding-bottom: 40px; }
-.logo--index { margin-top: 20px; }
+// #############################################################################
+
+// #############################################################################
+// TYPOGROPHY - INDEX PAGE
+// -----------------------------------------------------------------------------
+
 .h1--index {
 	margin-top: 50px;
-	@media (max-width: 640px) { font-size: 1.3em; }
+
+	@media (max-width: 640px) {
+		font-size: 1.3em;
+	}
 }
+
+.testimonials-excerpts {
+	list-style: none;
+	margin-left: 0;
+}
+
+.testimonial-excerpt {
+	background: #ffe;
+	border: 1px solid #fed;
+	border-radius: 3px;
+	font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+	font-size: 1.3em;
+	font-style: italic;
+	margin: 3em auto;
+	padding: 2em 2em .6em;
+	text-align: left;
+	@include radius(3px);
+	@include shadow(2px, 2px, 8px, #ccc);
+
+	@media (max-width: 640px) {
+		font-size: 1em;
+	};
+}
+
+.testimonial-excerpt:first-child { margin-top: 0; }
+
+.testimonial-link { text-align: right; }
+
+.contact-info {
+	color: #333333;
+	font-weight: bold;
+	display: block;
+	line-height: 1.7em;
+}
+
+// -----------------------------------------------------------------------------
+
 .btn-to-enter {
 	background: #007b00; //#209620;
 	background-image: linear-gradient(to bottom right, #209620, #0a5d0a);
@@ -60,57 +102,52 @@ p.footer {
 	color: whitesmoke;
 	border-radius: 8px;
 	color: white;
-  display: inline-block;
+	display: inline-block;
 	font-size: 1.4em;
 	font-weight: bold;
-  margin: 40px auto;
+	margin: 40px auto;
 	padding: 1em 2.5em;
 	position: relative;
 	transition: all .25s cubic-bezier(0.0, 0.0, 0.58, 1.0);
+
 	@media (max-width: 640px) {
 		font-size: 1.2em;
 		padding: 1em;
 	};
 }
+
 .btn-to-enter:hover {
 	background: #209620;
 	background-image: none;
 	box-shadow:
 		0 0 0 3px #209620,
-		3px 3px 9px 3px rgba(0,0,0,0.18);
+		3px 3px 9px 3px rgba(0, 0, 0, 0.18);
 	color: white;
 }
+
+// #############################################################################
+// LAYOUT - INDEX PAGE
+// -----------------------------------------------------------------------------
+
+.body--index,
+.footer--index { text-align: center; }
+
 .contact-info-wrapper--index {
-  font-size: 1.4em;
-  margin-bottom: 40px;
-	@media (max-width: 640px) { font-size: 1.2em; };
+	font-size: 1.4em;
+	margin-bottom: 40px;
+
+	@media (max-width: 640px) {
+		font-size: 1.2em;
+	};
 }
-.contact-info {
-  color: #333333;
-  font-weight: bold;
-	display: block;
-	line-height: 1.7em;
+
+.footer--index {
+	padding-top: 60px;
+	padding-bottom: 40px;
 }
-.testimonials-excerpts {
-	list-style: none;
-	margin-left: 0;
-}
-.testimonial-excerpt {
-	background: #ffe;
-	border: 1px solid #fed;
-	border-radius: 3px;
-	font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
-	font-size: 1.3em;
-  font-style: italic;
-	margin: 3em auto;
-	padding: 2em 2em .6em;
-	text-align: left;
-	@include radius( 3px );
-  @include shadow( 2px, 2px, 8px, #ccc );
-	@media (max-width: 640px) { font-size: 1em; };
-}
-.testimonial-excerpt:first-child { margin-top: 0; }
-.testimonial-link { text-align: right; }
+
+.logo--index { margin-top: 20px; }
+
 
 
 // ####################################################
