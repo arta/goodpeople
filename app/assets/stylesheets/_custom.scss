@@ -144,48 +144,115 @@ p.footer {
 
 
 
-// ####################################################
+// #############################################################################
 // INTERIOR PAGES
-// ####################################################
-.desktop-header { height: 12em; }
-.contact-info-wrap--desktop-header {
-	margin-top: 3em;
-	text-align: right;
+// #############################################################################
+// INTERIOR PAGES - TYPOGROPHY
+// -----------------------------------------------------------------------------
+
+.testimonial p,
+.testimonial ul {
+	margin: 8px 0;
+	float: left;
+	clear: both;
 }
-// JS places .current dynamically, replaces CSS control of current menu item
-// hihglight
-.current {
-	background-color: $light-gray; // make it beige, somewhere around EAD29D;
-	@include radius( 3px );
-}
-.print-link { margin-top: 3em; }
-.print-link a:link, .print-link a:visited {
-	background: white image-url( 'print.gif' ) no-repeat 0 0.7em;
-	color: #aaa;
- 	margin: 0 auto 0 auto;
-	padding: 6px 0 6px 22px;
-	width: 9em; /* must be defined for margin centering to work */
-}
-.print-link a:hover {
-	color: #ff9900;
-	background-image: image-url( 'printHover.gif' );
-}
-.h1--interior { margin-bottom: 1em; }
-.signature {
-	margin-top: 18px;
-	margin-left: 18px;
-	display: inline-block;
-}
+
 .signature p {
 	margin-top: 0;
-  margin-left: 18px;
+	margin-left: 18px;
 }
-.help, acronym, abbr {
+
+.testimonial ul {
+	margin-top: 0;
+	padding-left: 0.1em;
+
+	li {
+		margin-left: 1em;
+	}
+}
+
+.testimonial label {
+	font-size: 90%;
+	display: block;
+	margin-bottom: 4px;
+}
+
+// Vertical offset of testimonials' page anchor (<a id="1234">&nbsp;</a>)
+// adapted from entries around: https://stackoverflow.com/a/17047997/247626
+a:not([href]) {
+	margin-top: -5em;
+	padding-top: 5em;
+}
+
+.h1--interior { margin-bottom: 1em; }
+
+.signed-by { text-align: left; }
+
+.help {
 	border-bottom-width: 1px;
 	border-bottom-style: dotted;
 	border-bottom-color: #333333;
 	cursor: help;
 }
+
+.underline { text-decoration: underline; }
+
+
+
+// #############################################################################
+// INTERIOR PAGES - NAVIGATION
+// -----------------------------------------------------------------------------
+
+// #FIXME: print icon images (pring.gif, printHover.gif) not showing up
+.print-link a:link,
+.print-link a:visited {
+	background: white image-url('print.gif') no-repeat 0 0.7em;
+	color: #aaa;
+	margin: 0 auto 0 auto;
+	padding: 6px 0 6px 22px;
+	width: 9em;
+	/* must be defined for margin centering to work */
+}
+
+.print-link a:hover {
+	color: #ff9900;
+	background-image: image-url('printHover.gif');
+}
+
+// JS places .current dynamically, replaces CSS control of current menu item
+// hihglight
+.current {
+	background-color: $light-gray; // make it beige, somewhere around EAD29D;
+	@include radius(3px);
+}
+
+.print-link {	margin-top: 3em; }
+
+
+
+// #############################################################################
+// INTERIOR PAGES - LAYOUT
+// -----------------------------------------------------------------------------
+
+.testimonial .info {
+	text-align: right;
+	float: right;
+	margin-bottom: 20px;
+}
+
+.contact-info-wrap--desktop-header {
+	margin-top: 3em;
+	text-align: right;
+}
+
+.desktop-header { height: 12em; }
+
+.signature {
+	margin-top: 18px;
+	margin-left: 18px;
+	display: inline-block;
+}
+
 .testimonial {
 	margin-top: 40px;
 	padding: 40px;
@@ -203,39 +270,8 @@ p.footer {
   -webkit-box-shadow: 2px 2px 8px #ccc;
   -khtml-box-shadow: 2px 2px 8px #ccc;
 }
-.testimonial p, .testimonial ul {
-  margin: 8px 0;
-  float: left;
-  clear: both;
-}
-.testimonial ul {
-	margin-top: 0;
-	padding-left: 0.1em;
-	li {
-		margin-left: 1em;
-	}
-}
-.testimonial .info {
-  text-align: right;
-  float: right;
-  margin-bottom: 20px;
-}
-.testimonial label {
-  font-size: 90%;
-  display: block;
-  margin-bottom: 4px;
-}
-.signed-by {
-  text-align: left;
-}
-.underline {
-	text-decoration: underline;
-}
-// adapted from entries around: https://stackoverflow.com/a/17047997/247626
-a:not([href]) {
-	margin-top: -5em;
-	padding-top: 5em;
-}
+
+
 
 // ####################################################
 // MOBILE
