@@ -1,5 +1,6 @@
 // attemtping to straighten out semantics. WIP.
-// https://medium.com/@drublic/css-naming-conventions-less-rules-more-fun-12af220e949b#.9pmcn86j0
+// https://medium.com/@drublic/css-naming-conventions-less-rules-more-fun-
+// 12af220e949b#.9pmcn86j0
 // http://engineering.appfolio.com/2012/11/16/css-architecture/
 // http://nicolasgallagher.com/about-html-semantics-front-end-architecture/
 
@@ -106,7 +107,8 @@ p.footer { padding-top: 60px; padding-bottom: 40px; }
 	margin-top: 3em;
 	text-align: right;
 }
-// JS places .current dynamically, replaces CSS control of current menu item hihglight
+// JS places .current dynamically, replaces CSS control of current menu item
+// hihglight
 .current {
 	background-color: $light-gray; // make it beige, somewhere around EAD29D;
 	@include radius( 3px );
@@ -224,7 +226,9 @@ a:not([href]) {
 	margin-left: 1.875rem;
 }
 // makes the .off-canvas-content lighter by default, make it darker instead
-.js-off-canvas-overlay.is-visible { background: rgba(0, 0, 0, .3); } // rgba(254, 254, 254, 0.25);
+.js-off-canvas-overlay.is-visible {
+	background: rgba(0, 0, 0, .3); // rgba(254, 254, 254, 0.25);
+}
 .h1--interior {
 	@media (max-width: 640px) { font-size: 1.6em; }
 }
