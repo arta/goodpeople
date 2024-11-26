@@ -273,26 +273,71 @@ a:not([href]) {
 
 
 
-// ####################################################
+// #############################################################################
 // MOBILE
-// ####################################################
-.off-canvas { background: white; }
+// #############################################################################
+
+// #############################################################################
+// MOBILE :: TYPOGROPHY
+// -----------------------------------------------------------------------------
+
+.menu-label {
+	color: #666;
+	font-size: 1rem;
+	margin-right: .25rem;
+	margin-left: 1.875rem;
+}
+
+.h1--interior {
+	@media (max-width: 640px) { font-size: 1.6em; }
+}
+
+
+
+// #############################################################################
+// MOBILE :: LAYOUT
+// -----------------------------------------------------------------------------
+
+// MOBILE :: LAYOUT, Start Of - Foundation overrides and tweaks ----------------
+
+// Make .off-canvas-content-overlay darker instead of te default lighter
+.js-off-canvas-overlay.is-visible {
+	background: rgba(0, 0, 0, .3); // rgba(254, 254, 254, 0.25);
+}
+
 // tune up mobile menu shadow
 .off-canvas.is-transition-push.is-open {
 	@include shadow( 2px, 0, 15px, rgba( 50, 50, 50, 0.74 ) );
 }
+
 // tune up mobile menu shadow
 .off-canvas.is-transition-push::after { box-shadow: none; }
+
+// FIXME: may no longer be needed
+// hack fix of not so sticky .sticky
+.sticky.is-anchored { position: fixed; }
+
+// -----------------------------------------------------------------------------
+
+.off-canvas { background: white; }
+
+// req'd by Foundation
+.sticky { width: 100%; }
+
 .title-bar {
 	background-color: white;
 	padding-top: .7em;
 	padding-bottom: .7em;
-	@include shadow( 0, 2px, 15px, rgba( 50, 50, 50, .74 ) );
+	@include shadow(0, 2px, 15px, rgba(50, 50, 50, .74));
 }
-.sticky { width: 100%; } // req'd by Foundation
-.sticky.is-anchored { position: fixed; } // hack fix of not so sticky .sticky
-.title-bar-left { line-height: 1; } // center burger menu (undo F's global 1.5)
+
+// center burger menu (undo F's global 1.5)
+.title-bar-left { line-height: 1; }
+
 .title-bar-right { font-size: .8em; }
+
+// MOBILE :: LAYOUT, End Of - Foundation overrides and tweaks ------------------
+
 .menu-border {
 	align-items: center;
 	border: 1px solid #777;
@@ -300,22 +345,11 @@ a:not([href]) {
 	width: 6rem;
 	@include radius(3px);
 }
-.menu-label {
-	color: #666;
-	font-size: 1rem;
-	margin-right: .25rem;
-	margin-left: 1.875rem;
-}
-// makes the .off-canvas-content lighter by default, make it darker instead
-.js-off-canvas-overlay.is-visible {
-	background: rgba(0, 0, 0, .3); // rgba(254, 254, 254, 0.25);
-}
-.h1--interior {
-	@media (max-width: 640px) { font-size: 1.6em; }
-}
+
 main {
 	@media (max-width: 640px) { margin-top: 6em; };
 }
+
 
 
 // ####################################################
