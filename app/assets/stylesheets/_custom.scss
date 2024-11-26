@@ -13,20 +13,6 @@
 // Remove blue glowing outline around clicked imgs, ..:
 * {	outline: 0; }
 
-footer {
-	@media (max-width: 640px) {
-		text-align: center;
-	}
-
-	color: #999999;
-	font-size: 80%;
-}
-
-p.footer {
-	padding-top: 60px;
-	padding-bottom: 40px;
-}
-
 @mixin radius( $radius ) {
 	border-radius:          $radius;
 	-moz-border-radius:     $radius;
@@ -38,6 +24,28 @@ p.footer {
 	-moz-box-shadow:		$x $y $width $color;
 	-webkit-box-shadow:	$x $y $width $color;
 	box-shadow: 				$x $y $width $color;
+}
+
+// #############################################################################
+// TYPOGRAPHY
+// -----------------------------------------------------------------------------
+
+p.footer {
+	padding-top: 60px;
+	padding-bottom: 40px;
+}
+
+// #############################################################################
+// LAYOUT
+// -----------------------------------------------------------------------------
+
+footer {
+	color: #999999;
+	font-size: 80%;
+
+	@media (max-width: 640px) {
+		text-align: center;
+	}
 }
 
 
