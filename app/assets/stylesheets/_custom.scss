@@ -59,12 +59,12 @@
 	}
 }
 
-.testimonials-excerpts {
+.ul-testimonials-excerpts {
 	list-style: none;
 	margin-left: 0;
 }
 
-.testimonial-excerpt {
+.li-testimonial-excerpt {
 	background: #ffe;
 	border: 1px solid #fed;
 	border-radius: 3px;
@@ -72,7 +72,7 @@
 	font-size: 1.3em;
 	font-style: italic;
 	margin: 3em auto;
-	padding: 2em 2em .6em;
+	padding: 2em 2em 1.5em;
 	text-align: left;
 	@include radius(3px);
 	@include shadow(2px, 2px, 8px, #ccc);
@@ -82,9 +82,7 @@
 	};
 }
 
-.testimonial-excerpt:first-child { margin-top: 0; }
-
-.testimonial-link { text-align: right; }
+.li-testimonial-excerpt:first-child { margin-top: 0; }
 
 .contact-info {
 	color: #333333;
@@ -141,6 +139,8 @@
 	};
 }
 
+.link-to-testimonial { text-align: right; }
+
 .logo--index { margin-top: 20px; }
 
 
@@ -153,9 +153,9 @@
 // INTERIOR PAGES :: TYPOGROPHY
 // -----------------------------------------------------------------------------
 
-.testimonial p,
-.testimonial ul {
+.article-testimonial p {
 	margin: 8px 0;
+	// FIXME: get rid of the float & clear
 	float: left;
 	clear: both;
 }
@@ -165,16 +165,18 @@
 	margin-left: 18px;
 }
 
-.testimonial ul {
-	margin-top: 0;
-	padding-left: 0.1em;
+.article-testimonial ul {
+	// FIXME: get rid of the float & clear
+	float: left;
+	clear: both;
+	margin: 0 0 8px;
 
 	li {
 		margin-left: 1em;
 	}
 }
 
-.testimonial label {
+.label-testimonial {
 	font-size: 90%;
 	display: block;
 	margin-bottom: 4px;
@@ -182,14 +184,15 @@
 
 // Vertical offset of testimonials' page anchor (<a id="1234">&nbsp;</a>)
 // adapted from entries around: https://stackoverflow.com/a/17047997/247626
-a:not([href]) {
+.a-anchor-testimonial {
 	margin-top: -5em;
 	padding-top: 5em;
 }
 
 .h1--interior-pg { margin-bottom: 1em; }
 
-.signed-by { text-align: left; }
+// semantic class
+.p-signature-testimonial { }
 
 .help {
 	border-bottom-width: 1px;
@@ -233,8 +236,9 @@ a:not([href]) {
 // INTERIOR PAGES :: LAYOUT
 // -----------------------------------------------------------------------------
 
-.testimonial .info {
+.header-testimonial {
 	text-align: right;
+	// FIXME: get rid of the float
 	float: right;
 	margin-bottom: 20px;
 }
@@ -252,7 +256,7 @@ a:not([href]) {
 	display: inline-block;
 }
 
-.testimonial {
+.article-testimonial {
 	margin-top: 40px;
 	padding: 40px;
 	border: 1px solid #fed;
