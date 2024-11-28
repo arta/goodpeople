@@ -194,14 +194,14 @@
 // semantic class
 .p-signature-testimonial { }
 
-.help {
+.span-help {
 	border-bottom-width: 1px;
 	border-bottom-style: dotted;
 	border-bottom-color: #333333;
 	cursor: help;
 }
 
-.underline { text-decoration: underline; }
+.span-underline { text-decoration: underline; }
 
 // #############################################################################
 // INTERIOR PAGES :: NAVIGATION
@@ -284,7 +284,7 @@
 // MOBILE :: TYPOGROPHY
 // -----------------------------------------------------------------------------
 
-.menu-label {
+.span-menu-title {
 	color: #666;
 	font-size: 1rem;
 	margin-right: .25rem;
@@ -339,7 +339,7 @@
 
 // MOBILE :: LAYOUT, End Of - Foundation overrides and tweaks ------------------
 
-.menu-border {
+.menu-borderline {
 	align-items: center;
 	border: 1px solid #777;
 	padding: .5rem .625rem .625rem .375rem;
