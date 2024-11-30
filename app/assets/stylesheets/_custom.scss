@@ -13,6 +13,11 @@
 // Remove blue glowing outline around clicked imgs, ..:
 * {	outline: 0; }
 
+img {
+	display: block;
+	max-width: 100%;
+}
+
 @mixin radius( $radius ) {
 	border-radius:          $radius;
 	-moz-border-radius:     $radius;
@@ -160,11 +165,6 @@
 	clear: both;
 }
 
-.signature p {
-	margin-top: 0;
-	margin-left: 18px;
-}
-
 .article-testimonial ul {
 	// FIXME: get rid of the float & clear
 	float: left;
@@ -250,10 +250,16 @@
 
 .desktop-header { height: 12em; }
 
-.signature {
-	margin-top: 18px;
-	margin-left: 18px;
-	display: inline-block;
+.gp-signatures {
+	column-gap: 2em;
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: 1em;
+}
+
+.gp-signature {
+	margin-top: 2em;
+	text-align: center;
 }
 
 .article-testimonial {
