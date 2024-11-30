@@ -90,15 +90,16 @@ img {
 .li-testimonial-excerpt:first-child { margin-top: 0; }
 
 .a-gp-contact-info {
+	display: block;
 	color: #333333;
 	font-weight: bold;
-	display: block;
 	line-height: 1.7em;
 }
 
 // -----------------------------------------------------------------------------
 
 .btn-to-enter {
+	display: inline-block;
 	background: #007b00; //#209620;
 	background-image: linear-gradient(to bottom right, #209620, #0a5d0a);
 	border: 1px solid white;
@@ -106,7 +107,6 @@ img {
 	color: whitesmoke;
 	border-radius: 8px;
 	color: white;
-	display: inline-block;
 	font-size: 1.4em;
 	font-weight: bold;
 	margin: 40px auto;
@@ -177,8 +177,8 @@ img {
 }
 
 .label-testimonial {
-	font-size: 90%;
 	display: block;
+	font-size: 90%;
 	margin-bottom: 4px;
 }
 
@@ -251,8 +251,8 @@ img {
 .desktop-header { height: 12em; }
 
 .gp-signatures {
-	column-gap: 2em;
 	display: flex;
+	column-gap: 2em;
 	flex-wrap: wrap;
 	margin-left: 1em;
 }
