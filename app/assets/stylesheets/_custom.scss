@@ -191,9 +191,9 @@ img {
 // -----------------------------------------------------------------------------
 
 // #FIXME: print icon images (pring.gif, printHover.gif) not showing up
-.print-link a:link,
-.print-link a:visited {
-	background: white image-url('print.gif') no-repeat 0 0.7em;
+.a-print-nav:link,
+.a-print-nav:visited {
+	background: white url('print.gif') no-repeat 0 0.56em;
 	color: #aaa;
 	margin: 0 auto 0 auto;
 	padding: 6px 0 6px 22px;
@@ -201,9 +201,9 @@ img {
 	/* must be defined for margin centering to work */
 }
 
-.print-link a:hover {
+.a-print-nav:hover {
 	color: #ff9900;
-	background-image: image-url('printHover.gif');
+	background: url('printHover.gif') no-repeat 0 0.56em;
 }
 
 // JS places .current dynamically, replaces CSS control of current menu item
@@ -213,7 +213,7 @@ img {
 	@include radius(3px);
 }
 
-.print-link {	margin-top: 3em; }
+.li-print-nav {	margin-top: 3em; }
 
 // #############################################################################
 // INTERIOR PAGES :: LAYOUT
