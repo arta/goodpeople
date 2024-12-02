@@ -10,8 +10,14 @@
 // GLOBAL
 // -----------------------------------------------------------------------------
 
-// Remove blue glowing outline around clicked imgs, ..:
-* {	outline: 0; }
+*,
+*::after,
+*::before {
+	// border: 1px solid hotpink;
+	box-sizing: border-box;
+	// Remove blue glowing outline around clicked imgs, ..:
+	outline: 0;
+}
 
 img {
 	display: block;
