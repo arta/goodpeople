@@ -9,10 +9,10 @@
 
 	%body{ id:@body_id }
 
-		#header
+		%header.header--print-pg
 			= render partial:'header', locals:{ map_ref:'intro' }
 
-		#content
+		%main.content--print-pg
 			%h1= link_to 'Intro', :action => :intro
 			= render 'intro'
 			%br
