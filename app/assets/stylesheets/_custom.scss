@@ -20,8 +20,8 @@
 }
 
 img {
-	display: block;
 	max-width: 100%;
+	vertical-align: middle;
 }
 
 @mixin radius( $radius ) {
@@ -94,6 +94,8 @@ img {
 }
 
 .li-testimonial-excerpt:first-child { margin-top: 0; }
+
+.p-gp-signature { margin: 0; }
 
 .a-gp-contact-info {
 	display: block;
