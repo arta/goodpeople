@@ -191,7 +191,6 @@ img {
 // INTERIOR PAGES :: NAVIGATION
 // -----------------------------------------------------------------------------
 
-// #FIXME: print icon images (pring.gif, printHover.gif) not showing up
 .a-print-nav:link,
 .a-print-nav:visited {
 	background: white url('print.gif') no-repeat 0 0.56em;
@@ -296,10 +295,6 @@ img {
 // tune up mobile menu shadow
 .off-canvas.is-transition-push::after { box-shadow: none; }
 
-// FIXME: may no longer be needed
-// hack fix of not so sticky .sticky
-.sticky.is-anchored { position: fixed; }
-
 // -----------------------------------------------------------------------------
 
 .off-canvas { background: white; }
@@ -330,7 +325,7 @@ img {
 }
 
 main {
-	@media (max-width: 640px) { margin-top: 6em; };
+	@media (max-width: 640px) { margin-top: 2em; };
 }
 
 
