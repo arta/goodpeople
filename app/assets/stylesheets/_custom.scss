@@ -24,18 +24,9 @@ img {
 	vertical-align: middle;
 }
 
-@mixin radius( $radius ) {
-	border-radius:          $radius;
-	-moz-border-radius:     $radius;
-	-webkit-border-radius:  $radius;
-	-khtml-border-radius:   $radius;
-}
+@mixin radius( $radius ) { border-radius: $radius; }
 
-@mixin shadow( $x, $y, $width, $color ) {
-	-moz-box-shadow:		$x $y $width $color;
-	-webkit-box-shadow:	$x $y $width $color;
-	box-shadow: 				$x $y $width $color;
-}
+@mixin shadow( $x, $y, $width, $color ) { box-shadow: $x $y $width $color; }
 
 // #############################################################################
 // TYPOGRAPHY
