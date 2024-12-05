@@ -24,10 +24,6 @@ img {
 	vertical-align: middle;
 }
 
-@mixin radius( $radius ) { border-radius: $radius; }
-
-@mixin shadow( $x, $y, $width, $color ) { box-shadow: $x $y $width $color; }
-
 // #############################################################################
 // TYPOGRAPHY
 // -----------------------------------------------------------------------------
@@ -76,8 +72,8 @@ img {
 	margin: 3em auto;
 	padding: 2em 2em 1.5em;
 	text-align: left;
-	@include radius(3px);
-	@include shadow(2px, 2px, 8px, #ccc);
+	border-radius: 3px;
+	box-shadow: 2px 2px 8px #ccc;
 
 	@media (max-width: 640px) {
 		font-size: 1em;
@@ -215,7 +211,7 @@ img {
 // hihglight
 .current {
 	background-color: $light-gray; // make it beige, somewhere around EAD29D;
-	@include radius(3px);
+	border-radius: 3px;
 }
 
 .li-print-nav {	margin-top: 3em; }
@@ -258,12 +254,6 @@ img {
 	overflow: auto;
   border-radius: 3px;
 	box-shadow: 2px 2px 8px #ccc;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -khtml-border-radius: 3px;
-  -moz-box-shadow: 2px 2px 8px #ccc;
-  -webkit-box-shadow: 2px 2px 8px #ccc;
-  -khtml-box-shadow: 2px 2px 8px #ccc;
 }
 
 
@@ -300,7 +290,7 @@ img {
 
 // tune up mobile menu shadow
 .off-canvas.is-transition-push.is-open {
-	@include shadow( 2px, 0, 15px, rgba( 50, 50, 50, 0.74 ) );
+	box-shadow: 2px 0 15px rgba(50, 50, 50, 0.74);
 }
 
 // tune up mobile menu shadow
@@ -321,7 +311,7 @@ img {
 	background-color: white;
 	padding-top: .7em;
 	padding-bottom: .7em;
-	@include shadow(0, 2px, 15px, rgba(50, 50, 50, .74));
+	box-shadow: 0 2px 15px rgba(50, 50, 50, .74);
 }
 
 // center burger menu (undo F's global 1.5)
@@ -336,7 +326,7 @@ img {
 	border: 1px solid #777;
 	padding: .5rem .625rem .625rem .375rem;
 	width: 6rem;
-	@include radius(3px);
+	border-radius: 3px;
 }
 
 main {
