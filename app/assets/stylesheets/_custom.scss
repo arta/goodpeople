@@ -24,29 +24,10 @@ img {
 	vertical-align: middle;
 }
 
+
+
 // #############################################################################
 // TYPOGRAPHY
-// -----------------------------------------------------------------------------
-
-.p-footer {
-	color: #999;
-	font-size: 80%;
-	padding-top: 60px;
-	padding-bottom: 40px;
-
-	@media (max-width: 640px) {
-		text-align: center;
-	}
-}
-
-
-
-// #############################################################################
-// INDEX PAGE
-// #############################################################################
-
-// #############################################################################
-// INDEX PAGE :: TYPOGROPHY
 // -----------------------------------------------------------------------------
 
 .h1--index-pg {
@@ -57,9 +38,12 @@ img {
 	}
 }
 
-.ul-testimonials-excerpts {
-	list-style: none;
-	margin-left: 0;
+.h1--interior-pg {
+	margin-bottom: 1em;
+
+	@media (max-width: 640px) {
+		font-size: 1.6em;
+	}
 }
 
 .li-testimonial-excerpt {
@@ -82,7 +66,57 @@ img {
 
 .li-testimonial-excerpt:first-child { margin-top: 0; }
 
+.p-footer {
+	color: #999;
+	font-size: 80%;
+	padding-top: 60px;
+	padding-bottom: 40px;
+
+	@media (max-width: 640px) {
+		text-align: center;
+	}
+}
+
 .p-gp-signature { margin: 0; }
+
+// Semantic class
+.p-signature-testimonial { display: initial; }
+
+// -----------------------------------------------------------------------------
+
+.label-info-testimonial {
+	display: block;
+	font-size: 90%;
+	margin-bottom: 4px;
+}
+
+.span-help {
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #333333;
+	cursor: help;
+}
+
+.span-menu-title {
+	color: #666;
+	font-size: 1rem;
+	margin-right: .25rem;
+	margin-left: 1.875rem;
+}
+
+.span-underline {
+	text-decoration: underline;
+}
+
+// -----------------------------------------------------------------------------
+
+// Vertical offset of testimonials' page anchor (<a id="1234">&nbsp;</a>)
+// adapted from entries around: https://stackoverflow.com/a/17047997/247626
+.a-anchor-testimonial {
+	float: left; // remove anchor from the flow
+	margin-top: -5em;
+	padding-top: 5em;
+}
 
 .a-gp-contact-info {
 	display: block;
@@ -91,7 +125,7 @@ img {
 	line-height: 1.7em;
 }
 
-// -----------------------------------------------------------------------------
+.a-testimonial-excerpt { text-align: right; }
 
 .btn-cta-learn-more {
 	display: inline-block;
@@ -124,72 +158,64 @@ img {
 	color: white;
 }
 
+
+
 // #############################################################################
-// INDEX PAGE :: LAYOUT
+// NAVIGATION
 // -----------------------------------------------------------------------------
 
-.body--index { text-align: center; }
+// >>> Foundation overrides and tweaks - Start ---------------------------------
 
-.section-gp-contact-info--index-pg {
-	font-size: 1.4em;
-	margin-bottom: 40px;
-
-	@media (max-width: 640px) {
-		font-size: 1.2em;
-	};
+// Make .off-canvas-content-overlay darker instead of te default lighter
+.js-off-canvas-overlay.is-visible {
 }
 
-.a-testimonial-excerpt { text-align: right; }
-
-.logo--index { margin-top: 20px; }
-
-// #############################################################################
-// INDEX PAGE :: IMAGES
-// -----------------------------------------------------------------------------
-
-.img-logo--index { display: inline-block; }
-
-
-
-// #############################################################################
-// INTERIOR PAGES
-// #############################################################################
-
-// #############################################################################
-// INTERIOR PAGES :: TYPOGROPHY
-// -----------------------------------------------------------------------------
-
-.label-info-testimonial {
-	display: block;
-	font-size: 90%;
-	margin-bottom: 4px;
+// tune up mobile menu shadow
+.off-canvas.is-transition-push.is-open {
+	box-shadow: 2px 0 15px rgba(50, 50, 50, 0.74);
 }
 
-// Vertical offset of testimonials' page anchor (<a id="1234">&nbsp;</a>)
-// adapted from entries around: https://stackoverflow.com/a/17047997/247626
-.a-anchor-testimonial {
-	float: left; // remove anchor from the flow
-	margin-top: -5em;
-	padding-top: 5em;
+// tune up mobile menu shadow
+.off-canvas.is-transition-push::after {
+	box-shadow: none;
 }
 
-.h1--interior-pg { margin-bottom: 1em; }
-
-// Semantic class
-.p-signature-testimonial { display: initial; }
-
-.span-help {
-	border-bottom-width: 1px;
-	border-bottom-style: dotted;
-	border-bottom-color: #333333;
-	cursor: help;
+.off-canvas {
+	background: white;
 }
 
-.span-underline { text-decoration: underline; }
+// req'd by Foundation
+.sticky {
+	width: 100%;
+}
 
-// #############################################################################
-// INTERIOR PAGES :: NAVIGATION
-// -----------------------------------------------------------------------------
+.title-bar {
+	background-color: white;
+	padding-top: .7em;
+	padding-bottom: .7em;
+	box-shadow: 0 2px 15px rgba(50, 50, 50, .74);
+}
+
+// center burger menu (undo F's global 1.5)
+.title-bar-left {
+	line-height: 1;
+}
+
+.title-bar-right {
+	font-size: .8em;
+}
+
+// <<< Foundation overrides and tweaks - End -----------------------------------
+
+// JS at the bottom of application.html.haml
+.current {
+	background-color: $light-gray; // make it beige, somewhere around EAD29D;
+	border-radius: 3px;
+}
+
+.li-print-nav {
+	margin-top: 3em;
+}
 
 .a-print-nav:link,
 .a-print-nav:visited {
@@ -206,41 +232,26 @@ img {
 	background: url('printHover.gif') no-repeat 0 0.56em;
 }
 
-// JS places .current dynamically, replaces CSS control of current menu item
-// hihglight
-.current {
-	background-color: $light-gray; // make it beige, somewhere around EAD29D;
+// -----------------------------------------------------------------------------
+
+.menu-borderline {
+	align-items: center;
+	border: 1px solid #777;
+	padding: .5rem .625rem .625rem .375rem;
+	width: 6rem;
 	border-radius: 3px;
 }
 
-.li-print-nav {	margin-top: 3em; }
+
 
 // #############################################################################
-// INTERIOR PAGES :: LAYOUT
+// LAYOUT
 // -----------------------------------------------------------------------------
 
-.header-info-testimonial {
-	text-align: right;
-	margin-bottom: 20px;
-}
-
-.gp-contact-info--desktop-header {
-	margin-top: 3em;
-	text-align: right;
-}
-
-.desktop-header { height: 12em; }
-
-.gp-signatures {
-	display: flex;
-	column-gap: 2em;
-	flex-wrap: wrap;
-	margin-left: 1em;
-}
-
-.gp-signature {
-	margin-top: 2em;
-	text-align: center;
+main {
+	@media (max-width: 640px) {
+		margin-top: 2em;
+	};
 }
 
 .article-testimonial {
@@ -251,110 +262,83 @@ img {
 	font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
 	font-size: 1.1em;
 	overflow: auto;
-  border-radius: 3px;
+	border-radius: 3px;
 	box-shadow: 2px 2px 8px #ccc;
 }
 
-
-
-// #############################################################################
-// MOBILE
-// #############################################################################
-
-// #############################################################################
-// MOBILE :: TYPOGROPHY
-// -----------------------------------------------------------------------------
-
-.span-menu-title {
-	color: #666;
-	font-size: 1rem;
-	margin-right: .25rem;
-	margin-left: 1.875rem;
-}
-
-.h1--interior-pg {
-	@media (max-width: 640px) { font-size: 1.6em; }
-}
-
-// #############################################################################
-// MOBILE :: LAYOUT
-// -----------------------------------------------------------------------------
-
-// MOBILE :: LAYOUT, Start Of - Foundation overrides and tweaks ----------------
-
-// Make .off-canvas-content-overlay darker instead of te default lighter
-.js-off-canvas-overlay.is-visible {
-	background: rgba(0, 0, 0, .3); // rgba(254, 254, 254, 0.25);
-}
-
-// tune up mobile menu shadow
-.off-canvas.is-transition-push.is-open {
-	box-shadow: 2px 0 15px rgba(50, 50, 50, 0.74);
-}
-
-// tune up mobile menu shadow
-.off-canvas.is-transition-push::after { box-shadow: none; }
-
-// -----------------------------------------------------------------------------
-
-.off-canvas { background: white; }
-
-// req'd by Foundation
-.sticky { width: 100%; }
-
-.title-bar {
-	background-color: white;
-	padding-top: .7em;
-	padding-bottom: .7em;
-	box-shadow: 0 2px 15px rgba(50, 50, 50, .74);
-}
-
-// center burger menu (undo F's global 1.5)
-.title-bar-left { line-height: 1; }
-
-.title-bar-right { font-size: .8em; }
-
-// MOBILE :: LAYOUT, End Of - Foundation overrides and tweaks ------------------
-
-.menu-borderline {
-	align-items: center;
-	border: 1px solid #777;
-	padding: .5rem .625rem .625rem .375rem;
-	width: 6rem;
-	border-radius: 3px;
-}
-
-main {
-	@media (max-width: 640px) { margin-top: 2em; };
-}
-
-
-
-// #############################################################################
-// PRINT PAGE
-// #############################################################################
-
-// #############################################################################
-// PRINT PAGE :: LAYOUT
-// -----------------------------------------------------------------------------
+.body--index { text-align: center; }
 
 .content--print-pg {
 	margin: 0 20px 0 0;
 	font-size: 10pt;
-  h1 {
-  	color: #484848;
-  	font-size: 130%;
-  	text-align: center;
-  	margin-top: 0px;
-  }
-  ul li {
-  	list-style-image: image-url( 'ablbull1check.gif' );
-  	margin-left: 0px;
-  }
+
+	h1 {
+		color: #484848;
+		font-size: 130%;
+		text-align: center;
+		margin-top: 0px;
+	}
+
+	ul li {
+		list-style-image: image-url('ablbull1check.gif');
+		margin-left: 0px;
+	}
+}
+
+.desktop-header {
+	height: 12em;
+}
+
+.gp-contact-info--desktop-header {
+	margin-top: 3em;
+	text-align: right;
+}
+
+.gp-signature {
+	margin-top: 2em;
+	text-align: center;
+}
+
+.gp-signatures {
+	display: flex;
+	column-gap: 2em;
+	flex-wrap: wrap;
+	margin-left: 1em;
+}
+
+.header-info-testimonial {
+	text-align: right;
+	margin-bottom: 20px;
 }
 
 .header--print-pg {
 	height: 180px;
 	margin-right: 20px;
 	clear: both;
+}
+
+.logo--index { margin-top: 20px; }
+
+.section-gp-contact-info--index-pg {
+	font-size: 1.4em;
+	margin-bottom: 40px;
+
+	@media (max-width: 640px) {
+		font-size: 1.2em;
+	};
+}
+
+.ul-testimonials-excerpts {
+	list-style: none;
+	margin-left: 0;
+}
+
+
+
+// #############################################################################
+// IMAGES
+// -----------------------------------------------------------------------------
+
+.img-logo--index {
+	display: inline-block;
 }
