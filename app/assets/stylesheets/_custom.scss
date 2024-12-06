@@ -268,9 +268,7 @@ main {
 	}
 }
 
-.desktop-header { height: 12em; }
-
-.gp-contact-info--desktop-header {
+.gp-contact-info--header-desktop {
 	margin-top: 3em;
 	text-align: right;
 }
@@ -286,6 +284,8 @@ main {
 	flex-wrap: wrap;
 	margin-left: 1em;
 }
+
+.header-desktop { height: 12em; }
 
 .header-info-testimonial {
 	margin-bottom: 20px;
