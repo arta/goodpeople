@@ -74,10 +74,8 @@
 					.columns.small-12.medium-9.medium-offset-3
 						%p.p-footer &copy; 2001 - #{Date.today.year} Good People, LLC
 
-		-# replacing CSS detection of current page with JS detection (may not work well for complicated menus?):
 		-# https://css-tricks.com/snippets/javascript/get-url-and-url-parts-in-javascript/
 		-# https://css-tricks.com/snippets/jquery/add-active-navigation-class-based-on-url/
 		:javascript
 			$loc = location.pathname.split("/").pop();
 			$(function() { $('nav a[href^="/' + $loc + '"]').parent().addClass('current'); });
-			// $(function() { $('nav a[href^="/' + location.pathname.split("/")[1] + '"]').parent().addClass('current'); });
