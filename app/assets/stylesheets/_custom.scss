@@ -168,6 +168,7 @@ img {
 
 // Make .off-canvas-content-overlay darker instead of te default lighter
 .js-off-canvas-overlay.is-visible {
+	background: rgba(0, 0, 0, .3); // rgba(254, 254, 254, 0.25);
 }
 
 // tune up mobile menu shadow
