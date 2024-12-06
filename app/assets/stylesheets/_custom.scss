@@ -46,6 +46,12 @@ img {
 	}
 }
 
+.label-info-testimonial {
+	display: block;
+	font-size: 90%;
+	margin-bottom: 4px;
+}
+
 .li-testimonial-excerpt {
 	background: #ffe;
 	border: 1px solid #fed;
@@ -84,12 +90,6 @@ img {
 
 // -----------------------------------------------------------------------------
 
-.label-info-testimonial {
-	display: block;
-	font-size: 90%;
-	margin-bottom: 4px;
-}
-
 .span-help {
 	border-bottom-width: 1px;
 	border-bottom-style: dotted;
@@ -104,11 +104,23 @@ img {
 	margin-left: 1.875rem;
 }
 
-.span-underline {
-	text-decoration: underline;
-}
+.span-underline { text-decoration: underline; }
 
+
+
+// #############################################################################
+// INTERACTIVE
 // -----------------------------------------------------------------------------
+
+.a-print-nav:link,
+.a-print-nav:visited {
+	background: white url('print.gif') no-repeat 0 0.56em;
+	color: #aaa;
+	margin: 0 auto 0 auto;
+	padding: 6px 0 6px 22px;
+	width: 9em;
+	/* must be defined for margin centering to work */
+}
 
 // Vertical offset of testimonials' page anchor (<a id="1234">&nbsp;</a>)
 // adapted from entries around: https://stackoverflow.com/a/17047997/247626
@@ -123,6 +135,11 @@ img {
 	color: #333333;
 	font-weight: bold;
 	line-height: 1.7em;
+}
+
+.a-print-nav:hover {
+	background: url('printHover.gif') no-repeat 0 0.56em;
+	color: #ff9900;
 }
 
 .a-testimonial-excerpt { text-align: right; }
@@ -158,11 +175,21 @@ img {
 	color: white;
 }
 
+// JS at the bottom of application.html.haml
+.current {
+	background-color: $light-gray; // make it beige, somewhere around EAD29D;
+	border-radius: 3px;
+}
 
+.li-print-nav { margin-top: 3em; }
 
-// #############################################################################
-// NAVIGATION
-// -----------------------------------------------------------------------------
+.menu-borderline {
+	align-items: center;
+	border: 1px solid #777;
+	padding: .5rem .625rem .625rem .375rem;
+	width: 6rem;
+	border-radius: 3px;
+}
 
 // >>> Foundation overrides and tweaks - Start ---------------------------------
 
@@ -177,18 +204,12 @@ img {
 }
 
 // tune up mobile menu shadow
-.off-canvas.is-transition-push::after {
-	box-shadow: none;
-}
+.off-canvas.is-transition-push::after { box-shadow: none; }
 
-.off-canvas {
-	background: white;
-}
+.off-canvas { background: white; }
 
 // req'd by Foundation
-.sticky {
-	width: 100%;
-}
+.sticky { width: 100%; }
 
 .title-bar {
 	background-color: white;
@@ -198,50 +219,11 @@ img {
 }
 
 // center burger menu (undo F's global 1.5)
-.title-bar-left {
-	line-height: 1;
-}
+.title-bar-left { line-height: 1; }
 
-.title-bar-right {
-	font-size: .8em;
-}
+.title-bar-right { font-size: .8em; }
 
 // <<< Foundation overrides and tweaks - End -----------------------------------
-
-// JS at the bottom of application.html.haml
-.current {
-	background-color: $light-gray; // make it beige, somewhere around EAD29D;
-	border-radius: 3px;
-}
-
-.li-print-nav {
-	margin-top: 3em;
-}
-
-.a-print-nav:link,
-.a-print-nav:visited {
-	background: white url('print.gif') no-repeat 0 0.56em;
-	color: #aaa;
-	margin: 0 auto 0 auto;
-	padding: 6px 0 6px 22px;
-	width: 9em;
-	/* must be defined for margin centering to work */
-}
-
-.a-print-nav:hover {
-	color: #ff9900;
-	background: url('printHover.gif') no-repeat 0 0.56em;
-}
-
-// -----------------------------------------------------------------------------
-
-.menu-borderline {
-	align-items: center;
-	border: 1px solid #777;
-	padding: .5rem .625rem .625rem .375rem;
-	width: 6rem;
-	border-radius: 3px;
-}
 
 
 
@@ -276,8 +258,8 @@ main {
 	h1 {
 		color: #484848;
 		font-size: 130%;
-		text-align: center;
 		margin-top: 0px;
+		text-align: center;
 	}
 
 	ul li {
@@ -286,9 +268,7 @@ main {
 	}
 }
 
-.desktop-header {
-	height: 12em;
-}
+.desktop-header { height: 12em; }
 
 .gp-contact-info--desktop-header {
 	margin-top: 3em;
@@ -308,14 +288,13 @@ main {
 }
 
 .header-info-testimonial {
-	text-align: right;
 	margin-bottom: 20px;
+	text-align: right;
 }
 
 .header--print-pg {
 	height: 180px;
 	margin-right: 20px;
-	clear: both;
 }
 
 .logo--index { margin-top: 20px; }
@@ -340,6 +319,4 @@ main {
 // IMAGES
 // -----------------------------------------------------------------------------
 
-.img-logo--index {
-	display: inline-block;
-}
+.img-logo--index { display: inline-block; }
