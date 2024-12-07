@@ -10,12 +10,11 @@
 	%body{ id:@body_id }
 
 		%header.header--print-pg
-			= render partial:'header', locals:{ map_ref:'intro' }
+			= render partial: 'header_desktop', locals: { map_ref: 'intro' }
 
 		%main.content--print-pg
 			%h1= link_to 'Intro', :action => :intro
 			= render 'intro'
-			%br
 			%br
 
 			%h1= link_to 'Care', :action => :type_of_care
