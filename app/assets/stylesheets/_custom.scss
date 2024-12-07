@@ -124,7 +124,6 @@ img {
 }
 
 .a-gp-contact-info {
-	display: block;
 	color: #333333;
 	font-weight: bold;
 	line-height: 1.7em;
@@ -231,6 +230,12 @@ img {
 // LAYOUT
 // -----------------------------------------------------------------------------
 
+.gp-contact-info--header-desktop,
+.gp-contact-info--index-pg {
+	display: flex;
+	flex-direction: column;
+}
+
 main {
 	@media (max-width: 640px) {
 		margin-top: 2em;
@@ -272,11 +277,13 @@ main {
 }
 
 .gp-contact-info--header-desktop {
+	align-items: flex-end; // prevent spread of the items (hoverable links)
 	margin-top: 3em;
 	text-align: right;
 }
 
 .gp-contact-info--index-pg {
+	align-items: center;
 	font-size: 1.4em;
 	margin-bottom: 40px;
 
