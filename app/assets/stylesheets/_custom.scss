@@ -249,7 +249,10 @@ main {
 	box-shadow: 2px 2px 8px #ccc;
 }
 
-.body--index { text-align: center; }
+.body--index-pg {
+	padding-top: 20px;
+	text-align: center;
+}
 
 .content--print-pg {
 	margin: 0 20px 0 0;
@@ -297,8 +300,6 @@ main {
 	margin-right: 20px;
 }
 
-.logo--index { margin-top: 20px; }
-
 .section-gp-contact-info--index-pg {
 	font-size: 1.4em;
 	margin-bottom: 40px;
@@ -312,11 +313,3 @@ main {
 	list-style: none;
 	margin-left: 0;
 }
-
-
-
-// #############################################################################
-// IMAGES
-// -----------------------------------------------------------------------------
-
-.img-logo--index { display: inline-block; }

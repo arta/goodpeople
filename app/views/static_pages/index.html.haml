@@ -18,14 +18,13 @@
 			ga('create', 'UA-76652418-1', 'auto');
 			ga('send', 'pageview');
 
-	%body.body--index
+	%body.body--index-pg
 		%header
 			.row
 				.columns.small-centered.small-10.medium-8
-					.logo--index
-						=image_tag "GP Logo web1 welcome.gif", border:"0", usemap:"#Map", class: 'img-logo--index'
-						%map{ name:"Map" }
-							%area{ shape:"rect", coords:"0,0,643,643", href:"/intro" }
+					=image_tag "GP Logo web1 welcome.gif", border:"0", usemap:"#Map"
+					%map{ name:"Map" }
+						%area{ shape:"rect", coords:"0,0,643,643", href:"/intro" }
 			.row
 				.columns.small-centered.small-8
 					%h1.h1--index-pg
