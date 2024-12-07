@@ -97,13 +97,6 @@ img {
 	cursor: help;
 }
 
-.span-menu-title {
-	color: #666;
-	font-size: 1rem;
-	margin-right: .25rem;
-	margin-left: 1.875rem;
-}
-
 .span-underline { text-decoration: underline; }
 
 
@@ -183,12 +176,19 @@ img {
 
 .li-print-nav { margin-top: 3em; }
 
-.menu-borderline {
+.off-canvas-opener {
 	align-items: center;
 	border: 1px solid #777;
 	padding: .5rem .625rem .625rem .375rem;
 	width: 6rem;
 	border-radius: 3px;
+}
+
+.span-menu-title {
+	color: #666;
+	font-size: 1rem;
+	margin-right: .25rem;
+	margin-left: 1.875rem;
 }
 
 // >>> Foundation overrides and tweaks - Start ---------------------------------
