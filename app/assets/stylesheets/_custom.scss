@@ -276,6 +276,15 @@ main {
 	text-align: right;
 }
 
+.gp-contact-info--index-pg {
+	font-size: 1.4em;
+	margin-bottom: 40px;
+
+	@media (max-width: 640px) {
+		font-size: 1.2em;
+	};
+}
+
 .gp-signature {
 	margin-top: 2em;
 	text-align: center;
@@ -288,25 +297,16 @@ main {
 	margin-left: 1em;
 }
 
-.header-desktop { height: 12em; }
-
-.header-testimonial {
-	margin-bottom: 20px;
-	text-align: right;
-}
-
 .header--print-pg {
 	height: 180px;
 	margin-right: 20px;
 }
 
-.section-gp-contact-info--index-pg {
-	font-size: 1.4em;
-	margin-bottom: 40px;
+.header-desktop { height: 12em; }
 
-	@media (max-width: 640px) {
-		font-size: 1.2em;
-	};
+.header-testimonial {
+	margin-bottom: 20px;
+	text-align: right;
 }
 
 .ul-testimonials-excerpts {
