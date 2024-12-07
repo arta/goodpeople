@@ -70,7 +70,9 @@ img {
 	};
 }
 
-.li-testimonial-excerpt:first-child { margin-top: 0; }
+.li-testimonial-excerpt:first-child {
+	margin-top: 0;
+}
 
 .p-footer {
 	color: #999;
@@ -83,10 +85,14 @@ img {
 	}
 }
 
-.p-gp-signature { margin: 0; }
+.p-gp-signature {
+	margin: 0;
+}
 
 // Semantic class
-.p-signature-testimonial { display: initial; }
+.p-signature-testimonial {
+	display: initial;
+}
 
 // -----------------------------------------------------------------------------
 
@@ -97,7 +103,9 @@ img {
 	cursor: help;
 }
 
-.span-underline { text-decoration: underline; }
+.span-underline {
+	text-decoration: underline;
+}
 
 
 
@@ -134,7 +142,9 @@ img {
 	color: #ff9900;
 }
 
-.a-testimonial-excerpt { text-align: right; }
+.a-testimonial-excerpt {
+	text-align: right;
+}
 
 .btn-cta-learn-more {
 	display: inline-block;
@@ -173,7 +183,9 @@ img {
 	border-radius: 3px;
 }
 
-.li-print-nav { margin-top: 3em; }
+.li-print-nav {
+	margin-top: 3em;
+}
 
 .off-canvas-opener {
 	align-items: center;
@@ -203,12 +215,18 @@ img {
 }
 
 // tune up mobile menu shadow
-.off-canvas.is-transition-push::after { box-shadow: none; }
+.off-canvas.is-transition-push::after {
+	box-shadow: none;
+}
 
-.off-canvas { background: white; }
+.off-canvas {
+	background: white;
+}
 
 // req'd by Foundation
-.sticky { width: 100%; }
+.sticky {
+	width: 100%;
+}
 
 .title-bar {
 	background-color: white;
@@ -218,9 +236,13 @@ img {
 }
 
 // center burger menu (undo F's global 1.5)
-.title-bar-left { line-height: 1; }
+.title-bar-left {
+	line-height: 1;
+}
 
-.title-bar-right { font-size: .8em; }
+.title-bar-right {
+	font-size: .8em;
+}
 
 // <<< Foundation overrides and tweaks - End -----------------------------------
 
@@ -230,8 +252,8 @@ img {
 // LAYOUT
 // -----------------------------------------------------------------------------
 
-.gp-contact-info--header-desktop,
-.gp-contact-info--index-pg {
+.gp-contact-info--index-pg,
+.gp-contact-info-header-desktop {
 	display: flex;
 	flex-direction: column;
 }
@@ -276,12 +298,6 @@ main {
 	}
 }
 
-.gp-contact-info--header-desktop {
-	align-items: flex-end; // prevent spread of the items (hoverable links)
-	margin-top: 3em;
-	text-align: right;
-}
-
 .gp-contact-info--index-pg {
 	align-items: center;
 	font-size: 1.4em;
@@ -290,6 +306,12 @@ main {
 	@media (max-width: 640px) {
 		font-size: 1.2em;
 	};
+}
+
+.gp-contact-info-header-desktop {
+	align-items: flex-end; // prevent spread of the items (hoverable links)
+	margin-top: 3em;
+	text-align: right;
 }
 
 .gp-signature {
@@ -309,7 +331,9 @@ main {
 	margin-right: 20px;
 }
 
-.header-desktop { height: 12em; }
+.header-desktop {
+	height: 12em;
+}
 
 .header-testimonial {
 	margin-bottom: 20px;
