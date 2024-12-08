@@ -96,10 +96,8 @@ img {
 
 // -----------------------------------------------------------------------------
 
-.span-help {
-	border-bottom-width: 1px;
-	border-bottom-style: dotted;
-	border-bottom-color: #333333;
+.span-tooltip {
+	border-bottom: 1px dotted #333333;
 	cursor: help;
 }
 
