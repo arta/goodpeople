@@ -260,7 +260,7 @@ img {
 
 .gp-contact-info-header,
 .gp-contact-info-header--desktop {
-	text-align: right;
+	align-items: flex-end;
 }
 
 main {
@@ -308,6 +308,7 @@ main {
 }
 
 .gp-contact-info-index-pg {
+	align-items: center;
 	font-size: 1.4em;
 	margin-bottom: 40px;
 
