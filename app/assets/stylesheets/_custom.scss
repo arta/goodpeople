@@ -30,7 +30,7 @@ img {
 // TYPOGRAPHY
 // -----------------------------------------------------------------------------
 
-.h1--index-pg {
+.h1-index-pg {
 	margin-top: 50px;
 
 	@media (max-width: 640px) {
@@ -38,7 +38,7 @@ img {
 	}
 }
 
-.h1--interior-pg {
+.h1-interior-pg {
 	margin-bottom: 1em;
 
 	@media (max-width: 640px) {
@@ -252,7 +252,7 @@ img {
 
 .gp-contact-info-header,
 .gp-contact-info-header--desktop,
-.gp-contact-info--index-pg {
+.gp-contact-info-index-pg {
 	display: flex;
 	flex-direction: column;
 }
@@ -280,12 +280,12 @@ main {
 	box-shadow: 2px 2px 8px #ccc;
 }
 
-.body--index-pg {
+.body-index-pg {
 	padding-top: 20px;
 	text-align: center;
 }
 
-.content--print-pg {
+.content-print-pg {
 	margin: 0 20px 0 0;
 	font-size: 10pt;
 
@@ -306,7 +306,7 @@ main {
 	margin-top: 3em;
 }
 
-.gp-contact-info--index-pg {
+.gp-contact-info-index-pg {
 	font-size: 1.4em;
 	margin-bottom: 40px;
 
@@ -327,13 +327,13 @@ main {
 	margin-left: 1em;
 }
 
-.header--print-pg {
-	height: 180px;
-	margin-right: 20px;
-}
-
 .header-desktop {
 	height: 12em;
+}
+
+.header-print-pg {
+	height: 180px;
+	margin-right: 20px;
 }
 
 .header-testimonial {
