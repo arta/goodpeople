@@ -250,10 +250,16 @@ img {
 // LAYOUT
 // -----------------------------------------------------------------------------
 
-.gp-contact-info--index-pg,
-.gp-contact-info-header-desktop {
+.gp-contact-info-header,
+.gp-contact-info-header--desktop,
+.gp-contact-info--index-pg {
 	display: flex;
 	flex-direction: column;
+}
+
+.gp-contact-info-header,
+.gp-contact-info-header--desktop {
+	text-align: right;
 }
 
 main {
@@ -296,20 +302,17 @@ main {
 	}
 }
 
+.gp-contact-info-header--desktop {
+	margin-top: 3em;
+}
+
 .gp-contact-info--index-pg {
-	align-items: center;
 	font-size: 1.4em;
 	margin-bottom: 40px;
 
 	@media (max-width: 640px) {
 		font-size: 1.2em;
 	};
-}
-
-.gp-contact-info-header-desktop {
-	align-items: flex-end; // prevent spread of the items (hoverable links)
-	margin-top: 3em;
-	text-align: right;
 }
 
 .gp-signature {
