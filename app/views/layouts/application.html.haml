@@ -16,7 +16,8 @@
 		%title Good People LLC - Live-in caregivers & companions
 		// 5/12/15: http://blog.steveklabnik.com/posts/2013-06-25-removing-turbolinks-from-rails-4
 		= stylesheet_link_tag		'application'#, media: 'all'#, 'data-turbolinks-track' => true
-		= javascript_include_tag 'application'#, 'data-turbolinks-track' => true
+		= javascript_importmap_tags
+		= javascript_include_tag 'application', defer: true, type: "module"#, 'data-turbolinks-track' => true
 		= csrf_meta_tags
 		= csp_meta_tag
 
