@@ -2,6 +2,7 @@
 %html
 	%head
 		// Global site tag (gtag.js) - Google Analytics (.. as the first item)
+		// TODO: re-activate with the new GA4(<=?)
 		%script{ async: "",
 			src: "https://www.googletagmanager.com/gtag/js?id=UA-76652418-1" }
 		:javascript
@@ -14,10 +15,8 @@
 		%meta{ name: 'viewport', content: 'width=device-width, initial-scale=1.0' }
 
 		%title Good People LLC - Live-in caregivers & companions
-		// 5/12/15: http://blog.steveklabnik.com/posts/2013-06-25-removing-turbolinks-from-rails-4
-		= stylesheet_link_tag		'application'#, media: 'all'#, 'data-turbolinks-track' => true
+		= stylesheet_link_tag	'application', media: 'all'
 		= javascript_importmap_tags
-		= javascript_include_tag 'application', defer: true, type: "module"#, 'data-turbolinks-track' => true
 		= csrf_meta_tags
 		= csp_meta_tag
 
@@ -75,9 +74,3 @@
 				%footer.row
 					.columns.small-12.medium-9.medium-offset-3
 						%p.p-footer &copy; 2001 - #{Date.today.year} Good People, LLC
-
-		-# https://css-tricks.com/snippets/javascript/get-url-and-url-parts-in-javascript/
-		-# https://css-tricks.com/snippets/jquery/add-active-navigation-class-based-on-url/
-		:javascript
-			$loc = location.pathname.split("/").pop();
-			$(function() { $('nav a[href^="/' + $loc + '"]').parent().addClass('current'); });
