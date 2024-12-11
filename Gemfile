@@ -12,7 +12,6 @@ gem 'bootsnap', require: false
 gem "dartsass-rails"
 gem 'haml-rails'
 gem 'jbuilder'
-gem 'jquery-rails'
 gem 'mini_magick'
 gem 'net-imap', require: false
 gem 'net-pop', require: false
