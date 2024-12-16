@@ -1,12 +1,10 @@
 {
-  "engines": {
-    "node": "16.13.1"
-  },
+  "name": "your_project_name",
+  "version": "1.0.0",
   "dependencies": {
-    "@rails/webpacker": "5.4.3"
+    "foundation-sites": "^6.9.0"
   },
-  "devDependencies": {
-    "webpack": "^4.46.0",
-    "webpack-dev-server": "^4.9.2"
+  "scripts": {
+    "build:css": "sass ./app/assets/stylesheets/application.scss ./app/assets/builds/application.css"
   }
 }

@@ -1,21 +1,43 @@
 ################################################################################
-11-23-24: ######################################################################
-• git commit message abbreviations, per Copee:
-  Yes, using abbreviations or prefixes in commit messages is a good practice as
-  it helps in quickly understanding the purpose of the commit. This practice is
-  commonly known as Conventional Commits. Here are some of the most common
-  prefixes used:
+12-10-24: ######################################################################
+• Integrate Zurb Foundation via importmap in Rails 7
+  : away from the slowly dying gem foundation-rails, and, primarily,
+  : adopting NoBuild, the nascent Rails Way for assets, both CSS & JS (actually,
+    JS is being elevated, from an asset, to a first class citizen in Rails 7)
+: Enormous amount of time and confusion, Cody and Copee both confused too
+  : GOTCHA: NOT precompiling
 
-  : feat: A new feature
-  : fix: A bug fix
-  : docs: Documentation only changes
-  : style: Changes that do not affect the meaning of the code (white-space,
-    formatting, missing semi-colons, etc)
-  : refactor: A code change that neither fixes a bug nor adds a feature
-  : perf: A code change that improves performance
-  : test: Adding missing tests or correcting existing tests
-  : chore: Changes to the build process or auxiliary tools and libraries
-    such as documentation generation
+      % rails assets:precompile
+
+  : after each update I was trying to see working in the browser (at localhost &
+    JS console there)
+  : This happened due to my massive cognitive innertia,
+      (secondary to taking CSS & JS automatic, background precompiling during
+      development by gems, foundation-rails & sassc, for granted for many years)
+    where my not precompiling manually meant that my edits in the new (location
+    of) JS entry point `app/javascript/application.js`
+      (not in the original, `app/assets/javascripts/application.js`,
+      something I forgot in the escalating confusion, confusing myself yet more)
+    not being picked up (<= due to their not bing precompiled, fingerprinted &
+    piped by sprockets, into `public/assets/application-655..466.js`),
+    and my not being able to understand what the hell is going on, why does JS
+    not work, why is `$` (jQuery) undefined, and why & where from (!) does some
+    old `application-655..466.js` file continue being picked up by this new
+    shiny importmap JS thingy we're implementing here?!
+      (again, I completely forgot about public/assets directory being active
+      part of the app (not to mention in development(!)), because up until
+      this point, all of assets pre-processing was being managed in
+      the background automatically by foundation-rails, sassc -- now deprecated,
+      recently, 3c2d971, replaced by dartsass-rails - and sprockets-rails gems)
+
+• Ok, works now, after the battle, next:
+  : #TODO: figure out how to remove the npm's node_modules foundation dependency
+    : should be possible, though not standard (just have all required
+      Foundation files (both, JS & CSS) in the vendor, and import them into may
+      existing foundation_and_overrides, settings_overrides, etc.)
+    : benefit: full control over Foundation code for study, eventual replacement
+      with my own (far preferred) or other (responsive dropdown) nav menu
+      (<= this is, ofc, more about the thehouse)
 
 ################################################################################
 
@@ -49,7 +71,7 @@
   4.  % bin/rails dartsass:install
 
   : this created a bunch of files & additions/changes to existing files, e.g.:
-    /app/assets/builds/application.css (= precompilation, re-allows `% rails s`)
+    /app/assets/builds/application.CSS (= precompilation, re-allows `% rails s`)
     /app/assets/config/manifest.js (adds link to the precompiles in the /builds)
     /app/bin/dev (allows `% bin/dev`)
     Procfile.dev (runs `% rails s`, and `% rails dartsass:watch` #= the watcher)

@@ -10,16 +10,13 @@ gem 'puma'
 
 gem 'bootsnap', require: false
 gem "dartsass-rails"
-gem 'foundation-rails'
 gem 'haml-rails'
 gem 'jbuilder'
-gem 'jquery-rails'
 gem 'mini_magick'
 gem 'net-imap', require: false
 gem 'net-pop', require: false
 gem 'net-smtp', require: false
 gem 'sprockets-rails'
-gem 'webpacker', '~> 5.2', '>= 5.2.1'
 
 group :development do
   gem 'awesome_print', '~> 1.8'
@@ -58,3 +55,7 @@ end
 # see debbugging.txt
 
 # 1-22-20: Foundation requires jquery, so .. keep JQuery for now
+
+gem "importmap-rails", "~> 2.0"
+
+gem "cssbundling-rails", "~> 1.4"
