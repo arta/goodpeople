@@ -9,8 +9,10 @@ gem 'pg'
 gem 'puma'
 
 gem 'bootsnap', require: false
+gem "cssbundling-rails", "~> 1.4"
 gem "dartsass-rails"
 gem 'haml-rails'
+gem "importmap-rails", "~> 2.0"
 gem 'jbuilder'
 gem 'mini_magick'
 gem 'net-imap', require: false
@@ -55,7 +57,3 @@ end
 # see debbugging.txt
 
 # 1-22-20: Foundation requires jquery, so .. keep JQuery for now
-
-gem "importmap-rails", "~> 2.0"
-
-gem "cssbundling-rails", "~> 1.4"
