@@ -8,15 +8,7 @@
 		= javascript_importmap_tags
 		= csrf_meta_tags
 		= csp_meta_tag
-		%script{
-			async: "",
-			src: "https://www.googletagmanager.com/gtag/js?id=UA-76652418-1"
-		}
-		:javascript
-			window.dataLayer = window.dataLayer || [];
-			function gtag() { dataLayer.push(arguments); }
-			gtag('js', new Date());
-			gtag('config', 'UA-76652418-1');
+		= render 'javascript_google_tag'
 
 	%body
 		// hide horizontal scrollbar when .off-canvas.is-open
