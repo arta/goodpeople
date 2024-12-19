@@ -1,4 +1,23 @@
 ################################################################################
+12-19-24: ######################################################################
+• Integrate Zurb Foundation via importmap in Rails 7, Cont'd
+
+• Clean up Foundation SCSS imports in stylesheets
+  : Add `--load-path=node_modules` to package.json script for sass
+  : Remove relative paths (`../../../`) from all Foundation imports:
+
+      Before:
+      @import "../../../node_modules/foundation-sites/scss/foundation";
+
+      After:
+      @import "foundation-sites/scss/foundation";
+
+  : ✅ Clean imports and simpler maintenance. Nice!
+################################################################################
+
+
+
+################################################################################
 12-10-24: ######################################################################
 • Integrate Zurb Foundation via importmap in Rails 7
   : away from the slowly dying gem foundation-rails, and, primarily,
