@@ -1,4 +1,29 @@
 ################################################################################
+12-22-24: ######################################################################
+• importmap-rails checks pinned resources in this order:
+  1. vendor/javascript/
+  2. app/javascript/
+  3. configured CDN (defaults to JSDelivr)
+
+: this default search path sequence can be customized in config/importmap.rb
+
+• No need for us to specify `to:`
+
+      pin 'jquery' to: 'jquery.js'
+      pin 'foundation' to: 'foundation.js'
+
+  : becasue our pinned resources have the same name as the pins, so this works:
+
+      pin 'jquery'
+      pin 'foundation'
+
+• Local (vendor/javascript/, app/javascript/) pins are preloaded by default,
+  external (CDN) pins need an explicit `preload: true` to preload
+################################################################################
+
+
+
+################################################################################
 12-19-24: ######################################################################
 • Integrate Zurb Foundation via importmap in Rails 7, Cont'd
 

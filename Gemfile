@@ -9,9 +9,9 @@ gem 'pg'
 gem 'puma'
 
 gem 'bootsnap', require: false
-gem "cssbundling-rails", "~> 1.4"
+gem 'cssbundling-rails', '~> 1.4'
 gem 'haml-rails'
-gem "importmap-rails", "~> 2.0"
+gem 'importmap-rails', '~> 2.0'
 gem 'jbuilder'
 gem 'mini_magick'
 gem 'net-imap', require: false
