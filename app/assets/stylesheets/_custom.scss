@@ -4,7 +4,7 @@
 // http://engineering.appfolio.com/2012/11/16/css-architecture/
 // http://nicolasgallagher.com/about-html-semantics-front-end-architecture/
 
-
+@use 'colors' as c;
 
 // #############################################################################
 // GLOBAL
@@ -53,8 +53,8 @@ img {
 }
 
 .li-testimonial-excerpt {
-	background: #ffe;
-	border: 1px solid #fed;
+	background: c.$testimonial-background;
+	border: 1px solid c.$testimonial-border-color;
 	border-radius: 3px;
 	font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
 	font-size: 1.3em;
@@ -63,7 +63,7 @@ img {
 	padding: 2em 2em 1.5em;
 	text-align: left;
 	border-radius: 3px;
-	box-shadow: 2px 2px 8px #ccc;
+	box-shadow: 2px 2px 8px c.$testimonial-shadow-color;
 
 	@media (max-width: 640px) {
 		font-size: 1em;
@@ -75,7 +75,7 @@ img {
 }
 
 .p-footer {
-	color: #999;
+	color: c.$footer-color;
 	font-size: 80%;
 	padding-top: 60px;
 	padding-bottom: 40px;
@@ -97,7 +97,7 @@ img {
 // -----------------------------------------------------------------------------
 
 .span-tooltip {
-	border-bottom: 1px dotted #333333;
+	border-bottom: 1px dotted c.$tooltip-span-underline-color;
 	cursor: help;
 }
 
@@ -113,8 +113,8 @@ img {
 
 .a-print-nav:link,
 .a-print-nav:visited {
-	background: white url('print.gif') no-repeat 0 0.56em;
-	color: #aaa;
+	background: c.$a-print-nav-background url('print.gif') no-repeat 0 0.56em;
+	color: c.$a-print-nav-color;
 	margin: 0 auto 0 auto;
 	padding: 6px 0 6px 22px;
 	width: 9em;
@@ -130,14 +130,14 @@ img {
 }
 
 .a-gp-contact-info {
-	color: #333333;
+	color: c.$a-gp-contact-info-color;
 	font-weight: bold;
 	line-height: 1.7em;
 }
 
 .a-print-nav:hover {
 	background: url('printHover.gif') no-repeat 0 0.56em;
-	color: #ff9900;
+	color: c.$a-print-nav-color-hover;
 }
 
 .a-testimonial-excerpt {
@@ -146,13 +146,14 @@ img {
 
 .btn-cta-learn-more {
 	display: inline-block;
-	background: #007b00; //#209620;
-	background-image: linear-gradient(to bottom right, #209620, #0a5d0a);
-	border: 1px solid white;
-	box-shadow: 0 0 0 3px #007b00;
-	color: whitesmoke;
+	background: c.$cta-background;
+	background-image: linear-gradient(
+		to bottom right, c.$cta-gradient-start, c.$cta-gradient-end
+	);
+	border: 1px solid c.$cta-border-color;
+	box-shadow: 0 0 0 3px c.$cta-outer-border-color;
 	border-radius: 8px;
-	color: white;
+	color: c.$cta-color;
 	font-size: 1.4em;
 	font-weight: bold;
 	margin: 40px auto;
@@ -167,17 +168,17 @@ img {
 }
 
 .btn-cta-learn-more:hover {
-	background: #209620;
+	background: c.$cta-background-hover;
 	background-image: none;
 	box-shadow:
-		0 0 0 3px #209620,
-		3px 3px 9px 3px rgba(0, 0, 0, 0.18);
-	color: white;
+		0 0 0 3px c.$cta-outer-border-color-hover,
+		3px 3px 9px 3px c.$cta-shadow-color-hover;
+	color: c.$cta-color;
 }
 
 // JS at the bottom of application.html.haml
 .current {
-	background-color: #e6e6e6; // F6's $light-gray; make it beige ~#EAD29D;
+	background-color: c.$nav-current-background;
 	border-radius: 3px;
 }
 
@@ -187,14 +188,14 @@ img {
 
 .off-canvas-opener {
 	align-items: center;
-	border: 1px solid #777;
+	border: 1px solid c.$off-canvas-opener-border-color;
 	padding: .5rem .625rem .625rem .375rem;
 	width: 6rem;
 	border-radius: 3px;
 }
 
 .label-off-canvas-opener {
-	color: #666;
+	color: c.$label-off-canvas-opener-color;
 	font-size: 1rem;
 	margin-right: .25rem;
 	margin-left: 1.875rem;
@@ -205,12 +206,12 @@ img {
 
 // Make .off-canvas-content-overlay darker instead of te default lighter
 .js-off-canvas-overlay.is-visible {
-	background: rgba(0, 0, 0, .3); // rgba(254, 254, 254, 0.25);
+	background: c.$off-canvas-overlay-background;
 }
 
 // tune up mobile menu shadow
 .off-canvas.is-transition-push.is-open {
-	box-shadow: 2px 0 15px rgba(50, 50, 50, 0.74);
+	box-shadow: 2px 0 15px c.$off-canvas-shadow-color;
 }
 
 // tune up mobile menu shadow
@@ -219,7 +220,7 @@ img {
 }
 
 .off-canvas {
-	background: white;
+	background: c.$off-canvas-background;
 }
 
 // req'd by Foundation
@@ -228,10 +229,10 @@ img {
 }
 
 .title-bar {
-	background-color: white;
+	background-color: c.$title-bar-background-color;
 	padding-top: .7em;
 	padding-bottom: .7em;
-	box-shadow: 0 2px 15px rgba(50, 50, 50, .74);
+	box-shadow: 0 2px 15px c.$title-bar-shadow-color;
 }
 
 // center burger menu (undo F's global 1.5)
@@ -272,13 +273,13 @@ main {
 .article-testimonial {
 	margin-top: 40px;
 	padding: 40px;
-	border: 1px solid #fed;
-	background: #ffe;
+	border: 1px solid c.$testimonial-border-color;
+	background: c.$testimonial-background;
 	font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
 	font-size: 1.1em;
 	overflow: auto;
 	border-radius: 3px;
-	box-shadow: 2px 2px 8px #ccc;
+	box-shadow: 2px 2px 8px c.$testimonial-shadow-color;
 }
 
 .body-index-pg {
@@ -291,7 +292,7 @@ main {
 	font-size: 10pt;
 
 	h1 {
-		color: #484848;
+		color: c.$h1-color;
 		font-size: 130%;
 		margin-top: 0px;
 		text-align: center;

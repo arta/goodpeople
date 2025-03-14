@@ -1,3 +1,5 @@
+@use 'colors' as c;
+
 // 1. Global
 // ---------
 
@@ -24,5 +26,5 @@ $header-styles: (
     'h6': ('font-size': 16),
   ),
 );
-$anchor-color: #0066cc;
-$anchor-color-hover: #FF9900;
+$anchor-color: c.$a-color;
+$anchor-color-hover: c.$a-color-hover;
