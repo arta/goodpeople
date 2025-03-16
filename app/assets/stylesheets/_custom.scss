@@ -31,7 +31,7 @@ img {
 // -----------------------------------------------------------------------------
 
 .h1-index-pg {
-	margin-top: 50px;
+	margin-top: 3em;
 
 	@media (max-width: 640px) {
 		font-size: 1.3em;
@@ -283,7 +283,7 @@ main {
 }
 
 .body-index-pg {
-	padding-top: 20px;
+	padding-top: 2.5em;
 	text-align: center;
 }
 
@@ -332,6 +332,8 @@ main {
 
 .header-desktop {
 	height: 12em;
+	margin-bottom: 1em;
+	padding-top: 1em;
 }
 
 .header-print-pg {
@@ -348,3 +350,15 @@ main {
 	list-style: none;
 	margin-left: 0;
 }
+
+
+
+// #############################################################################
+// IMAGES
+// -----------------------------------------------------------------------------
+
+.img-logo-desktop { width: 302px; }
+
+.img-logo-index-pg { width: 490px; }
+
+.img-logo-off-canvas { width: 50px; }

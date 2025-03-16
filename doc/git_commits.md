@@ -17,6 +17,7 @@ Based on [Conventional Commits 1.0.0][def]
 ## Common Scopes
 - (npm): package.json changes
 - (deps): dependency updates
+- (assets): images, logo versions, etc.
 - (ui): user interface
 - (api): API changes
 - (db): database related
