@@ -357,8 +357,45 @@ main {
 // IMAGES
 // -----------------------------------------------------------------------------
 
-.img-logo-desktop { width: 302px; }
+.svg--gp-logo-desktop,
+.svg--gp-logo-index-pg,
+.svg--gp-logo-off-canvas {
+	clip-rule: evenodd;
+	fill-rule: evenodd;
+}
 
-.img-logo-index-pg { width: 490px; }
+.svg--gp-logo-desktop { max-width: 302px; }
+
+.svg--gp-logo-index-pg { max-width: 490px; }
+
+.svg--gp-logo-off-canvas { width: 50px; }
+
+.g-svg--gp-logomark {
+	fill: c.$gp-logo-logomark-color;
+
+	.path-svg--gp-logomark-fill-stroke-width {
+			stroke: c.$gp-logo-logomark-color;
+			stroke-width: 0.22px;
+		}
+
+	.path-svg--gp-logomark-fill-nonzero { fill-rule: nonzero; }
+	// .path-svg--gp-logomark-fill {} // semantic class; assigned, not used
+}
+
+.g-svg--gp-logotype {
+	fill: c.$gp-logo-logotype-color;
+	fill-rule: nonzero;
+	// font converted to paths for font independence:
+	// .path-svg--gp-logotype {} // semantic class; assigned, not used
+}
+
+.g-svg--gp-tagline {
+	fill: c.$gp-logo-tagline-color;;
+	fill-rule: nonzero;
+	// font converted to paths for font independence:
+	// .path-svg--gp-tagline {} // semantic class; assigned, not used
+	.path-svg--gp-tagline-ampresand { fill: c.$gp-logo-tagline-ampresand-color; }
+}
+
 
 .img-logo-off-canvas { width: 50px; }

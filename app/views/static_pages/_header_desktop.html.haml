@@ -1,9 +1,7 @@
 // 6 columns to prevent too early resizing
 .column.small-6
-	= image_tag( "GP Logo complete.png", class: 'img-logo-desktop',
-		usemap:"#Map", href:"#" )
-	%map{ name:"Map" }
-		%area{ shape:"rect", coords:"4,4,298,150", href:map_ref }
+	= link_to root_path do
+		= render 'svg_gp_logo_complete', class_name: 'svg--gp-logo-desktop'
 // <6 (to get <12 together), this will make the last column float to R
 .column.small-4
 	.gp-contact-info-header--desktop
