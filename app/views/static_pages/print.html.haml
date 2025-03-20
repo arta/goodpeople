@@ -12,30 +12,30 @@
 		%header.header-print-pg
 			= render partial: 'header_desktop', locals: { map_ref: 'intro' }
 
-		%main.content-print-pg
-			%h1= link_to 'Intro', :action => :intro
+		%main.main--print-pg
+			%h1.h1--print-pg= link_to 'Intro', :action => :intro
 			= render 'intro'
 			%br
 
-			%h1= link_to 'Care', :action => :type_of_care
+			%h1.h1--print-pg= link_to 'Care', :action => :type_of_care
 			= render 'type_of_care'
 			%br
 
-			%h1= link_to 'Caregivers', :action => :caregivers
+			%h1.h1--print-pg= link_to 'Caregivers', :action => :caregivers
 			= render 'caregivers'
 			%br
 
-			%h1= link_to 'Procedure', :action => :procedure
+			%h1.h1--print-pg= link_to 'Procedure', :action => :procedure
 			= render 'procedure'
 			%br
 
-			%h1= link_to 'Service area', :action => :servicearea
+			%h1.h1--print-pg= link_to 'Service area', :action => :servicearea
 			= render 'servicearea'
 			%br
 
-			%h1= link_to 'Cost', :action => :cost
+			%h1.h1--print-pg= link_to 'Cost', :action => :cost
 			= render 'cost'
 			%br
 
-			%h1= link_to 'Contact us', :action => :contactus
+			%h1.h1--print-pg= link_to 'Contact us', :action => :contactus
 			= render 'contactus'

@@ -46,6 +46,12 @@ img {
 	}
 }
 
+.h1--print-pg {
+	font-size: 130%;
+	margin-top: 0px;
+	text-align: center;
+}
+
 .label-testimonial {
 	display: block;
 	font-size: 90%;
@@ -287,23 +293,6 @@ main {
 	text-align: center;
 }
 
-.content-print-pg {
-	margin: 0 20px 0 0;
-	font-size: 10pt;
-
-	h1 {
-		color: c.$h1-color;
-		font-size: 130%;
-		margin-top: 0px;
-		text-align: center;
-	}
-
-	ul li {
-		list-style-image: image-url('ablbull1check.gif');
-		margin-left: 0px;
-	}
-}
-
 .gp-contact-info-header--desktop {
 	margin-top: 3em;
 }
@@ -344,6 +333,11 @@ main {
 .header-testimonial {
 	margin-bottom: 20px;
 	text-align: right;
+}
+
+.main--print-pg {
+	margin: 0 20px 0 0;
+	font-size: 10pt;
 }
 
 .ul-testimonials-excerpts {
