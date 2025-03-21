@@ -215,6 +215,14 @@ img {
 	background: c.$off-canvas-overlay-background;
 }
 
+// Change Foundation's menu burger color
+// Or, override F6's _settings.scss, 852: 53. Title Bar, $titlebar-icon-color
+// using our _settings_overrides.scss, and foundation_and_overrides.scss
+.menu-icon::after {
+	background: c.$oil;
+	box-shadow: 0 7px 0 c.$oil, 0 14px 0 c.$oil;
+}
+
 // tune up mobile menu shadow
 .off-canvas.is-transition-push.is-open {
 	box-shadow: 2px 0 15px c.$off-canvas-shadow-color;
