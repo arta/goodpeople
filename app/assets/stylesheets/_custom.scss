@@ -114,12 +114,11 @@ img {
 
 .a-print-nav:link,
 .a-print-nav:visited {
-	background: c.$a-print-nav-background url('print.gif') no-repeat 0 0.56em;
+	background: c.$a-print-nav-background;
 	color: c.$a-print-nav-color;
 	margin: 0 auto 0 auto;
-	padding: 6px 0 6px 22px;
-	width: 9em;
-	/* must be defined for margin centering to work */
+	padding: 6px 0 6px;
+	width: 9em; /* must define for margin centering to work */
 }
 
 // Vertical offset of testimonials' page anchor (<a id="1234">&nbsp;</a>)
@@ -139,7 +138,7 @@ img {
 .a-print-nav:hover {
 	background: url('printHover.gif') no-repeat 0 0.56em;
 	color: c.$a-print-nav-color-hover;
-}
+.a-print-nav:hover { color: c.$a-print-nav-color-hover; }
 
 .a-testimonial-excerpt {
 	text-align: right;
