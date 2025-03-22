@@ -102,11 +102,6 @@ img {
 
 // -----------------------------------------------------------------------------
 
-.span-tooltip {
-	border-bottom: 1px dotted c.$tooltip-span-underline-color;
-	cursor: help;
-}
-
 .span-underline {
 	text-decoration: underline;
 }
@@ -206,6 +201,11 @@ img {
 	margin-right: .25rem;
 	margin-left: 1.875rem;
 	text-transform: uppercase;
+}
+
+.span-tooltip {
+	border-bottom: 1px dotted c.$tooltip-span-underline-color;
+	cursor: help;
 }
 
 // >>> Foundation overrides and tweaks - Start ---------------------------------
@@ -364,6 +364,7 @@ main {
 .svg--gp-logo-off-canvas {
 	clip-rule: evenodd;
 	fill-rule: evenodd;
+	filter: drop-shadow(2px 4px 6px lightgray);
 }
 
 .svg--gp-logo-desktop { max-width: 302px; }
@@ -374,30 +375,26 @@ main {
 
 .g-svg--gp-logomark {
 	fill: c.$gp-logo-logomark-color;
-
-	.path-svg--gp-logomark-fill-stroke-width {
-			stroke: c.$gp-logo-logomark-color;
-			stroke-width: 0.22px;
-		}
-
-	.path-svg--gp-logomark-fill-nonzero { fill-rule: nonzero; }
-	// .path-svg--gp-logomark-fill {} // semantic class; assigned, not used
 }
+.path-svg--gp-logomark-fill-stroke-width {
+		stroke: c.$gp-logo-logomark-color;
+		stroke-width: 0.22px;
+	}
+.path-svg--gp-logomark-fill-nonzero { fill-rule: nonzero; }
+// .path-svg--gp-logomark-fill {} // semantic class; assigned, not used
+
 
 .g-svg--gp-logotype {
 	fill: c.$gp-logo-logotype-color;
 	fill-rule: nonzero;
-	// font converted to paths for font independence:
-	// .path-svg--gp-logotype {} // semantic class; assigned, not used
 }
+// font converted to paths for font independence:
+// .path-svg--gp-logotype {} // semantic class; assigned, not used
 
 .g-svg--gp-tagline {
-	fill: c.$gp-logo-tagline-color;;
+	fill: c.$gp-logo-tagline-color;
 	fill-rule: nonzero;
-	// font converted to paths for font independence:
-	// .path-svg--gp-tagline {} // semantic class; assigned, not used
-	.path-svg--gp-tagline-ampresand { fill: c.$gp-logo-tagline-ampresand-color; }
 }
-
-
-.img-logo-off-canvas { width: 50px; }
+// font converted to paths for font independence:
+// .path-svg--gp-tagline {} // semantic class; assigned, not used
+.path-svg--gp-tagline-ampresand { fill: c.$gp-logo-tagline-ampresand-color; }

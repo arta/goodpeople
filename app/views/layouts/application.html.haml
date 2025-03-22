@@ -3,6 +3,7 @@
 	%head
 		%meta{ charset: 'utf-8' }
 		%meta{ name: 'viewport', content: 'width=device-width, initial-scale=1.0' }
+		%script{ src: "https://kit.fontawesome.com/a46ffabf68.js", crossorigin: "anonymous" }
 		%title Good People LLC - Live-in caregivers & companions
 		= stylesheet_link_tag	'application', media: 'all'
 		= javascript_importmap_tags
@@ -57,7 +58,10 @@
 								%li= link_to 'Cost', cost_path
 								%li= link_to 'Testimonials', testimonials_path
 								%li= link_to 'Contact us ...', contactus_path
-								%li.li-print-nav= link_to 'Print view', print_path, class: 'a-print-nav'
+								%li.li-print-nav
+									= link_to print_path do
+										%i.fas.fa-print &nbsp;
+										%span Print view
 
 					.column.small-12.medium-9
 						%main
