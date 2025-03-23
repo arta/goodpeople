@@ -23,12 +23,10 @@
 
   .li-testimonial-excerpt {
     background: c.$testimonial-background-dm;
-    color: c.$testimonial-color-dm;
     border-color: c.$testimonial-border-color-dm;
     box-shadow: 2px 2px 8px c.$testimonial-shadow-color-dm;
+    color: c.$testimonial-color-dm;
   }
-
-  .p-footer { color: c.$footer-color-dm; }
 
 
 
@@ -36,41 +34,28 @@
   // INTERACTIVE
   // ---------------------------------------------------------------------------
 
-  .a-print-nav:link,
-  .a-print-nav:visited {
-    background-color: c.$a-print-nav-background-dm;
-    color: c.$a-print-nav-color-dm;
-  }
-
-  .a-gp-contact-info { color: c.$a-gp-contact-info-color-dm; }
-
-  .a-print-nav:hover {
-    color: c.$a-print-nav-color-hover-dm;
-  }
-
-  // TODO: fix this; give the `a` class and move out of the `.li-..` selector
-  .li-testimonial-excerpt {
-    a { color: c.$a-testimonial-excerpt-color-dm; }
-    a:hover { color: c.$a-testimonial-excerpt-color-hover-dm; }
+  .a-gp-contact-info {
+    color: c.$cloud-gray; //c.$spanish-gray;
+    // font-weight: normal;
   }
 
   .btn-cta-learn-more {
-    background: c.$cta-background-dm;
+    background: c.$cta-green;
     background-image: linear-gradient(
-      to bottom right, c.$cta-gradient-start-dm, c.$cta-gradient-end-dm
+      to bottom right, c.$cta-green-darker, #092a09
     );
-    border-color: c.$cta-border-color-dm;
-    box-shadow: 0 0 0 3px c.$cta-outer-border-color-dm;
-    color: c.$cta-color-dm;
+    border-color: #d1d1d1;
+    box-shadow: 0 0 0 3px c.$cta-green-darker;
+    color: #d0cbcb;
   }
 
   .btn-cta-learn-more:hover {
-    background: c.$cta-background-hover-dm;
-    border-color: c.$cta-border-color-hover-dm;
+    background: c.$cta-green-darker;
+    border-color: #dbd7d7;
     box-shadow:
-      0 0 0 3px c.$cta-outer-border-color-hover-dm,
-      3px 3px 9px 3px c.$cta-shadow-color-hover-dm;
-    color: c.$cta-color-hover-dm;
+      0 0 0 3px c.$grass,
+      3px 3px 9px 3px rgba(0, 0, 0, 0.3);
+    color: #dbd7d7;
   }
 
   // #TODO: fix this; give each a in the nav class
@@ -81,42 +66,50 @@
 
   // JS at the bottom of application.html.haml
   .current {
-    background-color: #4c5969; // #475361; // make it beige ~#EAD29D;
+    background-color: #4c5969; // #475361;
     box-shadow: 2px 4px 6px #353535;
   }
 
-  .off-canvas-opener { border-color: #777; }
+  .off-canvas-opener { border-color: c.$cloud-gray-darker; }
 
-  .label-off-canvas-opener { color: #aaa; }
+  .label-off-canvas-opener { color: c.$cloud-gray; }
 
-  .span-tooltip { border-bottom-color: c.$tooltip-span-underline-color-dm; }
+  .span-tooltip { border-bottom-color: c.$cloud-gray; }
 
   // >>> Foundation overrides and tweaks - Start -------------------------------
 
+  // #TODO: figure out how to dim font color (modern CSS may allow this)
   .js-off-canvas-overlay.is-visible {
-    background: c.$off-canvas-overlay-background-dm;
+    background: rgba(35, 43, 53, 0.7);
+    // background: rgba(55, 63, 73, 0.4); // rgb(55, 63, 73) = #373f49
+    // background: rgba(0, 0, 0, 0.4);
   }
 
   .menu-icon::after {
-    background: #aaa;
-    box-shadow: 0 7px 0 #aaa, 0 14px 0 #aaa;
+    background: c.$cloud-gray-darker;
+    box-shadow: 0 7px 0 c.$cloud-gray-darker, 0 14px 0 c.$cloud-gray-darker;
   }
 
   .off-canvas.is-transition-push.is-open {
-    box-shadow: 2px 0 15px c.$off-canvas-shadow-color-dm;
+    box-shadow: 10px 0 20px 6px rgba(35, 43, 53, 0.84);
+    // box-shadow: 10px 0 20px 6px rgba(35, 35, 35, 0.74);
+    // box-shadow: 2px 0 15px rgba(35, 35, 35, 0.74);
   }
 
   .off-canvas {
-    background: c.$off-canvas-background-dm;
+    background: c.$body-background-dm;
 
-    .a-gp-contact-info { color: #ababab; }
+    .a-gp-contact-info { color: c.$cloud-gray; }
   }
 
   .title-bar {
-    background-color: c.$title-bar-background-color-dm;
-    box-shadow: 0 2px 15px c.$title-bar-shadow-color-dm;
+    background-color: c.$body-background-dm;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.84);
 
-    .a-gp-contact-info { color: #bbb; }
+    .a-gp-contact-info {
+      color: c.$cloud-gray-lighter;
+      // font-weight: normal;
+    }
   }
 
   // <<< Foundation overrides and tweaks - End ---------------------------------
@@ -131,6 +124,7 @@
     border-color: c.$testimonial-border-color-dm;
     background: c.$testimonial-background-dm;
     box-shadow: 2px 2px 8px c.$testimonial-shadow-color-dm;
+    color: c.$testimonial-color-dm;
   }
 
 
@@ -143,18 +137,18 @@
   .svg--gp-logo-index-pg,
   .svg--gp-logo-off-canvas { filter: drop-shadow(2px 4px 6px black); }
 
-  .g-svg--gp-logomark { fill: c.$gp-logo-logomark-color-dm; }
+  .g-svg--gp-logomark { fill: c.$gp-logomark-color-dm; }
 
   .path-svg--gp-logomark-fill-stroke-width {
-    stroke: c.$gp-logo-logomark-color-dm;
+    stroke: c.$gp-logomark-color-dm;
   }
 
-  .g-svg--gp-logotype { fill: c.$gp-logo-logotype-color-dm; }
+  .g-svg--gp-logotype { fill: c.$gp-logotype-color-dm; }
 
-  .g-svg--gp-tagline { fill: c.$gp-logo-tagline-color-dm; }
+  .g-svg--gp-tagline { fill: c.$gp-tagline-color-dm; }
 
   .path-svg--gp-tagline-ampresand {
-    fill: c.$gp-logo-tagline-ampresand-color-dm;
+    fill: c.$gp-ampresand-color-dm;
   }
 
   .svg--gp-logo-desktop {
@@ -162,7 +156,7 @@
 
     .path-svg--gp-logomark-fill-stroke-width { stroke: #5d80cc; }
 
-    .g-svg--gp-logotype { fill: #999999; }
+    .g-svg--gp-logotype { fill: c.$dusty-gray; }
 
     .g-svg--gp-tagline { fill: #969494; }
 

@@ -1,190 +1,73 @@
-// -----------------------------------------------------------------------------
-// F6 default settings we use:
-// $black: #0a0a0a;
-// $white: #fefefe;
-// $body-background: $white;
-// $body-font-color: $black;
-// -----------------------------------------------------------------------------
-
-$creamy-shell: #fed;
 $charcoal: #484848;
+$cta-green: #007b00;
+$cta-green-darker: #1b7b1b;
+$cloud-gray-lighter: #ababab;
+$cloud-gray: #aaa;
+$cloud-gray-darker: #8a8a8a;
 $dusty-gray: #999;
 $egyptian-blue: #173C8E; // gp logo house blue
 $grass: #209620;
-$mid-gray: #aaa;
-$platinum: #e6e6e6;
-$mayo: #ffe;
+$inkblot: #373f49;
 $monsoon: #777;
 $oil: #333;
 $mandarin: #ff9900;
-$sapphire: #06c; // currently unused
-$silver: #ccc;
 $spanish-gray: #969696;
 $steel: #666;
-
-$a-color: $egyptian-blue;
-$a-color-hover: $mandarin;
-
-// -----------------------------------------------------------------------------
-// F6 overrides we set (in foundation_and_overrides.scss):
-// $anchor-color: c.$a-color;
-// $anchor-color-hover: c.$a-color-hover;
-// -----------------------------------------------------------------------------
-
-// -----------------------------------------------------------------------------
-// TYPOGRAPHY
-// -----------------------------------------------------------------------------
-
-$testimonial-background: $mayo;
-$testimonial-border-color: $creamy-shell;
-$testimonial-shadow-color: $silver;
-
-$footer-color: #999;
-
-// ---------------------------------------------------------------------------
-// INTERACTIVE
-// ---------------------------------------------------------------------------
-
-$a-print-nav-background: white;
-$a-print-nav-color: $mid-gray;
-
-$a-gp-contact-info-color: $oil;
-
-$a-print-nav-color-hover: $mandarin;
-
-$cta-background: #007b00;
-$cta-gradient-start: $grass;
-$cta-gradient-end: #0a5d0a;
-$cta-border-color: white;
-$cta-outer-border-color: #007b00;
-$cta-color: white;
-
-$cta-background-hover: $cta-gradient-start;
-$cta-outer-border-color-hover: #209620;
-$cta-shadow-color-hover: rgba(0, 0, 0, 0.18);
-
-$nav-current-background: $platinum; // make it beige ~#EAD29D;
-
-$off-canvas-opener-border-color: $monsoon;
-
-$label-off-canvas-opener-color: $oil;
-
-$tooltip-span-underline-color: $oil;
-
-// >>> Foundation overrides and tweaks - Start ---------------------------------
-
-$off-canvas-overlay-background: rgba(0, 0, 0, 0.3);
-
-$off-canvas-shadow-color: rgba(50, 50, 50, 0.74);
-
-$off-canvas-background: white;
-
-$title-bar-background-color: white;
-$title-bar-shadow-color: rgba(50, 50, 50, 0.74);
-
-// <<< Foundation overrides and tweaks - End -----------------------------------
-
-
-
-// ---------------------------------------------------------------------------
-// LAYOUT
-// ---------------------------------------------------------------------------
-
-
-
-
-// -----------------------------------------------------------------------------
-// IMAGES
-// -----------------------------------------------------------------------------
-
-$gp-logo-logomark-color: $egyptian-blue;
-$gp-logo-logotype-color: #231f20;
-$gp-logo-tagline-color: #5a5b5e;
-$gp-logo-tagline-ampresand-color: #ef3d33;
 
 
 
 // #############################################################################
-// DARK	MODE (DM)
-// -----------------------------------------------------------------------------
+// F6 settings (body) & overrides (a) we set (in foundation_and_overrides.scss):
+// ---------------------------------------------------------------------------
 
-// -----------------------------------------------------------------------------
-// F6 settings (body) and overrides (a)
+// $black: #0a0a0a; // F6
+// $white: #fefefe; // F6
 
-$body-background-dm: #373f49;
+// $body-background: $white; // we use F6 default setting
+$body-background-dm: $inkblot;
+
+// $body-font-color: $black; // we use F6 default setting
 $body-font-color-dm: white;
 
-$a-color-dm: white; // lightblue;
-$a-color-hover-dm: $mandarin;
+$a-color: $egyptian-blue;
+$a-color-hover: $mandarin;
 
-// -----------------------------------------------------------------------------
-// TYPOGRAPHY - DM
-// -----------------------------------------------------------------------------
+// $anchor-color: c.$a-color; // we override F6 setting
+// $anchor-color-hover: c.$a-color-hover; we override // F6 setting
 
-$testimonial-background-dm: #39383b; // #3F3C34; // #413c34; // #413119; // #4c3819;
-$testimonial-border-color-dm: #804f05; // #4e2f00;
+$a-color-dm: white;
+
+
+
+// #############################################################################
+// GP Logo
+// ---------------------------------------------------------------------------
+
+$gp-logomark-color: $egyptian-blue;
+$gp-logomark-color-dm: #516fb1;
+
+$gp-logotype-color: #231f20;
+$gp-logotype-color-dm: $spanish-gray;
+
+$gp-tagline-color: #5a5b5e;
+$gp-tagline-color-dm: #8b8b8b;
+
+$gp-ampresand-color: #ef3d33;
+$gp-ampresand-color-dm: #c04943;
+
+
+
+// #############################################################################
+// GP Testimonials
+// ---------------------------------------------------------------------------
+
+$testimonial-background: #ffe;
+$testimonial-background-dm: #39383b;
+
+$testimonial-border-color: #fed;
+$testimonial-border-color-dm: #804f05;
+
+$testimonial-shadow-color: #ccc;
+$testimonial-shadow-color-dm: #2C2B4C;
+
 $testimonial-color-dm: #f4e7e2;
-$testimonial-shadow-color-dm: #2C2B4C; // #222;
-
-$footer-color-dm: #999;
-
-// -----------------------------------------------------------------------------
-// INTERACTIVE - DM
-// -----------------------------------------------------------------------------
-
-$a-print-nav-background-dm: $body-background-dm;
-$a-print-nav-color-dm: $mid-gray;
-
-$a-gp-contact-info-color-dm: $spanish-gray;
-
-$a-print-nav-color-hover-dm: $mandarin;
-
-$a-testimonial-excerpt-color-dm: white;
-$a-testimonial-excerpt-color-hover-dm: $mandarin;
-
-$cta-background-dm: #007b00;
-$cta-gradient-start-dm: #1b7b1b;
-$cta-gradient-end-dm: #092a09;
-$cta-border-color-dm: #d1d1d1;
-$cta-outer-border-color-dm: #1b7b1b;
-$cta-color-dm: #d0cbcb;// #dbd7d7;
-
-$cta-background-hover-dm: #1b7b1b; // $cta-gradient-start-dm;
-$cta-border-color-hover-dm: #dbd7d7;
-$cta-outer-border-color-hover-dm: #209620;
-$cta-shadow-color-hover-dm: rgba(0, 0, 0, 0.3);
-$cta-color-hover-dm: #dbd7d7; //#f1eeee;
-
-// $nav-current-background-dm: #4c5969; // #475361; // make it beige ~#EAD29D;
-
-// $off-canvas-opener-border-color-dm: #777;
-
-// $label-off-canvas-opener-color-dm: #aaa;
-
-$tooltip-span-underline-color-dm: #aeaeae;
-
-// >>> Foundation overrides and tweaks - Start ---------------------------------
-
-$off-canvas-overlay-background-dm: rgba(0, 0, 0, 0.3);
-
-$off-canvas-shadow-color-dm: rgba(35, 35, 35, 0.74);
-
-$off-canvas-background-dm: $body-background-dm;
-
-$title-bar-background-color-dm: $body-background-dm;
-$title-bar-shadow-color-dm: rgba(0, 0, 0, 0.84);
-$title-bar-color-dm: #ddd;
-
-// <<< Foundation overrides and tweaks - End -----------------------------------
-
-
-
-
-// -----------------------------------------------------------------------------
-// IMAGES - DM
-// -----------------------------------------------------------------------------
-
-$gp-logo-logomark-color-dm: #516fb1;
-$gp-logo-logotype-color-dm: $spanish-gray;
-$gp-logo-tagline-color-dm: #8b8b8b;
-$gp-logo-tagline-ampresand-color-dm: #c04943;
