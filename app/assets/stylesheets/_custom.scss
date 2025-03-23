@@ -390,3 +390,21 @@ main {
 // font converted to paths for font independence:
 .path-svg--gp-tagline { display: initial; } // semantic; assigned, unused
 .path-svg--gp-tagline-ampresand { fill: c.$gp-ampresand-color; }
+
+.signature-image {
+	background-position: left;
+	background-repeat: no-repeat;
+	background-size: contain;
+	// Adjust per pic, orig pics too small, get better pics
+	width: 125px;
+	height: 42px;
+}
+
+.signature-mf { background-image: url('signature.mf.gif'); }
+
+.signature-jp {
+	background-image: url('signature.jp.gif');
+	width: 145px; // pic specific
+}
+
+.signature-rk { background-image: url('signature.rk.gif'); }
