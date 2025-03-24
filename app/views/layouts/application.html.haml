@@ -29,27 +29,27 @@
 						%li= link_to 'Testimonials', testimonials_path
 						%li= link_to 'Contact us ...', contactus_path
 						%li &nbsp;
-						%li= link_to '1-800-608-8003', 'tel:18006088003', class: 'a-gp-contact-info'
-						%li= link_to 'info@goodpeople.us', 'mailto:info@goodpeople.us', class: 'a-gp-contact-info'
+						%li= link_to '1-800-608-8003', 'tel:18006088003', class: 'a--gp-contact-info'
+						%li= link_to 'info@goodpeople.us', 'mailto:info@goodpeople.us', class: 'a--gp-contact-info'
 
 			.off-canvas-content{ data: { off_canvas_content: true, sticky_container: true } }
-				%header.title-bar.sticky.row.hide-for-medium{ data: { sticky: true, sticky_on: 'small', margin_top: 0 } }
+				%header.header--mobile.title-bar.sticky.row.hide-for-medium{ data: { sticky: true, sticky_on: 'small', margin_top: 0 } }
 					.title-bar-left
 						.off-canvas-opener
 							%button.menu-icon{ type: 'button', data: { toggle: 'offCanvas' } }
-								%label.label-off-canvas-opener Menu
+								%label.label--off-canvas-opener Menu
 					.title-bar-right
-						.gp-contact-info-header
-							= link_to '1-800-608-8003', 'tel:18006088003', class: 'a-gp-contact-info'
-							= link_to 'info@goodpeople.us', 'mailto:info@goodpeople.us', class: 'a-gp-contact-info'
+						.gp-contact-info--header--mobile
+							= link_to '1-800-608-8003', 'tel:18006088003', class: 'a--gp-contact-info'
+							= link_to 'info@goodpeople.us', 'mailto:info@goodpeople.us', class: 'a--gp-contact-info'
 
-				%header.header-desktop.row.show-for-medium
+				%header.header--desktop.row.show-for-medium
 					.column.small-12
-						= render partial: 'header_desktop', locals: { map_ref: '/' }
+						= render partial: 'header_desktop'
 				.row
 					.column.medium-3
 						%nav.show-for-medium
-							%ul.menu.vertical.nav-desktop
+							%ul.menu.vertical
 								%li= link_to 'Intro', intro_path
 								%li= link_to 'Type of Care', type_of_care_path
 								%li= link_to 'Caregivers', caregivers_path
@@ -58,8 +58,8 @@
 								%li= link_to 'Cost', cost_path
 								%li= link_to 'Testimonials', testimonials_path
 								%li= link_to 'Contact us ...', contactus_path
-								%li.li-print-nav
-									= link_to print_path, class: 'a-print-nav' do
+								%li.li--print--nav
+									= link_to print_path, class: 'a--print--nav' do
 										%i.fas.fa-print &nbsp;
 										%span Print view
 

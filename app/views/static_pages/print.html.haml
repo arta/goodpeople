@@ -7,9 +7,9 @@
 		=javascript_include_tag 'application'#, 'data-turbolinks-track' => true
 		=csrf_meta_tags
 
-	%body{ id:@body_id }
+	%body
 
-		%header.header-print-pg
+		%header.header--print-pg
 			= render partial: 'header_desktop', locals: { map_ref: 'intro' }
 
 		%main.main--print-pg

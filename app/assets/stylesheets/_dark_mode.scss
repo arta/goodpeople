@@ -21,7 +21,7 @@
   // TYPOGRAPHY
   // ---------------------------------------------------------------------------
 
-  .li-testimonial-excerpt {
+  .li--testimonial-excerpt {
     background: c.$testimonial-background-dm;
     border-color: c.$testimonial-border-color-dm;
     box-shadow: 2px 2px 8px c.$testimonial-shadow-color-dm;
@@ -34,7 +34,7 @@
   // INTERACTIVE
   // ---------------------------------------------------------------------------
 
-  .a-gp-contact-info {
+  .a--gp-contact-info {
     color: c.$cloud-gray; //c.$spanish-gray;
     // font-weight: normal;
   }
@@ -72,9 +72,9 @@
 
   .off-canvas-opener { border-color: c.$cloud-gray-darker; }
 
-  .label-off-canvas-opener { color: c.$cloud-gray; }
+  .label--off-canvas-opener { color: c.$cloud-gray; }
 
-  .span-tooltip { border-bottom-color: c.$cloud-gray; }
+  .span--tooltip { border-bottom-color: c.$cloud-gray; }
 
   // >>> Foundation overrides and tweaks - Start -------------------------------
 
@@ -99,14 +99,14 @@
   .off-canvas {
     background: c.$body-background-dm;
 
-    .a-gp-contact-info { color: c.$cloud-gray; }
+    .a--gp-contact-info { color: c.$cloud-gray; }
   }
 
   .title-bar {
     background-color: c.$body-background-dm;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.84);
 
-    .a-gp-contact-info {
+    .a--gp-contact-info {
       color: c.$cloud-gray-lighter;
       // font-weight: normal;
     }
@@ -120,7 +120,7 @@
   // LAYOUT
   // ---------------------------------------------------------------------------
 
-  .article-testimonial {
+  .article--testimonial {
     border-color: c.$testimonial-border-color-dm;
     background: c.$testimonial-background-dm;
     box-shadow: 2px 2px 8px c.$testimonial-shadow-color-dm;
