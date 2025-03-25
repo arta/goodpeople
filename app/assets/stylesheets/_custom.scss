@@ -56,29 +56,10 @@ img {
 
 .label--testimonial {
 	display: block;
-	font-size: 90%;
-	margin-bottom: 4px;
+	color: c.$testimonial-background; // don't show, keep for counting :)
+	font-size: 1%; // 90%;
+	// margin-bottom: 4px;
 }
-
-.li--testimonial-excerpt {
-	background: c.$testimonial-background;
-	border: 1px solid c.$testimonial-border-color;
-	border-radius: 3px;
-	font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
-	font-size: 1.3em;
-	font-style: italic;
-	margin: 3em auto;
-	padding: 2em 2em 1.5em;
-	text-align: left;
-	border-radius: 3px;
-	box-shadow: 2px 2px 8px c.$testimonial-shadow-color;
-
-	@media (max-width: 640px) {
-		font-size: 1em;
-	};
-}
-
-.li--testimonial-excerpt:first-child { margin-top: 0; }
 
 .p-footer {
 	color: c.$dusty-gray;
@@ -91,7 +72,7 @@ img {
 
 .p--gp-signature { margin: 0; }
 
-.p--testimonial-signature { display: initial; } // Semantic class
+.p--testimonial-signature { margin-bottom: 0; }
 
 // -----------------------------------------------------------------------------
 
@@ -106,7 +87,7 @@ img {
 .a--print--nav:link,
 .a--print--nav:visited {
 	color: c.$cloud-gray;
-	margin: 0 auto 0 auto;
+	margin: 3em auto 0 auto;
 	padding: 6px 0 6px;
 	width: 9em; /* must define for margin centering to work */
 }
@@ -129,6 +110,7 @@ img {
 
 .a--full-testimonial {
 	display: block;
+	margin: -2em 1.4em 0 0;
 	text-align: right;
 }
 
@@ -169,8 +151,6 @@ img {
 	background-color: #e6e6e6; // make it beige ~#EAD29D;
 	border-radius: 3px;
 }
-
-.li--print--nav { margin-top: 3em; }
 
 .off-canvas-opener {
 	align-items: center;
@@ -270,15 +250,14 @@ main {
 }
 
 .article--testimonial {
-	margin-top: 40px;
-	padding: 40px;
-	border: 1px solid c.$testimonial-border-color;
 	background: c.$testimonial-background;
-	font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
-	font-size: 1.1em;
-	overflow: auto;
+	border: 1px solid c.$testimonial-border-color;
 	border-radius: 3px;
 	box-shadow: 2px 2px 8px c.$testimonial-shadow-color;
+	font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+	font-size: 1.1em;
+	margin-bottom: 3em;
+	padding: 2em;
 }
 
 .body--index-pg {
@@ -324,14 +303,25 @@ main {
 }
 
 .header--testimonial {
-	margin-bottom: 20px;
+	margin-bottom: 3em;
 	text-align: right;
+}
+
+.li--testimonial-excerpt {
+	font-size: 1.2em;
+	font-style: italic;
+	margin: 0 auto 3em;
+	text-align: left;
+
+	@media (max-width: 640px) { font-size: 1em; };
 }
 
 .main--print-pg {
 	margin: 0 20px 0 0;
 	font-size: 10pt;
 }
+
+.section--testimonials-intro { margin-bottom: 3em; }
 
 .ul--testimonials-excerpts {
 	list-style: none;

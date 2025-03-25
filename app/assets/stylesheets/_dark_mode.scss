@@ -17,22 +17,19 @@
 
 
 
-  // ###########################################################################
+  // #############################################################################
   // TYPOGRAPHY
-  // ---------------------------------------------------------------------------
+  // -----------------------------------------------------------------------------
 
-  .li--testimonial-excerpt {
-    background: c.$testimonial-background-dm;
-    border-color: c.$testimonial-border-color-dm;
-    box-shadow: 2px 2px 8px c.$testimonial-shadow-color-dm;
-    color: c.$testimonial-color-dm;
-  }
+  .label--testimonial { color: c.$testimonial-background-dm; }
 
 
 
   // ###########################################################################
   // INTERACTIVE
   // ---------------------------------------------------------------------------
+
+  .a--full-testimonial { color: c.$cloud-gray-lighter; }
 
   .a--gp-contact-info {
     color: c.$cloud-gray; //c.$spanish-gray;
@@ -121,8 +118,8 @@
   // ---------------------------------------------------------------------------
 
   .article--testimonial {
-    border-color: c.$testimonial-border-color-dm;
     background: c.$testimonial-background-dm;
+    border-color: c.$testimonial-border-color-dm;
     box-shadow: 2px 2px 8px c.$testimonial-shadow-color-dm;
     color: c.$testimonial-color-dm;
   }
