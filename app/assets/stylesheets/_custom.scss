@@ -356,7 +356,8 @@ main {
 		stroke-width: 0.22px;
 	}
 .path-svg--gp-logomark-fill-nonzero { fill-rule: nonzero; }
-.path-svg--gp-logomark-fill { display: initial; } // semantic; assigned, unused
+// careful here, `display: initial;` is not innocuous across diff HTML elements
+// .path-svg--gp-logomark-fill { display: initial; } // semantic; assigned, unused
 
 
 .g-svg--gp-logotype {
@@ -364,14 +365,14 @@ main {
 	fill-rule: nonzero;
 }
 // font converted to paths for font independence:
-.path-svg--gp-logotype { display: initial; } // semantic; assigned, unused
+// .path-svg--gp-logotype { display: initial; } // semantic; assigned, unused
 
 .g-svg--gp-tagline {
 	fill: c.$gp-tagline-color;
 	fill-rule: nonzero;
 }
 // font converted to paths for font independence:
-.path-svg--gp-tagline { display: initial; } // semantic; assigned, unused
+// .path-svg--gp-tagline { display: initial; } // semantic; assigned, unused
 .path-svg--gp-tagline-ampresand { fill: c.$gp-ampresand-color; }
 
 .signature-image {
