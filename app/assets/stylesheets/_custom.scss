@@ -70,11 +70,11 @@ img {
 	@media (max-width: 640px) { text-align: center; }
 }
 
-.p--gp-signature { margin: 0; }
-
 .p--testimonial-signature { margin-bottom: 0; }
 
 // -----------------------------------------------------------------------------
+
+.span--gp-signature-name { margin: 0; }
 
 .span--underline { text-decoration: underline; }
 
@@ -375,7 +375,7 @@ main {
 // .path-svg--gp-tagline { display: initial; } // semantic; assigned, unused
 .path-svg--gp-tagline-ampresand { fill: c.$gp-ampresand-color; }
 
-.signature-image {
+.gp-signature-container {
 	background-position: left;
 	background-repeat: no-repeat;
 	background-size: contain;
@@ -384,11 +384,11 @@ main {
 	height: 42px;
 }
 
-.signature-mf { background-image: url('signature-mf.png'); }
+.signature-image-mf { background-image: url('signature-mf.png'); }
 
-.signature-jp {
+.signature-image-jp {
 	background-image: url('signature-jp.png');
 	width: 145px; // pic specific
 }
 
-.signature-rk { background-image: url('signature-rk.png'); }
+.signature-image-rk { background-image: url('signature-rk.png'); }
