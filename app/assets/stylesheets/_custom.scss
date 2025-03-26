@@ -84,20 +84,18 @@ img {
 // INTERACTIVE
 // -----------------------------------------------------------------------------
 
-.a--print--nav:link,
-.a--print--nav:visited {
+.a--print:link,
+.a--print:visited {
 	color: c.$cloud-gray;
 	margin: 3em auto 0 auto;
 	padding: 6px 0 6px;
 	width: 9em; /* must define for margin centering to work */
 }
 
-// Vertical offset of testimonials' page anchor (<a id="1234">&nbsp;</a>)
-// adapted from entries around: https://stackoverflow.com/a/17047997/247626
-.a--testimonial-anchor {
-	float: left; // remove anchor from the flow
-	margin-top: -5em;
-	padding-top: 5em;
+.a--full-testimonial {
+	display: block;
+	margin: -2em 1.4em 0 0;
+	text-align: right;
 }
 
 .a--gp-contact-info {
@@ -106,12 +104,14 @@ img {
 	line-height: 1.7em;
 }
 
-.a--print--nav:hover { color: c.$a-color-hover; }
+.a--print:hover { color: c.$a-color-hover; }
 
-.a--full-testimonial {
-	display: block;
-	margin: -2em 1.4em 0 0;
-	text-align: right;
+// Vertical offset of testimonials' page anchor (<a id="1234">&nbsp;</a>)
+// adapted from entries around: https://stackoverflow.com/a/17047997/247626
+.a--testimonial-anchor {
+	float: left; // remove anchor from the flow
+	margin-top: -5em;
+	padding-top: 5em;
 }
 
 .btn-cta-learn-more {
