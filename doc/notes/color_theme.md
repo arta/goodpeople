@@ -19,3 +19,6 @@
 ## Events:
 - page load
 - toggle button click
+
+## Particulars:
+- consider soft gray #f3f4f6 for light mode
