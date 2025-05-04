@@ -1,6 +1,12 @@
 // Configure your import map in config/importmap.rb.
 // Read more: https://github.com/rails/importmap-rails
 
+// Interim measure until Rails 8 native turbo-rails is implemented
+// See 5-4-25 deb'g note
+import Rails from '@rails/ujs'
+Rails.start()
+window.Rails = Rails
+
 // Named import of jQuery module
 // We need the jquery reference to assign it to a global $ variable (line 14)
 import jquery from 'jquery'
