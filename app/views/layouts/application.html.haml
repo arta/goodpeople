@@ -76,3 +76,20 @@
 				%footer.row
 					.columns.small-12.medium-9.medium-offset-3
 						%p.p-footer &copy; 2001 - #{Date.today.year} Good People, LLC
+
+
+		:javascript
+			async function initMap() {
+				// Import the required library
+				const { ColorScheme } = await google.maps.importLibrary("core");
+
+				// Define map options
+				const mapOptions = {
+					center: { lat: 37.8, lng: -96 }, // Center on the US
+					colorScheme: ColorScheme.FOLLOW_SYSTEM, // Follow system theme settings
+					zoom: 4,
+				};
+
+				// Initialize the map
+				const map = new google.maps.Map(document.getElementById("servicearea-map"), mapOptions);
+			}
