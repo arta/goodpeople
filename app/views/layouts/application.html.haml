@@ -4,12 +4,12 @@
 		%meta{ charset: 'utf-8' }
 		%meta{ name: 'viewport', content: 'width=device-width, initial-scale=1.0' }
 		%script{ src: "https://kit.fontawesome.com/a46ffabf68.js", crossorigin: "anonymous" }
-		- if controller.action_name == 'servicearea'
-			%script{
-				src: "https://maps.googleapis.com/maps/api/js?key=#{ENV['GP_GOOGLE_MAPS_API_KEY']}&loading=async&callback=initMap",
-				async: true,
-				defer: true
-			}
+		-# - if controller.action_name == 'servicearea'
+		%script{
+			src: "https://maps.googleapis.com/maps/api/js?key=#{ENV['GP_GOOGLE_MAPS_API_KEY']}&loading=async&callback=initMap",
+			async: true,
+			defer: true
+		}
 		%title Good People LLC - Live-in caregivers & companions
 		= stylesheet_link_tag	'application', media: 'all'
 		= javascript_importmap_tags
