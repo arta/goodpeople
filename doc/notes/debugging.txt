@@ -55,8 +55,22 @@
       https://developers.google.com/maps/documentation/javascript/load-maps-js-
       api#js-api-loader
 
+    : and pinning our maps.js module in our config/importmap.rb:
+        ..
+        pin 'maps', to: 'maps.js'
+
+    : so we can write in our app/javascript/application.js:
+        ..
+        import { initMap } from "maps"  //<= instead of "./maps"
+        ..
+    : and heroku can find the module                                      <= !!!
+      rather than console error:
+
+        GET https://goodpeople-staging.herokuapp.com/assets/maps net::ERR_ABORTE
+        D 404 (Not Found)
+
 • FOOTNOTE:
-  : this took hours upon hours, w many AI models
+  : this whole basic map config / setup took hours upon hours, w many AI models
   : eventually got it working w o4-mini
 ################################################################################
 
