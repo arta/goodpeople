@@ -2,21 +2,5 @@
 
 %p The evaluation and assessment interview usually takes about 40 - 60 minutes.
 
--# - unless controller.action_name == 'print'
-%div#servicearea-map{ style: "height: 400px;" }
-
--# :javascript
--#   async function initMap() {
--#     // Import the required library
--#     const { ColorScheme } = await google.maps.importLibrary("core");
-
--#     // Define map options
--#     const mapOptions = {
--#       center: { lat: 37.8, lng: -96 }, // Center on the US
--#       colorScheme: ColorScheme.FOLLOW_SYSTEM, // Follow system theme settings
--#       zoom: 4,
--#     };
-
--#     // Initialize the map
--#     const map = new google.maps.Map(document.getElementById("servicearea-map"), mapOptions);
--#   }
+- unless controller.action_name == 'print'
+  .servicearea-map#servicearea-map

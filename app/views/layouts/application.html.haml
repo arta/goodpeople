@@ -3,13 +3,8 @@
 	%head
 		%meta{ charset: 'utf-8' }
 		%meta{ name: 'viewport', content: 'width=device-width, initial-scale=1.0' }
+		%meta{ name: 'gp-gm-api-key', content: ENV['GP_GOOGLE_MAPS_API_KEY'] }
 		%script{ src: "https://kit.fontawesome.com/a46ffabf68.js", crossorigin: "anonymous" }
-		-# - if controller.action_name == 'servicearea'
-		%script{
-			src: "https://maps.googleapis.com/maps/api/js?key=#{ENV['GP_GOOGLE_MAPS_API_KEY']}&loading=async&callback=initMap",
-			async: true,
-			defer: true
-		}
 		%title Good People LLC - Live-in caregivers & companions
 		= stylesheet_link_tag	'application', media: 'all'
 		= javascript_importmap_tags
@@ -76,20 +71,3 @@
 				%footer.row
 					.columns.small-12.medium-9.medium-offset-3
 						%p.p-footer &copy; 2001 - #{Date.today.year} Good People, LLC
-
-
-		:javascript
-			window.initMap = async function() {
-				// Import the required library
-				const { ColorScheme } = await google.maps.importLibrary("core");
-
-				// Define map options
-				const mapOptions = {
-					center: { lat: 37.8, lng: -96 }, // Center on the US
-					colorScheme: ColorScheme.FOLLOW_SYSTEM, // Follow system theme settings
-					zoom: 4,
-				};
-
-				// Initialize the map
-				const map = new google.maps.Map(document.getElementById("servicearea-map"), mapOptions);
-			}

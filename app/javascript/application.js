@@ -16,6 +16,9 @@ import jquery from 'jquery'
 // We don't need exports from foundation-sites, Foundation reference in our code
 import 'foundation-sites'
 
+import { Loader as GoogleMapsLoader } from "@googlemaps/js-api-loader";
+import { initMap } from "./maps"
+
 // Make jQuery available globally (as $) for Foundation's & our DOM manipulation
 window.$ = jquery
 
@@ -35,3 +38,10 @@ if (loc) {
   // );
   navLinks.parent().addClass('current')
 }
+
+document.addEventListener("DOMContentLoaded", async () => {
+
+  const mapEl = document.getElementById("servicearea-map")
+  if (mapEl) { await initMap(mapEl, GoogleMapsLoader) }
+
+})

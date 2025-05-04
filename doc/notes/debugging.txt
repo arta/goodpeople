@@ -2,7 +2,7 @@
 5-4-25: ########################################################################
 ################################################################################
 • WHAT:
-  : also see 1-18-25 deb'g note in thehouse                               <= !!!
+  : also see 1-18-25 deb'g note in thehouse
   : Google Map not displaying on heroku (locally it works)
   : turns out, the issue is missing @rails/ujs, a modern (Rails 6+) ESM version
     of the old rails unobstructive javascript (rails-ujs) formerly implemented
@@ -14,7 +14,7 @@
       webpacker to Rails' modern importmap in 89b7032, on 12-9-24
     : but now it's a suspect in non-functional Google Maps API
 
-• FIX:
+• FIX (actual fix below, this didn't fix the issue):
   : 1. run % bin/importmap pin @rails/ujs
 
     : 1.1 downloads @rails--ujs.js to vendor/javascript
@@ -30,6 +30,34 @@
   : 3. Doesn't seem to be the issue:
     : Google Map still not working
     : leaving it as is; doesn't break anything
+
+• ACTUAL FIX:
+  : pinning NPM js-api-loader package, instead of the <script>, as per:
+      https://developers.google.com/maps/documentation/javascript/load-maps-js-
+      api#js-api-loader
+    : and:
+      https://stackoverflow.com/questions/74364340/import-googlemaps-via-
+      importmaps-in-rails-7
+
+  : 1. run  % % bin/importmap pin @googlemaps/js-api-loader
+
+    : 1.1 downloads @googlemaps--js-api-loader.js to vendor/javascript
+    : 1.2 pins it in our importmap.rb:
+
+        pin "@googlemaps/js-api-loader", to: "@googlemaps--js-api-loader.js"
+
+  : 2. add to app/javascript/application.js:
+      ..
+      import { Loader } from "@googlemaps/js-api-loader";
+
+  : 3. rewriting our initMap(), now in our new app/javascript/maps.js module:
+    : again, as per:
+      https://developers.google.com/maps/documentation/javascript/load-maps-js-
+      api#js-api-loader
+
+• FOOTNOTE:
+  : this took hours upon hours, w many AI models
+  : eventually got it working w o4-mini
 ################################################################################
 
 
