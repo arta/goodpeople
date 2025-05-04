@@ -17,7 +17,7 @@ import jquery from 'jquery'
 import 'foundation-sites'
 
 import { Loader as GoogleMapsLoader } from "@googlemaps/js-api-loader";
-import { initMap } from "./maps"
+import { initMap } from "maps"
 
 // Make jQuery available globally (as $) for Foundation's & our DOM manipulation
 window.$ = jquery
