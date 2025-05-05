@@ -14,6 +14,7 @@ Based on [Conventional Commits 1.0.0][def]
 - test: adding/updating tests
 - chore: maintenance, dependencies, build changes
 - content: user/visitor facing text and other content types changes
+- config: configuration changes
 
 ## Common Scopes
 - (npm): package.json changes
