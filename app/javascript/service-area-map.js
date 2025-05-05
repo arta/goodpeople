@@ -1,4 +1,4 @@
-export async function initMap(mapEl, GoogleMapsLoader, zipData) {
+export async function initMap(mapEl, GoogleMapsLoader, clientsZipData) {
   const apiKey = document.querySelector("meta[name='gp-gm-api-key']").content
   const mapID = document.querySelector("meta[name='gp-gm-map-id']").content
 
@@ -23,7 +23,7 @@ export async function initMap(mapEl, GoogleMapsLoader, zipData) {
 
   // Initialize MarkerClusterer (you'll need to include this library)
   // This requires adding the MarkerClusterer library to your project
-  const markers = zipData.map(zip => {
+  const markers = clientsZipData.map(zip => {
     // Calculate marker size based on client count (with min/max sizes)
     const baseSize = 20;
     const minSize = 20;

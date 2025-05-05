@@ -9,3 +9,4 @@ pin 'foundation-sites' # @6.9.0
 pin "@googlemaps/js-api-loader", to: "@googlemaps--js-api-loader.js" # @1.16.8
 
 pin 'service-area-map', to: 'service-area-map.js'
+pin 'clients-zip-data', to: 'clients-zip-data.js'
