@@ -21,35 +21,24 @@ export async function initMap(mapEl, GoogleMapsLoader, clientsZipData) {
     mapId: mapID // set map ID, mandatory for Advanced Markers
   })
 
-  // Initialize MarkerClusterer (you'll need to include this library)
-  // This requires adding the MarkerClusterer library to your project
+  // Create simple markers for each client zip code
   const markers = clientsZipData.map(zip => {
-    // Calculate marker size based on client count (with min/max sizes)
-    const baseSize = 20;
-    const minSize = 20;
-    const maxSize = 40;
-    const size = Math.min(maxSize, Math.max(minSize, baseSize + (zip.clientCount / 20)));
-
-    // Create custom HTML for marker with count
+    // Create simple marker pin
     const markerContent = document.createElement('div');
     markerContent.className = 'client-marker';
-    markerContent.style.width = `${size}px`;
-    markerContent.style.height = `${size}px`;
+    markerContent.style.width = '14px';
+    markerContent.style.height = '14px';
     markerContent.style.borderRadius = '50%';
     markerContent.style.backgroundColor = '#4285F4';
-    markerContent.style.display = 'flex';
-    markerContent.style.justifyContent = 'center';
-    markerContent.style.alignItems = 'center';
-    markerContent.style.color = 'white';
-    markerContent.style.fontWeight = 'bold';
-    markerContent.innerHTML = zip.clientCount;
+    markerContent.style.border = '2px solid white';
+    markerContent.style.boxShadow = '0 1px 3px rgba(0,0,0,0.3)';
 
     // Create the marker
     return new AdvancedMarkerElement({
       map,
       position: zip.position,
       content: markerContent,
-      title: `${zip.zipCode}: ${zip.clientCount} clients`
+      title: zip.city ? `${zip.zipCode}: ${zip.city}, ${zip.state}` : zip.zipCode
     });
   });
 
