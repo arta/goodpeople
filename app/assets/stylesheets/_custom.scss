@@ -323,7 +323,10 @@ main {
 
 .section--testimonials-intro { margin-bottom: 3em; }
 
-.servicearea-map { height: 400px; }
+.servicearea-map {
+	height: 400px;
+	margin-top: 2.6em;
+}
 
 .ul--testimonials-excerpts {
 	list-style: none;
