@@ -1,16 +1,15 @@
 %p Good People serves families across the United States.
 
-%p The map shows ZIP code areas where we've helped at least one family to find their live-in caregiver. Each dot is an approximate geographic center of the ZIP. Don't see yours? We'd love to add your area to the map!
+%p Considering live-in care?
 
 %p
-  Considering live-in care?
-
-%p
-  Call us at
+  Please, call us at
   = link_to '1-800-608-8003', 'tel:18006088003', class:'a--gp-contact-info'
   or email
   = link_to 'info@goodpeople.us', 'mailto:info@goodpeople.us', class:'a--gp-contact-info'
   \- we are here to help you decide if our service fits your family's home care needs.
+
+%p The map shows ZIP code areas where we've helped at least one family to find their live-in caregiver. Each dot is an approximate geographic center of the ZIP. Don't see yours? We'd love to add your area to the map!
 
 - unless controller.action_name == 'print'
   .servicearea-map#servicearea-map
