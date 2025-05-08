@@ -4,27 +4,33 @@
 // Interim measure until Rails 8 native turbo-rails is implemented
 // See 5-4-25 deb'g note
 import Rails from '@rails/ujs'
-Rails.start()
-window.Rails = Rails
 
 // Named import of jQuery module
-// We need the jquery reference to assign it to a global $ variable (line 14)
+// We need the jquery reference to assign it to a global window.$ variable
 import jquery from 'jquery'
 
 // Side-effect only import of Foundation module
-// Foundation attaches its plugins to jQuery (line 17)
+// Foundation attaches its plugins to jQuery: $(document).foundation()
 // We don't need exports from foundation-sites, Foundation reference in our code
 import 'foundation-sites'
 
-import { Loader as GoogleMapsLoader } from "@googlemaps/js-api-loader";
+import { Loader as GoogleMapsLoader } from "@googlemaps/js-api-loader"
 import { initMap } from "service-area-map"
 import { clientsZipData } from "clients-zip-data"
+
+// --- Initialization and global assignments ---
+
+// Start Rails UJS
+Rails.start()
+window.Rails = Rails
 
 // Make jQuery available globally (as $) for Foundation's & our DOM manipulation
 window.$ = jquery
 
 // Initialize all Foundation plugins
 $(document).foundation()
+
+// --- Application logic ---
 
 // Custom script to add 'current' class to navigation links based on URL
 // https://css-tricks.com/snippets/javascript/get-url-and-url-parts-in-javascript/
@@ -40,6 +46,7 @@ if (loc) {
   navLinks.parent().addClass('current')
 }
 
+// Initialize map on page load
 document.addEventListener("DOMContentLoaded", async () => {
 
   const mapEl = document.getElementById("servicearea-map")
