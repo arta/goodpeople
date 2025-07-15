@@ -24,6 +24,7 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'listen', '~> 3.4', '>= 3.4.1'
+  gem 'rubocop-rails-omakase', require: false
   gem 'solargraph'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.1'

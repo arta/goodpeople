@@ -1,4 +1,20 @@
 ################################################################################
+7-15-25: #######################################################################
+• add gem rubocop-rails-omakase to development group
+  : followed: https://github.com/rails/rubocop-rails-omakase
+
+• Now you can run
+
+    ./bin/rubocop # to check for compliance
+
+  : and
+
+    ./bin/rubocop -a # to automatically fix violations.
+################################################################################
+
+
+
+################################################################################
 12-22-24: ######################################################################
 • importmap-rails checks pinned resources in this order:
   1. vendor/javascript/
