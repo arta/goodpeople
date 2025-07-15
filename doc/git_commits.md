@@ -27,6 +27,7 @@ Based on [Conventional Commits 1.0.0][def]
 - (js): JavaScript code
 - (ruby): Ruby code
 - (rails): Rails-specific changes
+- (ai): AI-related changes
 
 ## Breaking Changes
 - add `!` after type/(scope), or
