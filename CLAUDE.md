@@ -107,6 +107,10 @@ bundle clean --force
 - Assets are built to `app/assets/builds/` and ignored in git
 - Uses PostgreSQL in all environments
 
+## Coding Conventions
+
+- Git commit messages: @doc/git_commits.md
+
 ## Service Area Features
 
 The application includes interactive service area mapping with ZIP code data handled by `clients-zip-data.js` and `service-area-map.js`.
