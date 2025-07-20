@@ -72,6 +72,7 @@ $(document).foundation()           // Initialize
 - Custom Styles: `app/assets/stylesheets/_custom.scss`
 - Dark Mode: `app/assets/stylesheets/_dark_mode.scss` (styling present, toggle not yet implemented)
 - Maps: `app/javascript/service-area-map.js`, `app/javascript/clients-zip-data.js`
+- Git Conventions: `doc/git_commits.md` (detailed commit message standards)
 
 ## Git Commit Conventions
 
