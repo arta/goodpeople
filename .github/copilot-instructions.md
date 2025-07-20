@@ -8,7 +8,7 @@ This is a Ruby on Rails 7.1 homecare service website showcasing live-in caregive
 
 ## Architecture Overview
 
-**Single Controller Pattern**: All pages route through `StaticPagesController` with page-specific methods that set `@body_id` for CSS styling. The root (`/`) renders `index.html.haml` without layout.
+**Single Controller Pattern**: All pages route through `StaticPagesController` with page-specific methods. The root (`/`) renders `index.html.haml` without layout.
 
 **View Structure**: Each page has both a controller action view (e.g., `caregivers.html.haml`) and a partial (e.g., `_caregivers.html.haml`). The `index.html.haml` is a complete HTML document that includes partials inline.
 
@@ -55,8 +55,6 @@ $(document).foundation()           // Initialize
 **Print Pages**: The print route intentionally renders without layout, relying on user agent default print styles rather than custom print layouts.
 
 **Partial Organization**: Views follow `page.html.haml` + `_page.html.haml` pattern where the partial contains the actual content and the page view handles layout/wrapper logic.
-
-**Body ID Pattern**: Each controller action sets `@body_id` variable used for page-specific CSS targeting (e.g., `%body{ id: @body_id }`).
 
 ## External Dependencies
 
