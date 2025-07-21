@@ -109,7 +109,7 @@ bundle clean --force
 
 ## Coding Conventions
 
-- Git commit messages: @doc/git_commits.md
+- Git commit messages: @~/.gitmessage-conventions.md
 
 ## Service Area Features
 

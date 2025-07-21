@@ -70,11 +70,11 @@ $(document).foundation()           // Initialize
 - Custom Styles: `app/assets/stylesheets/_custom.scss`
 - Dark Mode: `app/assets/stylesheets/_dark_mode.scss` (styling present, toggle not yet implemented)
 - Maps: `app/javascript/service-area-map.js`, `app/javascript/clients-zip-data.js`
-- Git Conventions: `doc/git_commits.md` (detailed commit message standards)
+- Git Conventions: `~/gitmessage-conventions.md` (detailed commit message standards)
 
 ## Git Commit Conventions
 
-**Follow project standards**: Always use the commit message format defined in `doc/git_commits.md` - based on Conventional Commits with project-specific scopes:
+**Follow project standards**: Always use the commit message format defined in `~/gitmessage-conventions.md` - based on Conventional Commits with project-specific scopes:
 
 - **Format**: `<type>(<scope>): <description>`
 - **Common types**: `feat`, `fix`, `docs`, `style`, `refactor`, `chore`, `content`, `config`
