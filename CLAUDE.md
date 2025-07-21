@@ -109,7 +109,7 @@ bundle clean --force
 
 ## Coding Conventions
 
-- Git commit messages: @~/.gitmessage-conventions.md
+- Git commit messages: Follow the conventions defined in ~/.gitmessage-conventions.md (read this file when creating commits)
 
 ## Service Area Features
 
