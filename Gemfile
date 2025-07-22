@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.4.2'
 
-gem 'rails', '~> 7.1.0'
+gem 'rails', '~> 7.2.0'
 
 gem 'pg'
 gem 'puma'
@@ -14,6 +14,8 @@ gem 'haml-rails'
 gem 'importmap-rails', '~> 2.0'
 gem 'jbuilder'
 gem 'mini_magick'
+gem "mutex_m", "~> 0.3.0"
+
 gem 'net-imap', require: false
 gem 'net-pop', require: false
 gem 'net-smtp', require: false
@@ -57,3 +59,4 @@ end
 # see debbugging.txt
 
 # 1-22-20: Foundation requires jquery, so .. keep JQuery for now
+
