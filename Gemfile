@@ -15,7 +15,6 @@ gem 'importmap-rails', '~> 2.0'
 gem 'jbuilder'
 gem 'mini_magick'
 gem "mutex_m", "~> 0.3.0"
-
 gem 'net-imap', require: false
 gem 'net-pop', require: false
 gem 'net-smtp', require: false
@@ -26,14 +25,16 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'listen', '~> 3.4', '>= 3.4.1'
-  gem 'rubocop-rails-omakase', require: false
   gem 'solargraph'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.1'
 end
 
 group :development, :test do
+  gem 'brakeman', require: false
   gem 'debug', platforms: :mri
+  gem 'rubocop-rails-omakase', require: false
+  gem 'web-console'
 end
 
 group :test do
