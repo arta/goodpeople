@@ -20,6 +20,13 @@ gem 'net-pop', require: false
 gem 'net-smtp', require: false
 gem 'sprockets-rails'
 
+group :development, :test do
+  gem 'brakeman', require: false
+  gem 'debug', platforms: :mri
+  gem 'rubocop-rails-omakase', require: false
+  gem 'web-console'
+end
+
 group :development do
   gem 'awesome_print', '~> 1.8'
   gem 'better_errors'
@@ -28,13 +35,6 @@ group :development do
   gem 'solargraph'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.1'
-end
-
-group :development, :test do
-  gem 'brakeman', require: false
-  gem 'debug', platforms: :mri
-  gem 'rubocop-rails-omakase', require: false
-  gem 'web-console'
 end
 
 group :test do
