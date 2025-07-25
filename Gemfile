@@ -24,7 +24,6 @@ group :development, :test do
   gem 'brakeman', require: false
   gem 'debug', platforms: :mri
   gem 'rubocop-rails-omakase', require: false
-  gem 'web-console'
 end
 
 group :development do
@@ -35,6 +34,7 @@ group :development do
   gem 'solargraph'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.1'
+  gem 'web-console'
 end
 
 group :test do
