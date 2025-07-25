@@ -1,7 +1,9 @@
+# 7-25-25: Only use multiple workers in production (Heroku), not in development
+# (today's debugging note in thehouse has more info)
 # 7-22-25: updated w latest Rails & Heroku contents during Rails bump 7.1 -> 7.2
 # 1-22-20: override default config in favor of heroku's
 # https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server
-workers Integer(ENV['WEB_CONCURRENCY'] || 2)
+workers ENV['RAILS_ENV'] == 'development' ? 0 : Integer(ENV['WEB_CONCURRENCY'] || 2)
 threads_count = Integer(ENV['RAILS_MAX_THREADS'] || 5)
 threads threads_count, threads_count
 
