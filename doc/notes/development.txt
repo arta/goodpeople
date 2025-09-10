@@ -1,4 +1,25 @@
 ################################################################################
+9-10-25: #######################################################################
+• AI agent instructions summary:
+  : Copilot auto-detects .github/copilot-instructions.md for coding guidance
+  : Claude Code auto-detects CLAUDE.md
+  : Other agents: reference instruction files in README for compatibility
+  : For universal instructions, use a standard name,
+    e.g. AI_AGENT_INSTRUCTIONS.md, and mention it in README
+• Copilot Chat:
+  : You interact with Copilot’s interface; the selected model, e.g., GPT-4.1,
+    Claude, Grok, Gemini generates responses
+  : "0x" next to a model means unlimited use is included in your Copilot
+    subscription and does not consume premium quota
+  : Other multipliers (e.g. 1x, 1.25x, 0.25x) indicate models that count against
+    quota, cost extra or less (all "charged" to Copilot subscription)
+  : Copilot subscription covers features (inline suggestions, repo context, chat
+    panel) and included models
+################################################################################
+
+
+
+################################################################################
 7-15-25: #######################################################################
 • add gem rubocop-rails-omakase to development group
   : followed: https://github.com/rails/rubocop-rails-omakase
