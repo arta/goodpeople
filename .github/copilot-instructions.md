@@ -1,8 +1,8 @@
 # AI Coding Agent Instructions
 
-This is a Ruby on Rails 7.1 homecare service website showcasing live-in caregivers and companions. It's part of a two-app system - this is the public marketing site, while "thehouse" handles operational business logic.
+This is a Ruby on Rails 8.0 homecare service website showcasing live-in caregivers and companions. It's part of a two-app system - this is the public marketing site, while "thehouse" handles operational business logic.
 
-**Version Currency**: This project maintains current Rails and dependency versions - Rails 7.2 and 8.0 upgrades are planned. Always favor modern Rails patterns and avoid deprecated approaches.
+**Version Currency**: This project maintains current Rails and dependency versions - Rails 8.1 and 9.0 upgrades are planned. Always favor modern Rails patterns and avoid deprecated approaches.
 
 **Dependency Philosophy**: Minimize external dependencies - prefer Rails built-ins over gems, and simple in-house solutions over complex libraries. Only add dependencies when Rails doesn't provide the functionality and the implementation cost (development + maintenance) justifies it.
 
@@ -38,7 +38,7 @@ npm run build:css  # sass --load-path=node_modules
 **Importmap Configuration**: Uses importmap-rails with manual pins in `config/importmap.rb`:
 - jQuery + Foundation Sites loaded as modules
 - Custom maps: `service-area-map.js`, `clients-zip-data.js`
-- Rails UJS for interim Rails 8 compatibility
+- Rails UJS for Rails 8 compatibility
 
 **Foundation Setup**: Side-effect import pattern:
 ```javascript
@@ -80,3 +80,10 @@ $(document).foundation()           // Initialize
 - **Common types**: `feat`, `fix`, `docs`, `style`, `refactor`, `chore`, `content`, `config`
 - **Project scopes**: `(css)`, `(js)`, `(ruby)`, `(rails)`, `(npm)`, `(deps)`, `(ui)`, `(assets)`
 - **Examples**: `fix(css): correct navbar alignment`, `chore(deps): update rails to 7.2`, `content(/testimonials): add new client testimonial`
+
+## Reference Resources
+
+### Pristine Rails 8 App
+- **Location**: `/tmp/rails8021`
+- **Purpose**: Reference for bringing this project as close to a new Rails 8 app as possible
+- **Usage**: Use this as a comparison/reference when updating configurations, dependencies, and structure to match Rails 8 standards

@@ -4,13 +4,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a Ruby on Rails 7.1 application for a healthcare service website. It's a static site with multiple pages showcasing caregivers, services, and contact information.
+This is a Ruby on Rails 8.0 application for a healthcare service website. It's a static site with multiple pages showcasing caregivers, services, and contact information.
 
 ## Key Technologies
 
 - **Ruby**: 3.4.2
-- **Rails**: 7.1.x
-- **Database**: PostgreSQL
+- **Rails**: 8.0.x
+- **Database**: no database (static site)
 - **Frontend**: HAML templates with Foundation CSS framework
 - **CSS**: Sass/SCSS with dartsass-rails (migrated from sassc)
 - **JavaScript**: Importmap-rails with Foundation JS components
@@ -114,3 +114,10 @@ bundle clean --force
 ## Service Area Features
 
 The application includes interactive service area mapping with ZIP code data handled by `clients-zip-data.js` and `service-area-map.js`.
+
+## Reference Resources
+
+### Pristine Rails 8 App
+- **Location**: `/tmp/rails8021`
+- **Purpose**: Reference for bringing this project as close to a new Rails 8 app as possible
+- **Usage**: Use this as a comparison/reference when updating configurations, dependencies, and structure to match Rails 8 standards
