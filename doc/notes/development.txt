@@ -1,4 +1,57 @@
 ################################################################################
+9-25-25: #######################################################################
+• Migrate from gem sprockets-rails to propshaft, per Claude CLI:
+
+• Plan: Replace Sprockets with Propshaft
+: Your Rails 8 app is well-positioned for this migration since you're already
+  using:
+  : cssbundling-rails with npm/sass for CSS compilation
+  : importmap-rails for JavaScript modules
+  : Foundation CSS via npm (not sprockets gems)
+
+• Migration Steps:
+  1. Update Gemfile
+  : Replace sprockets-rails with propshaft
+  : Run bundle install
+
+  2. Remove Sprockets Configuration
+  : Delete app/assets/config/manifest.js (Sprockets-specific)
+  : No environment config changes needed (already clean)
+
+  3. Verify Asset Structure
+  : Your app/assets/builds/ directory (git-ignored, npm-generated) will work
+    seamlessly
+  : Images in app/assets/images/ will be copied to public/assets/ during
+    precompilation
+  : Stylesheets are already handled by cssbundling-rails
+
+  4. Test Asset Pipeline
+  : Run rails assets:precompile to verify assets compile correctly
+  : Test development server with bin/dev
+  : Verify all images, styles, and JavaScript load properly
+
+  5. Clean Up
+  : Remove any unused Sprockets-related files if discovered during testing
+
+  This should be a straightforward migration since your app already uses modern
+  asset handling patterns that align with Propshaft's philosophy.
+
+• Actions / steps taken:
+  1. Updated Gemfile
+  : gem sprockets-rails => gem propshaft
+
+  2. Removed Sprockets configuration
+  : delete app/assets/config (with manifest.js)
+
+  3. Check:
+  : % bin/dev
+  : changed CSS
+  : ✅
+################################################################################
+
+
+
+################################################################################
 9-10-25: #######################################################################
 • AI agent instructions summary:
   : Copilot auto-detects .github/copilot-instructions.md for coding guidance

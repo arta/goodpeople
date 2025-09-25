@@ -18,7 +18,7 @@ gem "mutex_m", "~> 0.3.0"
 gem 'net-imap', require: false
 gem 'net-pop', require: false
 gem 'net-smtp', require: false
-gem 'sprockets-rails'
+gem 'propshaft'
 
 group :development, :test do
   gem 'brakeman', require: false
