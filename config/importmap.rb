@@ -10,3 +10,6 @@ pin "@googlemaps/js-api-loader", to: "@googlemaps--js-api-loader.js" # @1.16.8
 
 pin 'service-area-map', to: 'service-area-map.js'
 pin 'clients-zip-data', to: 'clients-zip-data.js'
+pin "@hotwired/stimulus", to: "stimulus.min.js"
+pin "@hotwired/stimulus-loading", to: "stimulus-loading.js"
+pin_all_from "app/javascript/controllers", under: "controllers"

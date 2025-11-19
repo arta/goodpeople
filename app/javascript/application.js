@@ -30,6 +30,9 @@ window.$ = jquery
 // Initialize all Foundation plugins
 $(document).foundation()
 
+// 2025-11-19: Begin Stimulus implementation
+import "controllers"
+
 // --- Application logic ---
 
 // Custom script to add 'current' class to navigation links based on URL

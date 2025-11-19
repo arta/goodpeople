@@ -19,6 +19,7 @@ gem 'net-imap', require: false
 gem 'net-pop', require: false
 gem 'net-smtp', require: false
 gem 'propshaft'
+gem 'stimulus-rails'
 
 group :development, :test do
   gem 'brakeman', require: false
