@@ -1,8 +1,15 @@
 #!/usr/bin/env sh
 
-if ! gem list foreman -i --silent; then
+# 2025-11-19: paste more robust version from thehouse (good, per Claude)
+# comment from thehouse:
+# 2024-12-28: update for npm foundation-sites to run via bin/dev
+
+if gem list --no-installed --exact --silent foreman; then
   echo "Installing foreman..."
   gem install foreman
 fi
 
-exec foreman start -f Procfile.dev "$@"
+# Default to port 3000 if not specified
+export PORT="${PORT:-3000}"
+
+exec foreman start -f Procfile.dev --env /dev/null "$@"
