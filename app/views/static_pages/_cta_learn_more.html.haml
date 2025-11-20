@@ -1,9 +1,8 @@
-- btn_text = 'Learn More'
-
 .row
 	.columns.small-centered.small-7
 		%nav
-			= link_to btn_text, intro_path, class:'btn-cta-learn-more'
+			= link_to 'here to Learn More', intro_path, class:'btn-cta-learn-more',
+				data: { controller: 'btn-cta-verb' }
 
 .row
 	.columns.small-centered.small-12.medium-8

@@ -221,13 +221,3 @@
 			.columns.small-centered.small-8
 				%p.p-footer &copy; 2001 - #{Date.today.year} Good People, LLC
 
-		:javascript
-			const btnsToEnter = document.getElementsByClassName('btn-cta-learn-more')
-			const btnToEnterText = btnsToEnter[0].textContent;
-			let actionVerb = 'Click here to'
-			if ('ontouchstart' in window) { actionVerb = 'Tap here to' }
-			window.onload = function() {
-				for (let i=0; i<btnsToEnter.length; i++) {
-					btnsToEnter[i].textContent = `${actionVerb} ${btnToEnterText}`
-				}
-			}
