@@ -18,7 +18,7 @@
 		.off-canvas-wrapper
 			.off-canvas#offCanvas.position-left{ data: { off_canvas: true } }
 				%nav
-					%ul.menu.vertical
+					%ul.menu.vertical{ data: { controller: "current-nav-item" } }
 						%li
 							= link_to root_path do
 								= render 'svg_gp_logo_logomark'
@@ -51,7 +51,7 @@
 				.row
 					.column.medium-3
 						%nav.show-for-medium
-							%ul.menu.vertical
+							%ul.menu.vertical{ data: { controller: "current-nav-item" } }
 								%li= link_to 'Intro', intro_path
 								%li= link_to 'Type of Care', type_of_care_path
 								%li= link_to 'Caregivers', caregivers_path
