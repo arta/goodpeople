@@ -26,5 +26,4 @@ window.$ = jquery
 // Initialize all Foundation plugins
 $(document).foundation()
 
-// 2025-11-19: Begin Stimulus implementation
 import "controllers"

@@ -6,9 +6,9 @@
 		%title Good People LLC - Live-in caregivers & companions
 		= stylesheet_link_tag	'application', media: 'all'
 		= javascript_importmap_tags
+		= javascript_google_tag
 		= csrf_meta_tags
 		= csp_meta_tag
-		= render 'javascript_google_tag'
 
 	%body.body--index-pg
 		%header
