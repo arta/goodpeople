@@ -12,12 +12,12 @@
 
 	%body.body--index-pg
 		%header
-			.row
-				.columns.small-centered.small-10.medium-8
+			.gridfield
+				.gridrow-logo-index-pg
 					= link_to intro_path do
 						= render 'svg_gp_logo_complete', class_name: 'svg--gp-logo-index-pg'
-			.row
-				.columns.small-centered.small-8
+
+				.gridrow-index-pg
 					%h1.h1--index-pg
 						If you require 24/7 assistance
 						%br
@@ -29,11 +29,11 @@
 						%br
 						Good People can help
 
-		= render 'cta_learn_more'
+				= render 'cta_learn_more'
 
-		.row.collapse
-			.columns.small-centered.small-11.medium-8.large-6
-				%section.orbit{ role:'region', 'aria-label':'excerpts of testimonials' }
+
+				.gridrow-testimonials-index-pg
+					%section{ role:'region', 'aria-label':'excerpts of testimonials' }
 					%ul.ul--testimonials-excerpts
 						%li.li--testimonial-excerpt
 							%article.article--testimonial
@@ -215,9 +215,8 @@
 								%p.p--testimonial-signature ~Sue Nanstad
 							= link_to 'read the full letter', testimonials_path( anchor:4008 ), class: 'a--full-testimonial'
 
-		= render 'cta_learn_more'
+				= render 'cta_learn_more'
 
-		%footer.row
-			.columns.small-centered.small-8
-				%p.p-footer &copy; 2001 - #{Date.today.year} Good People, LLC
+				%footer.gridrow-index-pg
+					%p.p-footer &copy; 2001 - #{Date.today.year} Good People, LLC
 
