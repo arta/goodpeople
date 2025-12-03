@@ -35,40 +35,36 @@
 						%li= link_to 'info@goodpeople.us', 'mailto:info@goodpeople.us', class: 'a--gp-contact-info'
 
 			.off-canvas-content{ data: { off_canvas_content: true, sticky_container: true } }
-				%header.header--mobile.title-bar.sticky.row.hide-for-medium{ data: { sticky: true, sticky_on: 'small', margin_top: 0 } }
-					.title-bar-left
-						.off-canvas-opener
-							%button.menu-icon{ type: 'button', data: { toggle: 'offCanvas' } }
-								%label.label--off-canvas-opener Menu
-					.title-bar-right
-						.gp-contact-info--header--mobile
-							= link_to '1-800-608-8003', 'tel:18006088003', class: 'a--gp-contact-info'
-							= link_to 'info@goodpeople.us', 'mailto:info@goodpeople.us', class: 'a--gp-contact-info'
+				.gridfield
+					%header.header--mobile-interior-pg
+						.left--header--mobile
+							.off-canvas-opener
+								%button.menu-icon{ type: 'button', data: { toggle: 'offCanvas' } }
+									%label.label--off-canvas-opener Menu
+						.right--header--mobile
+							.gp-contact-info--header--mobile
+								= link_to '1-800-608-8003', 'tel:18006088003', class: 'a--gp-contact-info'
+								= link_to 'info@goodpeople.us', 'mailto:info@goodpeople.us', class: 'a--gp-contact-info'
 
-				%header.header--desktop.row.show-for-medium
-					.column.small-12
+					%header.header--desktop-interior-pg
 						= render partial: 'header_desktop'
-				.row
-					.column.medium-3
-						%nav.show-for-medium
-							%ul.menu.vertical{ data: { controller: "current-nav-item" } }
-								%li= link_to 'Intro', intro_path
-								%li= link_to 'Type of Care', type_of_care_path
-								%li= link_to 'Caregivers', caregivers_path
-								%li= link_to 'Procedure', procedure_path
-								%li= link_to 'Service area', servicearea_path
-								%li= link_to 'Cost', cost_path
-								%li= link_to 'Testimonials', testimonials_path
-								%li= link_to 'Contact us ...', contactus_path
-								%li
-									= link_to print_path, class: 'a--print' do
-										%i.fas.fa-print &nbsp;
-										%span Print view
+					%nav.nav--desktop-interior-pg
+						%ul.menu.vertical{ data: { controller: "current-nav-item" } }
+							%li= link_to 'Intro', intro_path
+							%li= link_to 'Type of Care', type_of_care_path
+							%li= link_to 'Caregivers', caregivers_path
+							%li= link_to 'Procedure', procedure_path
+							%li= link_to 'Service area', servicearea_path
+							%li= link_to 'Cost', cost_path
+							%li= link_to 'Testimonials', testimonials_path
+							%li= link_to 'Contact us ...', contactus_path
+							%li
+								= link_to print_path, class: 'a--print' do
+									%i.fas.fa-print &nbsp;
+									%span Print view
 
-					.column.small-12.medium-9
-						%main
-							= yield
+					%main.main--interior-pg
+						= yield
 
-				%footer.row
-					.columns.small-12.medium-9.medium-offset-3
+					%footer.footer--interior-pg
 						%p.p-footer &copy; 2001 - #{Date.today.year} Good People, LLC

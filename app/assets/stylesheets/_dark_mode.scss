@@ -55,13 +55,20 @@
     color: #dbd7d7;
   }
 
-  // #TODO: fix this; give each a in the nav class
-  nav.show-for-medium a:hover {
-    color: #ffa216; // #f90;
-    text-shadow: 2px 4px 6px #2d2d2d;
+  // #TODO: fix this;
+  //  give <a>s in the nav a class, e.g. .a-nav, and
+  //  do not set/override F6's $anchor-color nor $anchor-color-hover
+  //  i.e. use our own a {}, and a:hover {} instead
+  // was nav.show-for-medium a:hover
+  nav.nav--desktop-interior-pg a:not(.current):hover {
+    color: #ffa216; // tad lighter than c.$a-color-hover (= c.$mandarin)
+    text-shadow: 2px 4px 6px black; // #2d2d2d;
+  }
+  a.current:hover {
+    color: c.$a-color-dm; // must have along with a:not(.current):hover above
+    cursor: default;
   }
 
-  // JS at the bottom of application.html.haml
   .current {
     background-color: #4c5969; // #475361;
     box-shadow: 2px 4px 6px #353535;
@@ -99,7 +106,8 @@
     .a--gp-contact-info { color: c.$cloud-gray; }
   }
 
-  .title-bar {
+  // was .title-bar
+  .header--mobile-interior-pg {
     background-color: c.$body-background-dm;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.84);
 

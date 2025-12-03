@@ -146,7 +146,6 @@ img {
 	color: white;
 };
 
-// JS at the bottom of application.html.haml
 .current {
 	background-color: #e6e6e6; // make it beige ~#EAD29D;
 	border-radius: 3px;
@@ -180,6 +179,10 @@ img {
 	background: rgba(0, 0, 0, 0.3);
 }
 
+// Substitutes for Foundation's: .title-bar .menu-icon { .. } selector
+// (.title-bar no longer used in our markup as part of F6 removal)
+.menu-icon { margin-inline: .25rem; }
+
 // Change Foundation's menu burger color
 // Or, override F6's _settings.scss, 852: 53. Title Bar, $titlebar-icon-color
 // using our _settings_overrides.scss, and foundation_and_overrides.scss
@@ -202,26 +205,12 @@ img {
 	background: white;
 }
 
-// req'd by Foundation
-.sticky {
-	width: 100%;
-}
-
-.title-bar {
-	background-color: white;
-	padding-top: .7em;
-	padding-bottom: .7em;
-	box-shadow: 0 2px 15px rgba(50, 50, 50, 0.74);
-}
-
 // center burger menu (undo F's global 1.5)
-.title-bar-left {
-	line-height: 1;
-}
+// was .title-bar-left
+.left--header--mobile { line-height: 1; }
 
-.title-bar-right {
-	font-size: .8em;
-}
+// was .title-bar-right
+.right--header--mobile { font-size: .8em; }
 
 // <<< Foundation overrides and tweaks - End -----------------------------------
 
@@ -289,12 +278,6 @@ main {
 	column-gap: 2em;
 	flex-wrap: wrap;
 	margin-left: 1em;
-}
-
-.header--desktop {
-	height: 12em;
-	margin-bottom: 1em;
-	padding-top: 1em;
 }
 
 .header--print-pg {
