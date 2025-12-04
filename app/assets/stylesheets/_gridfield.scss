@@ -5,32 +5,16 @@
   margin: 0 auto;
 }
 
-.gridfield > * {
-  padding: 0 0.625rem; // immitate Foundation's column default padding
-}
+.cta-and-contact-info,
+.footer--index-pg { grid-column: 3 / span 8; }
 
-.gridrow-index-pg { grid-column: 3 / span 8; }
-
-.gridrow-logo-index-pg {
+.header--index-pg {
   grid-column: 2 / span 10;
+  padding-inline: .625rem; // immitate Foundation's column default padding
 
   @media (min-width: 40rem) {
     grid-column: 3 / span 8;
-    padding: 0 1rem; // imitate Foundation's logo size at this breakpoint
-  }
-}
-
-.gridrow-testimonials-index-pg {
-  grid-column: 1 / span 12;
-  padding: 0 1.5rem;
-
-  @media (min-width: 40rem) {
-    grid-column: 3 / span 8;
-    padding: unset;
-  }
-
-  @media (min-width: 64rem) {
-    grid-column: 4 / span 6;
+    padding-inline: 1rem; // imitate Foundation's logo size at this breakpoint
   }
 }
 
@@ -73,6 +57,7 @@
 
 .main--interior-pg {
   grid-column: 1 / span 12;
+  padding-inline: .625rem; // immitate Foundation's column default padding
 
   @media (min-width: 40rem) {
     grid-column: 4 / span 9;
