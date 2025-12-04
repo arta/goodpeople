@@ -15,7 +15,6 @@
 // We include everything by default.  To slim your CSS, remove components you don't use.
 
 @include foundation.foundation-global-styles;
-@include foundation.foundation-grid;
 @include foundation.foundation-typography;
 @include foundation.foundation-close-button;
 @include foundation.foundation-menu;
@@ -29,6 +28,7 @@
 @include foundation.foundation-visibility-classes;
 @include foundation.foundation-float-classes;
 
+// @include foundation.foundation-grid;
 // @include foundation-xy-grid-classes;
 // @include foundation-flex-grid;
 // @include foundation-flex-classes;

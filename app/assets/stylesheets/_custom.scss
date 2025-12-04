@@ -227,16 +227,11 @@ img {
 	flex-direction: column;
 }
 
-.gp-contact-info--header--mobile,
-.gp-contact-info--header--desktop {
-	align-items: flex-end;
-}
+.cta-and-contact-info,
+.footer--index-pg { grid-column: 3 / span 8; }
 
-main {
-	@media (max-width: 640px) {
-		margin-top: 2em;
-	};
-}
+.gp-contact-info--header--mobile,
+.gp-contact-info--header--desktop { align-items: flex-end; }
 
 .article--testimonial {
 	background: c.$testimonial-background;
@@ -252,6 +247,15 @@ main {
 .body--index-pg {
 	padding-top: 2.5em;
 	text-align: center;
+}
+
+.footer--interior-pg {
+	grid-column: 1 / span 12;
+
+	@media (min-width: 40rem) {
+		grid-column: 4 / span 9;
+		padding-inline: .9375rem;
+	}
 }
 
 .gp-contact-info--header--desktop {
@@ -280,6 +284,51 @@ main {
 	margin-left: 1em;
 }
 
+.gridfield {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	max-width: 75rem;
+	margin: 0 auto;
+}
+
+.header--desktop-interior-pg {
+	display: none;
+	height: 12em;
+	margin-bottom: 1em;
+	padding-top: 1em;
+
+	@media (min-width: 40rem) {
+		display: block;
+		grid-column: 1 / span 12;
+		padding-inline: .9375rem;
+	}
+}
+
+.header--index-pg {
+	grid-column: 2 / span 10;
+	padding-inline: .625rem; // immitate Foundation's column default padding
+
+	@media (min-width: 40rem) {
+		grid-column: 3 / span 8;
+		padding-inline: 1rem; // imitate Foundation's logo size at this breakpoint
+	}
+}
+
+.header--mobile-interior-pg {
+	align-items: center;
+	background-color: white;
+	box-shadow: 0 2px 15px rgba(50, 50, 50, 0.74);
+	display: flex;
+	grid-column: 1 / span 12;
+	justify-content: space-between;
+	margin-bottom: 2em;
+	padding: .7em .5rem;
+
+	@media (min-width: 40rem) {
+		display: none;
+	}
+}
+
 .header--print-pg {
 	height: 180px;
 	margin-right: 20px;
@@ -299,9 +348,29 @@ main {
 	@media (max-width: 640px) { font-size: 1em; };
 }
 
+.main--interior-pg {
+	grid-column: 1 / span 12;
+	padding-inline: .625rem; // immitate Foundation's column default padding
+
+	@media (min-width: 40rem) {
+		grid-column: 4 / span 9;
+		padding-inline: .9375rem;
+	}
+}
+
 .main--print-pg {
 	margin: 0 20px 0 0;
 	font-size: 10pt;
+}
+
+.nav--desktop-interior-pg {
+	display: none;
+
+	@media (min-width: 40rem) {
+		display: block;
+		grid-column: 1 / span 3;
+		padding-inline: .9375rem;
+	}
 }
 
 .section--testimonials-intro { margin-bottom: 3em; }
