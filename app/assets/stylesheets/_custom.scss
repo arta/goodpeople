@@ -293,14 +293,15 @@ img {
 
 .header--desktop-interior-pg {
 	display: none;
-	height: 12em;
-	margin-bottom: 1em;
-	padding-top: 1em;
 
 	@media (min-width: 40rem) {
-		display: block;
+		display: flex;
 		grid-column: 1 / span 12;
-		padding-inline: .9375rem;
+		height: 12em;
+		justify-content: space-between;
+		margin-bottom: 1em;
+		padding-inline: 1.875rem;
+		padding-top: 1em;
 	}
 }
 
@@ -410,7 +411,7 @@ img {
 	filter: drop-shadow(2px 4px 6px lightgray);
 }
 
-.svg--gp-logo-desktop { max-width: 302px; }
+.svg--gp-logo-desktop { min-width: 302px; }
 
 .svg--gp-logo-index-pg { max-width: 490px; }
 
