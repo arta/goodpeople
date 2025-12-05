@@ -342,7 +342,9 @@ img {
 }
 
 .header--print-pg {
+	display: flex;
 	height: 180px;
+	justify-content: space-between;
 	margin-right: 20px;
 }
 
@@ -427,6 +429,8 @@ img {
 .svg--gp-logo-index-pg { max-width: 490px; }
 
 .svg--gp-logo-off-canvas { width: 50px; }
+
+.svg--gp-logo-print-pg { width: 280px; }
 
 .g-svg--gp-logomark {
 	fill: c.$gp-logomark-color;

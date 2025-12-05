@@ -1,6 +1,15 @@
-= link_to root_path do
-	= render 'svg_gp_logo_complete', class_name: 'svg--gp-logo-desktop'
+- if local_assigns[:for_print]
+	= link_to root_path do
+		= render 'svg_gp_logo_complete', class_name: 'svg--gp-logo-print-pg'
 
-.gp-contact-info--header--desktop
-	= link_to '1-800-608-8003', 'tel:18006088003', class:'a--gp-contact-info'
-	= link_to 'info@goodpeople.us', 'mailto:info@goodpeople.us', class:'a--gp-contact-info'
+	.gp-contact-info--header--desktop
+		.a--gp-contact-info 1-800-608-8003
+		.a--gp-contact-info info@goodpeople.us
+
+- else
+	= link_to root_path do
+		= render 'svg_gp_logo_complete', class_name: 'svg--gp-logo-desktop'
+
+	.gp-contact-info--header--desktop
+		= link_to '1-800-608-8003', 'tel:18006088003', class:'a--gp-contact-info'
+		= link_to 'info@goodpeople.us', 'mailto:info@goodpeople.us', class:'a--gp-contact-info'

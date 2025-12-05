@@ -11,7 +11,7 @@
 	%body
 
 		%header.header--print-pg
-			= render partial: 'header_desktop', locals: { map_ref: 'intro' }
+			= render partial: 'header_desktop', locals: { for_print: true }
 
 		%main.main--print-pg
 			%h1.h1--print-pg= link_to 'Intro', :action => :intro
