@@ -20,14 +20,7 @@
 					%li
 						= link_to root_path do
 							= render 'svg_gp_logo_logomark'
-					%li= link_to 'Welcome', intro_path
-					%li= link_to 'Type of Care', type_of_care_path
-					%li= link_to 'Caregivers', caregivers_path
-					%li= link_to 'Procedure', procedure_path
-					%li= link_to 'Service area', servicearea_path
-					%li= link_to 'Cost', cost_path
-					%li= link_to 'Testimonials', testimonials_path
-					%li= link_to 'Contact us ...', contactus_path
+					= render 'menu_nav_shared_items'
 					%li &nbsp;
 					%li= link_to '1-800-608-8003', 'tel:18006088003', class: 'a--gp-contact-info'
 					%li= link_to 'info@goodpeople.us', 'mailto:info@goodpeople.us', class: 'a--gp-contact-info'
@@ -45,17 +38,10 @@
 
 			.gridfield
 				%header.header--desktop-interior-pg
-					= render partial: 'header_desktop'
+					= render 'header_desktop'
 				%nav.nav--desktop-interior-pg
 					%ul.menu.vertical{ data: { controller: "current-nav-item" } }
-						%li= link_to 'Intro', intro_path
-						%li= link_to 'Type of Care', type_of_care_path
-						%li= link_to 'Caregivers', caregivers_path
-						%li= link_to 'Procedure', procedure_path
-						%li= link_to 'Service area', servicearea_path
-						%li= link_to 'Cost', cost_path
-						%li= link_to 'Testimonials', testimonials_path
-						%li= link_to 'Contact us ...', contactus_path
+						= render 'menu_nav_shared_items'
 						%li
 							= link_to print_path, class: 'a--print' do
 								%i.fas.fa-print &nbsp;
