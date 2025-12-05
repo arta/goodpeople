@@ -16,19 +16,19 @@
 
 @include foundation.foundation-global-styles;
 @include foundation.foundation-typography;
-@include foundation.foundation-close-button;
 @include foundation.foundation-menu;
 @include foundation.foundation-menu-icon;
 @include foundation.foundation-responsive-embed;
 @include foundation.foundation-off-canvas;
-@include foundation.foundation-orbit;
-@include foundation.foundation-sticky;
-@include foundation.foundation-title-bar;
-@include foundation.foundation-top-bar;
 @include foundation.foundation-visibility-classes;
-@include foundation.foundation-float-classes;
 
+// @include foundation.foundation-close-button;
+// @include foundation.foundation-orbit;
+// @include foundation.foundation-sticky;
+// @include foundation.foundation-title-bar;
+// @include foundation.foundation-top-bar;
 // @include foundation.foundation-grid;
+// @include foundation.foundation-float-classes;
 // @include foundation-xy-grid-classes;
 // @include foundation-flex-grid;
 // @include foundation-flex-classes;
