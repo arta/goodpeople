@@ -191,6 +191,11 @@ img {
 	box-shadow: 0 7px 0 c.$oil, 0 14px 0 c.$oil;
 }
 
+// remove mobile menu active item Foundation signature teal-blue background
+.off-canvas.is-transition-push.is-open a:active {
+	background: transparent;
+}
+
 // tune up mobile menu shadow
 .off-canvas.is-transition-push.is-open {
 	box-shadow: 2px 0 15px rgba(50, 50, 50, 0.74);
