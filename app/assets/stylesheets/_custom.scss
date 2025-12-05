@@ -249,6 +249,10 @@ img {
 	text-align: center;
 }
 
+// Hide horizontal scrollbar caused by Foundation’s .off-canvas.is-open push
+// while keeping .header--mobile-interior-pg plain CSS position: sticky working
+.body--interior-pg { overflow-x: hidden; }
+
 .footer--interior-pg {
 	grid-column: 1 / span 12;
 
@@ -320,10 +324,12 @@ img {
 	background-color: white;
 	box-shadow: 0 2px 15px rgba(50, 50, 50, 0.74);
 	display: flex;
-	grid-column: 1 / span 12;
 	justify-content: space-between;
 	margin-bottom: 2em;
 	padding: .7em .5rem;
+	position: sticky;
+	top: 0;
+	z-index: 100;
 
 	@media (min-width: 40rem) {
 		display: none;

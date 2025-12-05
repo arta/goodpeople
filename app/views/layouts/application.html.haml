@@ -13,16 +13,42 @@
 		= csrf_meta_tags
 		= csp_meta_tag
 
-	%body
-		// hide horizontal scrollbar when .off-canvas.is-open
-		.off-canvas-wrapper
-			.off-canvas#offCanvas.position-left{ data: { off_canvas: true } }
-				%nav
+	%body.body--interior-pg
+		.off-canvas#offCanvas.position-left{ data: { off_canvas: true } }
+			%nav
+				%ul.menu.vertical{ data: { controller: "current-nav-item" } }
+					%li
+						= link_to root_path do
+							= render 'svg_gp_logo_logomark'
+					%li= link_to 'Welcome', intro_path
+					%li= link_to 'Type of Care', type_of_care_path
+					%li= link_to 'Caregivers', caregivers_path
+					%li= link_to 'Procedure', procedure_path
+					%li= link_to 'Service area', servicearea_path
+					%li= link_to 'Cost', cost_path
+					%li= link_to 'Testimonials', testimonials_path
+					%li= link_to 'Contact us ...', contactus_path
+					%li &nbsp;
+					%li= link_to '1-800-608-8003', 'tel:18006088003', class: 'a--gp-contact-info'
+					%li= link_to 'info@goodpeople.us', 'mailto:info@goodpeople.us', class: 'a--gp-contact-info'
+
+		.off-canvas-content{ data: { off_canvas_content: true } }
+			%header.header--mobile-interior-pg
+				.left--header--mobile
+					.off-canvas-opener
+						%button.menu-icon{ type: 'button', data: { toggle: 'offCanvas' } }
+							%label.label--off-canvas-opener Menu
+				.right--header--mobile
+					.gp-contact-info--header--mobile
+						= link_to '1-800-608-8003', 'tel:18006088003', class: 'a--gp-contact-info'
+						= link_to 'info@goodpeople.us', 'mailto:info@goodpeople.us', class: 'a--gp-contact-info'
+
+			.gridfield
+				%header.header--desktop-interior-pg
+					= render partial: 'header_desktop'
+				%nav.nav--desktop-interior-pg
 					%ul.menu.vertical{ data: { controller: "current-nav-item" } }
-						%li
-							= link_to root_path do
-								= render 'svg_gp_logo_logomark'
-						%li= link_to 'Welcome', intro_path
+						%li= link_to 'Intro', intro_path
 						%li= link_to 'Type of Care', type_of_care_path
 						%li= link_to 'Caregivers', caregivers_path
 						%li= link_to 'Procedure', procedure_path
@@ -30,41 +56,13 @@
 						%li= link_to 'Cost', cost_path
 						%li= link_to 'Testimonials', testimonials_path
 						%li= link_to 'Contact us ...', contactus_path
-						%li &nbsp;
-						%li= link_to '1-800-608-8003', 'tel:18006088003', class: 'a--gp-contact-info'
-						%li= link_to 'info@goodpeople.us', 'mailto:info@goodpeople.us', class: 'a--gp-contact-info'
+						%li
+							= link_to print_path, class: 'a--print' do
+								%i.fas.fa-print &nbsp;
+								%span Print view
 
-			.off-canvas-content{ data: { off_canvas_content: true, sticky_container: true } }
-				.gridfield
-					%header.header--mobile-interior-pg
-						.left--header--mobile
-							.off-canvas-opener
-								%button.menu-icon{ type: 'button', data: { toggle: 'offCanvas' } }
-									%label.label--off-canvas-opener Menu
-						.right--header--mobile
-							.gp-contact-info--header--mobile
-								= link_to '1-800-608-8003', 'tel:18006088003', class: 'a--gp-contact-info'
-								= link_to 'info@goodpeople.us', 'mailto:info@goodpeople.us', class: 'a--gp-contact-info'
+				%main.main--interior-pg
+					= yield
 
-					%header.header--desktop-interior-pg
-						= render partial: 'header_desktop'
-					%nav.nav--desktop-interior-pg
-						%ul.menu.vertical{ data: { controller: "current-nav-item" } }
-							%li= link_to 'Intro', intro_path
-							%li= link_to 'Type of Care', type_of_care_path
-							%li= link_to 'Caregivers', caregivers_path
-							%li= link_to 'Procedure', procedure_path
-							%li= link_to 'Service area', servicearea_path
-							%li= link_to 'Cost', cost_path
-							%li= link_to 'Testimonials', testimonials_path
-							%li= link_to 'Contact us ...', contactus_path
-							%li
-								= link_to print_path, class: 'a--print' do
-									%i.fas.fa-print &nbsp;
-									%span Print view
-
-					%main.main--interior-pg
-						= yield
-
-					%footer.footer--interior-pg
-						%p.p-footer &copy; 2001 - #{Date.today.year} Good People, LLC
+				%footer.footer--interior-pg
+					%p.p-footer &copy; 2001 - #{Date.today.year} Good People, LLC
