@@ -26,4 +26,5 @@ window.$ = jquery
 // Initialize all Foundation plugins
 $(document).foundation()
 
+import "@hotwired/turbo-rails"
 import "controllers"
