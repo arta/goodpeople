@@ -31,10 +31,7 @@ group :development do
   gem 'awesome_print', '~> 1.8'
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'listen', '~> 3.4', '>= 3.4.1'
   gem 'solargraph'
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.1'
   gem 'web-console'
 end
 
@@ -61,4 +58,3 @@ end
 # see debbugging.txt
 
 # 1-22-20: Foundation requires jquery, so .. keep JQuery for now
-
