@@ -21,6 +21,7 @@ gem 'net-smtp', require: false
 gem 'propshaft'
 gem 'stimulus-rails'
 gem "turbo-rails"
+gem "thruster", require: false
 
 group :development, :test do
   gem 'brakeman', require: false
