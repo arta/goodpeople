@@ -1,4 +1,4 @@
-# Copilot Instructions
+# AGENTS.md
 
 The contents and structure of these four files are kept identical: `CLAUDE.md`, `AGENTS.md`, `GEMINI.md`, `.github/copilot-instructions.md` — when any is updated, apply the same change to all others.
 

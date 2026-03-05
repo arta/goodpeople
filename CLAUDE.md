@@ -1,123 +1,87 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+The contents and structure of these four files are kept identical: `CLAUDE.md`, `AGENTS.md`, `GEMINI.md`, `.github/copilot-instructions.md` — when any is updated, apply the same change to all others.
 
-## Project Overview
+These files are minimal by design. Only include what an agent would get wrong without being told. Discoverable information (commands, file structure, standard Rails/Ruby conventions) is noise — omit it.
 
-This is a Ruby on Rails 8.0 application for a healthcare service website. It's a static site with multiple pages showcasing caregivers, services, and contact information.
+Ruby on Rails static informational site for a home care employment agency (no database interactions, no auth). Propshaft, cssbundling, importmap.
 
-## Key Technologies
+## Direction for new code
+Rails-first always. New UI: Stimulus + Turbo (not jQuery). CSS: modern vanilla CSS (Foundation is being replaced — no framework preference; prefer raw standard tools over utility libraries like Tailwind).
 
-- **Ruby**: 3.4.2
-- **Rails**: 8.0.x
-- **Database**: no database (static site)
-- **Frontend**: HAML templates with Foundation CSS framework
-- **CSS**: Sass/SCSS with dartsass-rails (migrated from sassc)
-- **JavaScript**: Importmap-rails with Foundation JS components
+## CSS naming scheme — WIP
 
-## Development Commands
+Mental model: human naming — first name (element), nickname (custom), surname chain (ancestry). The name's job is to let you mentally picture the selector's target element's location(s) in markup with minimal effort. Ancestry is distillation not breadcrumbs — pick the ancestor(s) that paint the clearest mental picture; keep the chain as short as possible, skip intermediaries, cut entirely if self-evidently unique — but never at the cost of clarity. Brevity, expressiveness, clarity.
 
-### Server
-```bash
-# Start development server (preferred - runs Rails + CSS watcher)
-bin/dev
+- `-` separates words of the same kind (HTML names, or nicks)
+- `--` separates kinds: HTML element/ancestry from nick; appears wherever a kind-boundary occurs
+- No nick: `a-li-nav` (all single dash)
+- With nick: `button--toggle--nav`, `ul--menu--nav`
+- Divs omit the element prefix — the nick is the full name; no `--` needed (already the conventional CSS signal for divs)
+- Component nicks serve as ancestry — `a--card`, `button--toggle--section--card` — no special component syntax; the scheme absorbs components naturally
+- Ancestry serves double duty: locating the element in markup *or* disambiguating from similar elements elsewhere; use whichever is needed, sometimes both
+- Page-specific classes use a page-identifier suffix: `--home-pg`, `--print-pg`, etc.
+- State classes (`.active`, `.is-open`) are separate conventional classes, orthogonal to the scheme and JS-ready
+- Known edge case: when a div nick appears as ancestry after another nick, insert `div` explicitly — `button--toggle--div--card` — to avoid ambiguity; add a `TODO: div → section` nearby; once resolved: `button--toggle--section--card`
 
-# This runs foreman with Procfile.dev which starts:
-# - rails server
-# - npm run build:css -- --watch (for live CSS compilation)
-```
+Examples (from goodpeople):
+- `p-footer` — element + HTML ancestry, no nick
+- `a--print` — element + nick, ancestry unnecessary (self-evidently unique)
+- `label--testimonial`, `article--testimonial` — element + nick
+- `h1--index-pg`, `main--interior-pg` — element + page nick
+- `button--toggle--nav` — element + nick flanked by HTML names
+- `g-svg--gp-logomark` — SVG element + HTML ancestry + nick
+- `gp-contact-info` — div nick only
+- `gp-contact-info--header--mobile` — div nick + HTML ancestry + nick
 
-### Asset Compilation
-```bash
-# Build CSS from Sass
-npm run build:css
+## CSS organization — WIP
 
-# Precompile assets for production
-rails assets:precompile
-```
+Partials by concern (`_navigation.scss`, `_typography.scss`, etc.).
 
-### Database
-```bash
-# Create database
-rails db:create
+**Global** — resets, box-sizing, universal rules; one place only: top of a single sheet or its own `_global.scss`; never duplicated across partials.
 
-# Run migrations
-rails db:migrate
+**Colors** live in `colors.scss` — a design token layer, separate from global resets.
 
-# Seed database
-rails db:seed
-```
+Within each file, sections in this order:
+1. **Typography** — block first (h1–h6, p, ul/ol/li, blockquote), inline last (cite, em, span, etc.); excludes `ul`/`li` inside navigation — those belong in Interactive
+2. **Interactive** — `a`, `button`, navigation (including nav-specific `ul`, `li`), forms
+3. **Layout** — div nicks included
+4. **Images / Media**
+5. **Tables**
+6. **Utilities**
+7. **@media queries** — bottom of file, mirroring sections 1–6 in order
 
-### Testing
-```bash
-# Run tests
-rails test
+Within each section:
+- Shared-style selector lists come first, atop, preceding all other selectors (individual, combinators, compound) — each selector on its own line, last one opens the curly bracket; if single-declaration, it goes on the same line as the last selector; if multi-declaration, first declaration goes on a new line:
+  ```css
+  .a--print,
+  .a--full-testimonial { color: gray; }
 
-# Run system tests
-rails test:system
-```
+  .a--print,
+  .a--full-testimonial,
+  .a--testimonial-anchor {
+    color: gray;
+    margin-top: 3em;
+  }
+  ```
+- Single-declaration rules on one line with the selector — applies to all selector types (individual, combinator, compound):
+  ```css
+  .a--print { margin-top: 3em; }
 
-### Bundler
-```bash
-# Install gems
-bundle install
+  nav > ul { list-style: none; }
+  ```
+- Then alphabetical by target throughout — element selectors, class selectors, combinators/compounds in one unified flow; no sub-grouping
+- Combinators and compound selectors are a last resort; prefer a class
+- IDs avoided
 
-# Clean unused gems
-bundle clean --force
-```
+Alphabetical by target aligns naturally with the naming scheme (names start with the element). Divs sort by nick within the alphabetical flow — `.card` sorts under `c`, `.gridfield` under `g`, interleaved with element-named selectors as they fall.
 
-## Architecture
+Component partials follow the same internal section order, including only sections that apply.
 
-### Routes and Controllers
-- Single controller: `StaticPagesController`
-- Routes defined in `config/routes.rb` for static pages: intro, type_of_care, caregivers, procedure, servicearea, cost, testimonials, contactus, print
-- Root route points to `static_pages#index`
+Note: goodpeople stylesheets are partially aligned with this scheme; apply consistently when touching files.
 
-### Views Structure
-- Layout: `app/views/layouts/application.html.haml`
-- Pages: `app/views/static_pages/` with HAML templates
-- Partials: Header, sections, and components organized as partials
+TODO: a `/css` skill will eventually replace these CSS sections — see `docs/ai-skills-to-develop.md`.
 
-### Styling
-- Foundation CSS framework integrated via npm
-- Sass files in `app/assets/stylesheets/`
-- Main entry point: `application.scss`
-- Foundation settings in `_settings.scss` and `_settings_overrides.scss`
-- Custom styles in `_custom.scss`
-- Dark mode support in `_dark_mode.scss`
-
-### JavaScript
-- Importmap-rails for module management
-- Foundation JS components loaded via importmap
-- Custom JS files: `application.js`, `service-area-map.js`, `clients-zip-data.js`
-
-## Important Files
-
-- `Gemfile` - Ruby dependencies
-- `package.json` - Node.js dependencies (Foundation CSS)
-- `config/importmap.rb` - JavaScript module definitions
-- `Procfile.dev` - Development server configuration
-- `app/assets/config/manifest.js` - Asset pipeline manifest
-
-## Development Notes
-
-- CSS compilation requires `--load-path=node_modules` for Foundation imports
-- Foundation integrated via npm + importmap (not foundation-rails gem)
-- Sass uses `@import` syntax (deprecated warnings expected)
-- Assets are built to `app/assets/builds/` and ignored in git
-- Uses PostgreSQL in all environments
-
-## Coding Conventions
-
-- Git commit messages: Follow the conventions defined in ~/.gitmessage-conventions.md (read this file when creating commits)
-
-## Service Area Features
-
-The application includes interactive service area mapping with ZIP code data handled by `clients-zip-data.js` and `service-area-map.js`.
-
-## Reference Resources
-
-### Pristine Rails 8 App
-- **Location**: `/tmp/rails8021`
-- **Purpose**: Reference for bringing this project as close to a new Rails 8 app as possible
-- **Usage**: Use this as a comparison/reference when updating configurations, dependencies, and structure to match Rails 8 standards
+## Workflow
+- Commits are handled by the user via GitHub Desktop — draft messages when asked, never run `git add` or `git commit`.
+- Commit conventions: `~/dev-git/gitmessage-conventions.md` — review before drafting, extend when introducing new types/scopes.
