@@ -10,7 +10,7 @@ Ruby on Rails static informational site for a home care employment agency (no da
 Rails-first always. New UI: Stimulus + Turbo (not jQuery). CSS: modern vanilla CSS (Foundation is being replaced — no framework preference; prefer raw standard tools over utility libraries like Tailwind).
 
 ## CSS
-Read `.claude/skills/css/SKILL.md` before writing any CSS — naming scheme, file organization, and formatting conventions. (Claude Code: also invocable as `/css`.)
+Read `docs/ai/css-authoring.md` before writing any CSS — naming scheme, file organization, and formatting conventions. (Claude Code: also invocable as `/css`.)
 
 ## Workflow
 - Commits are handled by the user via GitHub Desktop — draft messages when asked, never run `git add` or `git commit`.
