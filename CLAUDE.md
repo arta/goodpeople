@@ -18,3 +18,4 @@ When creating or updating a feature touches many files, break into testable phas
 ## Workflow
 - Commits are handled by the user via GitHub Desktop — draft messages when asked, never run `git add` or `git commit`.
 - Commit conventions: `~/dev-git/gitmessage-conventions.md` — review before drafting, extend when introducing new types/scopes.
+- When a new tool or config generates files at the project root, check whether they belong in `.gitignore` before committing.
