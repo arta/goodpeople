@@ -174,11 +174,6 @@ img {
 
 // >>> Foundation overrides and tweaks - Start ---------------------------------
 
-// Make .off-canvas-content-overlay darker instead of te default lighter
-.js-off-canvas-overlay.is-visible {
-	background: rgba(0, 0, 0, 0.3);
-}
-
 // Substitutes for Foundation's: .title-bar .menu-icon { .. } selector
 // (.title-bar no longer used in our markup as part of F6 removal)
 .menu-icon { margin-inline: .25rem; }
@@ -189,25 +184,6 @@ img {
 .menu-icon::after {
 	background: c.$oil;
 	box-shadow: 0 7px 0 c.$oil, 0 14px 0 c.$oil;
-}
-
-// remove mobile menu active item Foundation signature teal-blue background
-.off-canvas.is-transition-push.is-open a:active {
-	background: transparent;
-}
-
-// tune up mobile menu shadow
-.off-canvas.is-transition-push.is-open {
-	box-shadow: 2px 0 15px rgba(50, 50, 50, 0.74);
-}
-
-// tune up mobile menu shadow
-.off-canvas.is-transition-push::after {
-	box-shadow: none;
-}
-
-.off-canvas {
-	background: white;
 }
 
 // center burger menu (undo F's global 1.5)

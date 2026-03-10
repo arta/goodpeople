@@ -82,28 +82,9 @@
 
   // >>> Foundation overrides and tweaks - Start -------------------------------
 
-  // #TODO: figure out how to dim font color (modern CSS may allow this)
-  .js-off-canvas-overlay.is-visible {
-    background: rgba(35, 43, 53, 0.7);
-    // background: rgba(55, 63, 73, 0.4); // rgb(55, 63, 73) = #373f49
-    // background: rgba(0, 0, 0, 0.4);
-  }
-
   .menu-icon::after {
     background: c.$cloud-gray-darker;
     box-shadow: 0 7px 0 c.$cloud-gray-darker, 0 14px 0 c.$cloud-gray-darker;
-  }
-
-  .off-canvas.is-transition-push.is-open {
-    box-shadow: 10px 0 20px 6px rgba(35, 43, 53, 0.84);
-    // box-shadow: 10px 0 20px 6px rgba(35, 35, 35, 0.74);
-    // box-shadow: 2px 0 15px rgba(35, 35, 35, 0.74);
-  }
-
-  .off-canvas {
-    background: c.$body-background-dm;
-
-    .a--gp-contact-info { color: c.$cloud-gray; }
   }
 
   // was .title-bar
