@@ -12,3 +12,10 @@ Read `~/dev-git/css-authoring.md` first for the universal scheme (naming, organi
 Foundation partials (`_settings.scss`, `_settings_overrides.scss`, `foundation_and_overrides.scss`) are legacy and being replaced. Do not add new rules to Foundation files.
 
 Note: `_custom.scss` is partially aligned with these conventions; apply consistently when touching it.
+
+## Reading existing styles
+Before writing CSS for a new or refactored component, read all
+partials that may contain relevant rules — for example,
+`_custom.scss`, `_dark_mode.scss`, and/or any other component
+partials. Rules for the same selector can be spread across files
+and media queries and are easy to miss.
