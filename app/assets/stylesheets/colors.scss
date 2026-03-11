@@ -16,26 +16,12 @@ $steel: #666;
 
 
 
-// #############################################################################
-// F6 settings (body) & overrides (a) we set (in foundation_and_overrides.scss):
-// ---------------------------------------------------------------------------
-
-// $black: #0a0a0a; // F6
-// $white: #fefefe; // F6
-
-// $body-background: $white; // we use F6 default setting
-$body-background-dm: $inkblot;
-
-// $body-font-color: $black; // we use F6 default setting
-$body-font-color-dm: white;
-
 $a-color: $egyptian-blue;
+$a-color-dm: white;
 $a-color-hover: $mandarin;
 
-// $anchor-color: c.$a-color; // we override F6 setting
-// $anchor-color-hover: c.$a-color-hover; we override // F6 setting
-
-$a-color-dm: white;
+$body-background-dm: $inkblot;
+$body-font-color-dm: white;
 
 
 

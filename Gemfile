@@ -58,5 +58,3 @@ end
 
 # 6-24-22: gem net-smtp, -pop, -imap, for Ruby 3.1.2 (for heroku-22 stack),
 # see debbugging.txt
-
-# 1-22-20: Foundation requires jquery, so .. keep JQuery for now

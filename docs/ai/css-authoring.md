@@ -4,14 +4,11 @@ Read `~/dev-git/css-authoring.md` first for the universal scheme (naming, organi
 
 ## Project-specific: partial structure
 
-- `_custom.scss` — main stylesheet; contains Global, Typography, Interactive, Layout, Images, Utilities sections
+- `_global.scss` — resets and base normalization (box-sizing, body, typography, interactive)
+- `_custom.scss` — main stylesheet; Typography, Interactive, Layout, Images sections
 - `colors.scss` — design tokens (`@use 'colors' as c;` to consume)
 - `_dark_mode.scss` — dark mode overrides
-- `_navigation.scss` — create this when extracting nav styles from `_custom.scss`
-
-Foundation partials (`_settings.scss`, `_settings_overrides.scss`, `foundation_and_overrides.scss`) are legacy and being replaced. Do not add new rules to Foundation files.
-
-Note: `_custom.scss` is partially aligned with these conventions; apply consistently when touching it.
+- `_nav.scss` — navigation styles
 
 ## Reading existing styles
 Before writing CSS for a new or refactored component, read all
