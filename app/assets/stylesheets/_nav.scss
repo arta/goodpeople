@@ -27,12 +27,12 @@ nav .a--gp-contact-info { color: c.$oil; }
 
 nav ul { list-style: none; margin: 0; padding: 0; }
 
-.nav--off-canvas.is-open {
+.nav--off-canvas.is-shown {
   box-shadow: 2px 0 15px rgba(50, 50, 50, 0.74);
   transform: translateX(0);
 }
 
-.canvas-overlay.is-visible { display: block; }
+.canvas-overlay.is-shown { display: block; }
 
 .nav--off-canvas {
   background: white;
@@ -69,7 +69,7 @@ nav ul { list-style: none; margin: 0; padding: 0; }
 
   // LAYOUT --------------------------------------------------------------------
 
-  .nav--off-canvas.is-open { box-shadow: 10px 0 20px 6px rgba(35, 43, 53, 0.84); }
+  .nav--off-canvas.is-shown { box-shadow: 10px 0 20px 6px rgba(35, 43, 53, 0.84); }
 
   .nav--off-canvas { background: c.$body-background-dm; }
 

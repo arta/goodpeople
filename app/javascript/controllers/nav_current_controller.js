@@ -2,9 +2,9 @@ import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
 
-  connect() { this.highlightCurrentPage() }
+  connect() { this.highlightCurrentNavItem() }
 
-  highlightCurrentPage() {
+  highlightCurrentNavItem() {
     const currentPath = window.location.pathname //=> "/caregivers"
     const navLinks = this.element.querySelectorAll('a')
 

@@ -25,25 +25,25 @@
 		= javascript_fontawesome_kit_tag
 		= javascript_google_tag
 
-	%body.body--interior-pg{ data: { controller: "navigation" } }
-		%nav.nav--off-canvas{ data: { navigation_target: "navOffCanvas" } }
-			%ul{ data: { controller: "current-nav-item" } }
+	%body.body--interior-pg{ data: { controller: "nav-mobile" } }
+		%nav.nav--off-canvas{ data: { nav_mobile_target: "navOffCanvas" } }
+			%ul{ data: { controller: "nav-current" } }
 				%li
 					= link_to root_path do
 						= render 'svg_gp_logo_logomark'
-				= render 'menu_nav_shared_items'
+				= render 'nav_items'
 				%li &nbsp;
 				%li= link_to '1-800-608-8003', 'tel:18006088003', class: 'a--gp-contact-info'
 				%li= link_to 'info@goodpeople.us', 'mailto:info@goodpeople.us', class: 'a--gp-contact-info'
 
-		.canvas-overlay{ data: { navigation_target: "canvasOverlay", action: "click->navigation#close" } }
+		.canvas-overlay{ data: { nav_mobile_target: "canvasOverlay", action: "click->nav-mobile#hide" } }
 
 		.canvas
 			%header.header--mobile-interior-pg
 				.left--header--mobile
-					.off-canvas-opener
-						%button.menu-icon{ type: 'button', data: { action: "navigation#toggle" } }
-							%label.label--off-canvas-opener Menu
+					%button.button--nav-burger{ type: 'button', data: { action: "nav-mobile#show" } }
+						= render 'svg_nav_burger'
+						%span Menu
 				.right--header--mobile
 					.gp-contact-info--header--mobile
 						= link_to '1-800-608-8003', 'tel:18006088003', class: 'a--gp-contact-info'
@@ -53,8 +53,8 @@
 				%header.header--desktop-interior-pg
 					= render 'header_desktop'
 				%nav.nav--desktop-interior-pg
-					%ul{ data: { controller: "current-nav-item" } }
-						= render 'menu_nav_shared_items'
+					%ul{ data: { controller: "nav-current" } }
+						= render 'nav_items'
 						%li
 							= link_to print_path, class: 'a--print' do
 								%i.fas.fa-print &nbsp;

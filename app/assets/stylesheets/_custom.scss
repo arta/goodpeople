@@ -146,25 +146,24 @@ img {
 	color: white;
 };
 
+.button--nav-burger {
+	align-items: center;
+	border: 1px solid #777;
+	border-radius: 3px;
+	color: c.$oil;
+	cursor: pointer;
+	display: flex;
+	font-size: 1rem;
+	gap: .625rem;
+	justify-content: center;
+	padding: .625rem .5rem;
+	text-transform: uppercase;
+	width: 6rem;
+}
+
 .current {
 	background-color: #e6e6e6; // make it beige ~#EAD29D;
 	border-radius: 3px;
-}
-
-.off-canvas-opener {
-	align-items: center;
-	border: 1px solid #777;
-	padding: .5rem .625rem .625rem .375rem;
-	width: 6rem;
-	border-radius: 3px;
-}
-
-.label--off-canvas-opener {
-	color: c.$oil;
-	font-size: 1rem;
-	margin-right: .25rem;
-	margin-left: 1.875rem;
-	text-transform: uppercase;
 }
 
 .span--tooltip {
@@ -173,18 +172,6 @@ img {
 }
 
 // >>> Foundation overrides and tweaks - Start ---------------------------------
-
-// Substitutes for Foundation's: .title-bar .menu-icon { .. } selector
-// (.title-bar no longer used in our markup as part of F6 removal)
-.menu-icon { margin-inline: .25rem; }
-
-// Change Foundation's menu burger color
-// Or, override F6's _settings.scss, 852: 53. Title Bar, $titlebar-icon-color
-// using our _settings_overrides.scss, and foundation_and_overrides.scss
-.menu-icon::after {
-	background: c.$oil;
-	box-shadow: 0 7px 0 c.$oil, 0 14px 0 c.$oil;
-}
 
 // center burger menu (undo F's global 1.5)
 // was .title-bar-left
@@ -443,6 +430,8 @@ img {
 	width: 125px;
 	height: 42px;
 }
+
+.rect-svg--nav-burger { fill: c.$oil; }
 
 .signature-image-mf { background-image: url('signature-mf.png'); }
 

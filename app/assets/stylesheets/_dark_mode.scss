@@ -69,36 +69,17 @@
     cursor: default;
   }
 
+  .button--nav-burger {
+    border-color: c.$cloud-gray-darker;
+    color: c.$cloud-gray;
+  }
+
   .current {
     background-color: #4c5969; // #475361;
     box-shadow: 2px 4px 6px #353535;
   }
 
-  .off-canvas-opener { border-color: c.$cloud-gray-darker; }
-
-  .label--off-canvas-opener { color: c.$cloud-gray; }
-
   .span--tooltip { border-bottom-color: c.$cloud-gray; }
-
-  // >>> Foundation overrides and tweaks - Start -------------------------------
-
-  .menu-icon::after {
-    background: c.$cloud-gray-darker;
-    box-shadow: 0 7px 0 c.$cloud-gray-darker, 0 14px 0 c.$cloud-gray-darker;
-  }
-
-  // was .title-bar
-  .header--mobile-interior-pg {
-    background-color: c.$body-background-dm;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.84);
-
-    .a--gp-contact-info {
-      color: c.$cloud-gray-lighter;
-      // font-weight: normal;
-    }
-  }
-
-  // <<< Foundation overrides and tweaks - End ---------------------------------
 
 
 
@@ -111,6 +92,16 @@
     border-color: c.$testimonial-border-color-dm;
     box-shadow: 2px 2px 8px c.$testimonial-shadow-color-dm;
     color: c.$testimonial-color-dm;
+  }
+
+  .header--mobile-interior-pg {
+    background-color: c.$body-background-dm;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.84);
+
+    .a--gp-contact-info {
+      color: c.$cloud-gray-lighter;
+      // font-weight: normal;
+    }
   }
 
 
@@ -136,6 +127,8 @@
   .path-svg--gp-tagline-ampresand {
     fill: c.$gp-ampresand-color-dm;
   }
+
+  .rect-svg--nav-burger { fill: c.$cloud-gray-darker; }
 
   .svg--gp-logo-desktop {
     .g-svg--gp-logomark { fill: #5d80cc; }
