@@ -25,7 +25,11 @@ nav .a--gp-contact-info { color: c.$oil; }
 // LAYOUT
 // -----------------------------------------------------------------------------
 
-nav ul { list-style: none; margin: 0; padding: 0; }
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
 .nav--off-canvas.is-shown {
   box-shadow: 2px 0 15px rgba(50, 50, 50, 0.74);
