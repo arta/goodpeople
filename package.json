@@ -1,9 +1,7 @@
 {
   "name": "your_project_name",
   "version": "1.0.0",
-  "dependencies": {
-    "foundation-sites": "^6.9.0"
-  },
+  "dependencies": {},
   "scripts": {
     "build:css": "sass --load-path=node_modules ./app/assets/stylesheets/application.scss ./app/assets/builds/application.css"
   }
