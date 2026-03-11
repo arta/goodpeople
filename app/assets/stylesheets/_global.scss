@@ -1,0 +1,88 @@
+@use 'colors' as c;
+
+
+
+// #############################################################################
+// GLOBAL — resets & base normalization
+// -----------------------------------------------------------------------------
+
+*,
+*::after,
+*::before {
+  // border: 1px solid hotpink;
+  box-sizing: border-box;
+  outline: 0; // remove browser default focus ring
+}
+
+body {
+  background: white;
+  color: #0a0a0a;
+  font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+  font-size: 100%;
+  line-height: 1.5;
+  margin: 0;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; vertical-align: middle; }
+
+
+
+// #############################################################################
+// TYPOGRAPHY
+// -----------------------------------------------------------------------------
+
+h1 {
+  font-size: 1.1875rem; // 19px
+  font-weight: normal;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+li { line-height: 1.6; }
+
+p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+ul {
+  margin-bottom: 1rem;
+  margin-left: 1.25rem;
+}
+
+
+
+// #############################################################################
+// INTERACTIVE
+// -----------------------------------------------------------------------------
+
+a { color: c.$a-color; text-decoration: none; }
+
+a:hover { color: c.$a-color-hover; }
+
+button {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+  line-height: inherit;
+  padding: 0;
+}
+
+
+
+// #############################################################################
+// @media (min-width: 40rem)
+// -----------------------------------------------------------------------------
+
+@media (min-width: 40rem) {
+
+  // TYPOGRAPHY ----------------------------------------------------------------
+
+  h1 { font-size: 1.625rem; } // 26px
+
+}

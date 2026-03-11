@@ -9,26 +9,6 @@
 
 
 // #############################################################################
-// GLOBAL
-// -----------------------------------------------------------------------------
-
-*,
-*::after,
-*::before {
-	// border: 1px solid hotpink;
-	box-sizing: border-box;
-	// Remove blue glowing outline around clicked imgs, ..:
-	outline: 0;
-}
-
-img {
-	max-width: 100%;
-	vertical-align: middle;
-}
-
-
-
-// #############################################################################
 // TYPOGRAPHY
 // -----------------------------------------------------------------------------
 
@@ -171,16 +151,9 @@ img {
 	cursor: help;
 }
 
-// >>> Foundation overrides and tweaks - Start ---------------------------------
-
-// center burger menu (undo F's global 1.5)
-// was .title-bar-left
 .left--header--mobile { line-height: 1; }
 
-// was .title-bar-right
 .right--header--mobile { font-size: .8em; }
-
-// <<< Foundation overrides and tweaks - End -----------------------------------
 
 
 
@@ -217,8 +190,6 @@ img {
 	text-align: center;
 }
 
-// Hide horizontal scrollbar caused by Foundation’s .off-canvas.is-open push
-// while keeping .header--mobile-interior-pg plain CSS position: sticky working
 .body--interior-pg { overflow-x: hidden; }
 
 .footer--interior-pg {
