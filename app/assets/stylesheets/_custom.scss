@@ -138,7 +138,6 @@
 	justify-content: center;
 	padding: .625rem .5rem;
 	text-transform: uppercase;
-	width: 6rem;
 }
 
 .current {
@@ -285,6 +284,12 @@
 .header--testimonial {
 	margin-bottom: 3em;
 	text-align: right;
+}
+
+.li-nav--off-canvas-header {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
 }
 
 .li--testimonial-excerpt {

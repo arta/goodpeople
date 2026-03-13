@@ -28,9 +28,11 @@
 	%body.body--interior-pg{ data: { controller: "nav-mobile" } }
 		%nav.nav--off-canvas{ data: { nav_mobile_target: "navOffCanvas" } }
 			%ul{ data: { controller: "nav-current" } }
-				%li
+				%li.li-nav--off-canvas-header
 					= link_to root_path do
 						= render 'svg_gp_logo_logomark'
+					%button.button--nav-burger{ type: 'button', data: { action: "nav-mobile#hide" } }
+						= render 'svg_nav_burger'
 				= render 'nav_items'
 				%li &nbsp;
 				%li= link_to '1-800-608-8003', 'tel:18006088003', class: 'a--gp-contact-info'
