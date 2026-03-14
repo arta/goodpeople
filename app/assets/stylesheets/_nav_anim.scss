@@ -5,7 +5,7 @@
 // Comment out @use "nav_anim" in application.scss to disable —
 // the close button will then always display as X (default in _nav.scss).
 
-// Animate mobile nav burger [𝝣] into mobile nav close [x]
+// Animate mobile nav close burger [𝝣] into [x]
 // (but on 1st page load only; handled by nav_mobile Stimulus controller)
 .nav--off-canvas.is-shown:not(.nav-close-anim-done) .rect-svg--nav-burger {
   // Animate each bar (rect) of the burger:
