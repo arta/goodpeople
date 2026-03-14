@@ -24,15 +24,12 @@ nav .a--gp-contact-info { color: c.$oil; }
 
 .li-nav--off-canvas-header button { margin: .7rem 1rem; }
 
-.nav--off-canvas .rect-svg--nav-burger {
-  transform-box: fill-box;
-  transform-origin: center;
-}
-
 // Transform mobile nav close burger [𝝣] into [x]:
 .nav--off-canvas {
   // Transform each bar (rect) of the burger:
   .rect-svg--nav-burger {
+    transform-box: fill-box;
+    transform-origin: center;
     // burger top bar down then clockwise:
     &:nth-child(1) { transform: translateY(7px) rotate(45deg) scaleY(0.8); }
     // burger middle bar fade out:
