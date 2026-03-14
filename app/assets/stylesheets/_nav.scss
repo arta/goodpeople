@@ -31,9 +31,13 @@ nav .a--gp-contact-info { color: c.$oil; }
 
 // Transform mobile nav burger [𝝣] into mobile nav close [x]:
 .nav--off-canvas {
+  // Transform each bar (rect) of the burger:
   .rect-svg--nav-burger {
+    // burger top bar down then clockwise:
     &:nth-child(1) { transform: translateY(7px) rotate(45deg) scaleY(0.8); }
+    // burger middle bar fade out:
     &:nth-child(2) { opacity: 0; }
+    // burger bottom bar up then counterclockwise:
     &:nth-child(3) { transform: translateY(-7px) rotate(-45deg) scaleY(0.8); }
   }
 }

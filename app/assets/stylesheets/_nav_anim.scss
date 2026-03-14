@@ -1,0 +1,38 @@
+// #############################################################################
+// INTERACTIVE
+// -----------------------------------------------------------------------------
+// Nav close button: burger → X animation, plays once per session.
+// Comment out @use "nav_anim" in application.scss to disable —
+// the close button will then always display as X (default in _nav.scss).
+
+// Animate mobile nav burger [𝝣] into mobile nav close [x]
+// (but on 1st page load only; handled by nav_mobile Stimulus controller)
+.nav--off-canvas.is-shown:not(.nav-close-anim-done) .rect-svg--nav-burger {
+  // Animate each bar (rect) of the burger:
+  &:nth-child(1) { animation-name: burger-top-bar-down-then-clockwise; }
+  &:nth-child(2) { animation-name: burger-middle-bar-fade-out; }
+  &:nth-child(3) { animation-name: burger-bottom-bar-up-then-counterclockwise; }
+  // Animation shared params:
+  animation-delay: 0.34s;
+  animation-duration: .5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+}
+
+@keyframes burger-top-bar-down-then-clockwise {
+  0%   { transform: translateY(0)   rotate(0deg); }
+  40%  { transform: translateY(7px) rotate(0deg); }
+  100% { transform: translateY(7px) rotate(45deg) scaleY(0.8); }
+}
+
+@keyframes burger-middle-bar-fade-out {
+  0%   { opacity: 1; }
+  40%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes burger-bottom-bar-up-then-counterclockwise {
+  0%   { transform: translateY(0)    rotate(0deg); }
+  40%  { transform: translateY(-7px) rotate(0deg); }
+  100% { transform: translateY(-7px) rotate(-45deg) scaleY(0.8); }
+}
