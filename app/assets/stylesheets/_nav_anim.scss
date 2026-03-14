@@ -13,10 +13,15 @@
   &:nth-child(2) { animation-name: burger-middle-bar-fade-out; }
   &:nth-child(3) { animation-name: burger-bottom-bar-up-then-counterclockwise; }
   // Animation shared params:
-  animation-fill-mode: forwards;
   animation-delay: 0.75s;
   animation-duration: 1s;
+  animation-fill-mode: both; // (*)
   animation-timing-function: ease;
+  // (*) Ensures burger is shown before the default X (_nav.scss post-transform)
+  //     CSS animations override author styles (including transforms)
+  //     total animation duration = animation-delay + animation-duration
+  //     animation fill mode both = forwards & backwards
+  //     backwards: show 0% keyframe during delay; forwards: hold 100% after end
 }
 
 @keyframes burger-top-bar-down-then-clockwise {
