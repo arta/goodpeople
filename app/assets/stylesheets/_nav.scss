@@ -24,7 +24,8 @@ nav .a--gp-contact-info { color: c.$oil; }
 
 .li-nav--off-canvas-header button { margin: .7rem 1rem; }
 
-// Transform mobile nav close burger [𝝣] into [x]:
+// Transform mobile nav burger [𝝣] into conventional mobile nav close [x]
+// (intercepted by _nav_animation.scss if :not(.nav-close-x-has-animated))
 .nav--off-canvas {
   // Transform each bar (rect) of the burger:
   .rect-svg--nav-burger {

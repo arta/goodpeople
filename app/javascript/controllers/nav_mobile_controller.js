@@ -4,7 +4,7 @@ export default class extends Controller {
   static targets = ["navOffCanvas", "canvasOverlay"]
 
   connect() {
-    if (sessionStorage.getItem("navCloseAnimDone")) {
+    if (sessionStorage.getItem("navCloseXHasAnimated")) {
       this.#lockNavCloseX()
     }
   }
@@ -12,7 +12,7 @@ export default class extends Controller {
   show() {
     this.navOffCanvasTarget.classList.add("is-shown")
     this.canvasOverlayTarget.classList.add("is-shown")
-    this.#flagNavCloseAnim()
+    this.#flagNavCloseXAnimation()
   }
 
   hide() {
@@ -29,11 +29,11 @@ export default class extends Controller {
 
   // Limit mobile nav close burger [𝝣] into [x] animation to once per session
 
-  #flagNavCloseAnim() {
-    sessionStorage.setItem("navCloseAnimDone", "1")
+  #flagNavCloseXAnimation() {
+    sessionStorage.setItem("navCloseXHasAnimated", "1")
   }
 
   #lockNavCloseX() {
-    this.navOffCanvasTarget.classList.add("nav-close-anim-done")
+    this.navOffCanvasTarget.classList.add("nav-close-x-has-animated")
   }
 }
