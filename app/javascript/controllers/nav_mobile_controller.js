@@ -5,20 +5,21 @@ export default class extends Controller {
 
   connect() {
     if (sessionStorage.getItem("navCloseXHasAnimated")) {
-      this.#lockNavCloseX()
+      // Mobile nav close burger [𝝣] into [x] animation runs once per session
+      this.#blockNavCloseXAnimation()
     }
   }
 
   show() {
     this.navOffCanvasTarget.classList.add("is-shown")
     this.canvasOverlayTarget.classList.add("is-shown")
-    this.#flagNavCloseXAnimation()
+    this.#flagNavCloseXAnimation() // idempotent
   }
 
   hide() {
     this.navOffCanvasTarget.classList.remove("is-shown")
     this.canvasOverlayTarget.classList.remove("is-shown")
-    this.#lockNavCloseX()
+    this.#blockNavCloseXAnimation() // idempotent
   }
 
 
@@ -27,13 +28,11 @@ export default class extends Controller {
   // HELPERS (private to this controller)
   // ---------------------------------------------------------------------------
 
-  // Limit mobile nav close burger [𝝣] into [x] animation to once per session
-
   #flagNavCloseXAnimation() {
     sessionStorage.setItem("navCloseXHasAnimated", "1")
   }
 
-  #lockNavCloseX() {
+  #blockNavCloseXAnimation() {
     this.navOffCanvasTarget.classList.add("nav-close-x-has-animated")
   }
 }
