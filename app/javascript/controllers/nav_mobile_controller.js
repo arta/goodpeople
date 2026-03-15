@@ -1,12 +1,17 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ["navOffCanvas", "canvasOverlay"]
+  static targets = ["headerMobile", "navOffCanvas", "canvasOverlay"]
 
   connect() {
+    if (this.hasHeaderMobileTarget && !sessionStorage.getItem("navBurgerHasAnimated")) {
+      // Mobile nav open [𝝣 MENU] burger animation runs once per session
+      this.#runNavBurgerAnimation() // opt-in animation
+    }
+
     if (sessionStorage.getItem("navCloseXHasAnimated")) {
       // Mobile nav close burger [𝝣] into [x] animation runs once per session
-      this.#blockNavCloseXAnimation()
+      this.#blockNavCloseXAnimation() // opt-out animation
     }
   }
 
@@ -27,6 +32,11 @@ export default class extends Controller {
   // ###########################################################################
   // HELPERS (private to this controller)
   // ---------------------------------------------------------------------------
+
+  #runNavBurgerAnimation() {
+    this.headerMobileTarget.classList.add("nav-burger-animates")
+    sessionStorage.setItem("navBurgerHasAnimated", "1")
+  }
 
   #flagNavCloseXAnimation() {
     sessionStorage.setItem("navCloseXHasAnimated", "1")

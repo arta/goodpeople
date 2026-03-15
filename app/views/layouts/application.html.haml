@@ -41,7 +41,7 @@
 		.canvas-overlay{ data: { nav_mobile_target: "canvasOverlay", action: "click->nav-mobile#hide" } }
 
 		.canvas
-			%header.header--mobile-interior-pg
+			%header.header--mobile-interior-pg{ data: { nav_mobile_target: "headerMobile" } }
 				.left--header--mobile
 					%button.button--nav-burger{ type: 'button', data: { action: "nav-mobile#show" } }
 						= render 'svg_nav_burger'
