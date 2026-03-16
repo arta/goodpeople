@@ -1,0 +1,73 @@
+@use 'colors' as c;
+
+
+
+h1,
+ul { margin-top: 0; }
+
+li,
+p {
+  line-height: 1.6;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 1.1875rem; // 19px
+  font-weight: normal;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+
+  @media (min-width: 40rem) { font-size: 1.625rem; } // 26px
+}
+
+.h1--index-pg {
+  margin-top: 3em;
+
+  @media (max-width: 640px) {
+    font-size: 1.3em;
+  }
+}
+
+.h1--interior-pg {
+  margin-bottom: 1em;
+
+  @media (max-width: 640px) {
+    font-size: 1.6em;
+  }
+}
+
+.h1--print-pg {
+  font-size: 130%;
+  margin-top: 0px;
+  text-align: center;
+}
+
+.label--testimonial {
+  display: block;
+  color: c.$testimonial-background; // don't show, keep for counting :)
+  font-size: 1%; // 90%;
+  // margin-bottom: 4px;
+}
+
+p { margin-bottom: 1rem; }
+
+.p-footer {
+  color: c.$dusty-gray;
+  font-size: 80%;
+  padding-top: 60px;
+  padding-bottom: 40px;
+
+  @media (max-width: 640px) { text-align: center; }
+}
+
+.p--testimonial-signature { margin-bottom: 0; }
+
+.span--gp-signature-name { margin: 0; }
+
+.span--underline { text-decoration: underline; }
+
+ul {
+  margin-bottom: 1rem;
+  margin-left: 1.25rem;
+  padding: 0;
+}
