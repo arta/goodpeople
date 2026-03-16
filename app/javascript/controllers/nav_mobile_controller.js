@@ -4,14 +4,12 @@ export default class extends Controller {
   static targets = ["headerMobile", "navOffCanvas", "canvasOverlay"]
 
   connect() {
-    if (this.hasHeaderMobileTarget && !sessionStorage.getItem("navBurgerHasAnimated")) {
-      // Mobile nav open [𝝣 MENU] burger animation runs once per session
-      this.#runNavBurgerAnimation() // opt-in animation
+    // Nav animations, open burger [𝝣 MENU] and close [x], run once per session:
+    if (this.#navBurgerHasNotAnimated()) { // opt-in
+      this.#runNavBurgerAnimation()
     }
-
-    if (sessionStorage.getItem("navCloseXHasAnimated")) {
-      // Mobile nav close burger [𝝣] into [x] animation runs once per session
-      this.#blockNavCloseXAnimation() // opt-out animation
+    if (this.#navCloseXHasAnimated()) { // opt-out
+      this.#blockNavCloseXAnimation()
     }
   }
 
@@ -32,6 +30,14 @@ export default class extends Controller {
   // ###########################################################################
   // HELPERS (private to this controller)
   // ---------------------------------------------------------------------------
+
+  #navBurgerHasNotAnimated() {
+    return this.hasHeaderMobileTarget && !sessionStorage.getItem("navBurgerHasAnimated")
+  }
+
+  #navCloseXHasAnimated() {
+    return !!sessionStorage.getItem("navCloseXHasAnimated")
+  }
 
   #runNavBurgerAnimation() {
     this.headerMobileTarget.classList.add("nav-burger-animates")
