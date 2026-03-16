@@ -1,0 +1,189 @@
+@use 'colors' as c;
+
+
+
+.cta-and-contact-info,
+.footer--index-pg { grid-column: 3 / span 8; }
+
+.gp-contact-info--header--mobile,
+.gp-contact-info--header--desktop {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+}
+
+.article--testimonial {
+  background: c.$testimonial-background;
+  border: 1px solid c.$testimonial-border-color;
+  border-radius: 3px;
+  box-shadow: 2px 2px 8px c.$testimonial-shadow-color;
+  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+  font-size: 1.1em;
+  margin-bottom: 3em;
+  padding: 2em;
+}
+
+.body--index-pg {
+  padding-top: 2.5em;
+  text-align: center;
+}
+
+.body--interior-pg { overflow-x: hidden; }
+
+.footer--interior-pg {
+  grid-column: 1 / span 12;
+
+  @media (min-width: 40rem) {
+    grid-column: 4 / span 9;
+    padding-inline: .9375rem;
+  }
+}
+
+.gp-contact-info--header--desktop { margin-top: 3em; }
+
+.gp-contact-info-index-pg {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.4em;
+  margin-bottom: 40px;
+
+  @media (max-width: 640px) {
+    font-size: 1.2em;
+  };
+}
+
+.gp-signature {
+  margin-top: 2em;
+  text-align: center;
+}
+
+.gp-signatures {
+  display: flex;
+  column-gap: 2em;
+  flex-wrap: wrap;
+  margin-left: 1em;
+}
+
+.gridfield {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  max-width: 75rem;
+  margin: 0 auto;
+}
+
+.header--index-pg {
+  grid-column: 2 / span 10;
+  padding-inline: .625rem; // immitate Foundation's column default padding
+
+  @media (min-width: 40rem) {
+    grid-column: 3 / span 8;
+    padding-inline: 1rem; // imitate Foundation's logo size at this breakpoint
+  }
+}
+
+.header--interior-pg-desktop {
+  display: none;
+
+  @media (min-width: 40rem) {
+    display: flex;
+    grid-column: 1 / span 12;
+    height: 12em;
+    justify-content: space-between;
+    margin-bottom: 1em;
+    padding-inline: 1.875rem;
+    padding-top: 1em;
+  }
+}
+
+.header--interior-pg-mobile {
+  align-items: center;
+  background-color: white;
+  box-shadow: 0 2px 15px rgba(50, 50, 50, 0.74);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2em;
+  padding: .7em .5rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  @media (min-width: 40rem) {
+    display: none;
+  }
+}
+
+.header-nav--off-canvas {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header--print-pg {
+  display: flex;
+  height: 180px;
+  justify-content: space-between;
+  margin-right: 20px;
+}
+
+.header--testimonial {
+  margin-bottom: 3em;
+  text-align: right;
+}
+
+.li--testimonial-excerpt {
+  font-size: 1.2em;
+  font-style: italic;
+  margin: 0 auto 3em;
+  text-align: left;
+
+  @media (max-width: 640px) { font-size: 1em; };
+}
+
+.main--interior-pg {
+  grid-column: 1 / span 12;
+  padding-inline: .625rem; // immitate Foundation's column default padding
+
+  @media (min-width: 40rem) {
+    grid-column: 4 / span 9;
+    padding-inline: .9375rem;
+  }
+}
+
+.main--print-pg {
+  margin: 0 20px 0 0;
+  font-size: 10pt;
+}
+
+.nav--interior-pg-desktop {
+  display: none;
+
+  @media (min-width: 40rem) {
+    display: block;
+    grid-column: 1 / span 3;
+    padding-inline: .9375rem;
+  }
+}
+
+.section--testimonials-intro { margin-bottom: 3em; }
+
+.servicearea-map {
+  height: 400px;
+  margin-top: 2.6em;
+}
+
+.ul--testimonials-excerpts {
+  grid-column: 1 / span 12;
+  list-style: none;
+  margin-left: 0;
+  padding-inline: 1.375rem;
+
+  @media (min-width: 40rem) {
+    grid-column: 3 / span 8;
+    padding: unset;
+  }
+
+  @media (min-width: 64rem) {
+    grid-column: 4 / span 6;
+  }
+}
