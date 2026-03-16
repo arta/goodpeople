@@ -13,15 +13,15 @@ export default class extends Controller {
     }
   }
 
-  show() {
-    this.navOffCanvasTarget.classList.add("is-shown")
-    this.canvasOverlayTarget.classList.add("is-shown")
+  open() {
+    this.navOffCanvasTarget.classList.add("is-open")
+    this.canvasOverlayTarget.classList.add("is-open")
     this.#flagNavCloseXAnimation() // idempotent
   }
 
-  hide() {
-    this.navOffCanvasTarget.classList.remove("is-shown")
-    this.canvasOverlayTarget.classList.remove("is-shown")
+  close() {
+    this.navOffCanvasTarget.classList.remove("is-open")
+    this.canvasOverlayTarget.classList.remove("is-open")
     this.#blockNavCloseXAnimation() // idempotent
   }
 

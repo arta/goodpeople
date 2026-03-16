@@ -55,12 +55,12 @@ nav ul {
   padding: 0;
 }
 
-.nav--off-canvas.is-shown {
+.nav--off-canvas.is-open {
   box-shadow: 2px 0 15px rgba(50, 50, 50, 0.74);
   transform: translateX(0);
 }
 
-.canvas-overlay.is-shown { display: block; }
+.canvas-overlay.is-open { display: block; }
 
 .nav--off-canvas {
   background: white;
@@ -97,7 +97,7 @@ nav ul {
 
   // LAYOUT --------------------------------------------------------------------
 
-  .nav--off-canvas.is-shown { box-shadow: 10px 0 20px 6px rgba(35, 43, 53, 0.84); }
+  .nav--off-canvas.is-open { box-shadow: 10px 0 20px 6px rgba(35, 43, 53, 0.84); }
 
   .nav--off-canvas { background: c.$body-background-dm; }
 
