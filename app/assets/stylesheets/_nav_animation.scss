@@ -6,7 +6,7 @@
 
 // Animate mobile nav open [𝝣 MENU] burger: bars sweep left then return right
 // (but on 1st page load only; handled by nav_mobile Stimulus controller)
-.header--mobile-interior-pg.nav-burger-animates .rect-svg--nav-burger {
+.header--interior-pg-mobile.nav-burger-animates .rect-svg--nav-burger {
   // Animate each bar (rect) of the burger:
   &:nth-child(1) { animation-name: burger-top-bar-left-then-right; }
   &:nth-child(2) { animation-name: burger-middle-bar-left-then-right; }

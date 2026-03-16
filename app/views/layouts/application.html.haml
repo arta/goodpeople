@@ -42,7 +42,7 @@
 		.canvas-overlay{ data: { nav_mobile_target: "canvasOverlay", action: "click->nav-mobile#hide" } }
 
 		.canvas
-			%header.header--mobile-interior-pg{ data: { nav_mobile_target: "headerMobile" } }
+			%header.header--interior-pg-mobile{ data: { nav_mobile_target: "headerMobile" } }
 				.left--header--mobile
 					%button.button--nav-burger{ type: 'button', data: { action: "nav-mobile#show" } }
 						= render 'svg_nav_burger'
@@ -53,9 +53,9 @@
 						= link_to 'info@goodpeople.us', 'mailto:info@goodpeople.us', class: 'a--gp-contact-info'
 
 			.gridfield
-				%header.header--desktop-interior-pg
+				%header.header--interior-pg-desktop
 					= render 'header_desktop'
-				%nav.nav--desktop-interior-pg
+				%nav.nav--interior-pg-desktop
 					%ul{ data: { controller: "nav-current" } }
 						= render 'nav_items'
 						%li
