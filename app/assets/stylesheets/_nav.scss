@@ -19,10 +19,13 @@ nav ul a:hover { color: c.$a-color-hover; }
 
 nav .a--gp-contact-info { color: c.$oil; }
 
+.header-nav--off-canvas a {
+  flex-grow: 1;
+  line-height: 1;
+  padding: .7rem 1rem;
+}
 
-.li-nav--off-canvas-header a { flex-grow: 1; }
-
-.li-nav--off-canvas-header button { margin: .7rem 1rem; }
+.header-nav--off-canvas button { margin: .7rem 1rem; }
 
 // Transform mobile nav burger [𝝣] into conventional mobile nav close [x]
 // (intercepted by _nav_animation.scss if :not(.nav-close-x-has-animated))
