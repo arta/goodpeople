@@ -69,7 +69,8 @@
     cursor: default;
   }
 
-  .button--nav-burger {
+  .button--nav-burger,
+  .button--nav-close {
     border-color: c.$cloud-gray-darker;
     color: c.$cloud-gray;
   }
