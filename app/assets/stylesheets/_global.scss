@@ -1,7 +1,3 @@
-@use 'colors' as c;
-
-
-
 // #############################################################################
 // GLOBAL — resets & base normalization
 // -----------------------------------------------------------------------------
@@ -30,25 +26,3 @@ img {
   vertical-align: middle;
 }
 
-
-
-// #############################################################################
-// INTERACTIVE
-// -----------------------------------------------------------------------------
-
-a {
-  color: c.$a-color;
-  text-decoration: none;
-}
-
-a:hover { color: c.$a-color-hover; }
-
-button {
-  appearance: none;
-  background: transparent;
-  border: 0;
-  cursor: pointer;
-  font: inherit;
-  line-height: inherit;
-  padding: 0;
-}
