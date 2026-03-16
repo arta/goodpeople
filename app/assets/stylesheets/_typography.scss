@@ -51,6 +51,11 @@ h1 {
 
 p { margin-bottom: 1rem; }
 
+.p--flextrack-justify-between {
+  display: flex;
+  justify-content: space-between;
+}
+
 .p-footer {
   color: c.$dusty-gray;
   font-size: 80%;
