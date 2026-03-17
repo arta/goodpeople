@@ -12,6 +12,8 @@
   flex-direction: column;
 }
 
+.gp-contact-info--header--mobile { font-size: .8em; }
+
 .article--testimonial {
   background: c.$testimonial-background;
   border: 1px solid c.$testimonial-border-color;
@@ -96,12 +98,13 @@
   }
 }
 
-.header--interior-pg-mobile {
-  align-items: center;
+.header--interior-pg-mobile { // mirror: _nav.scss::.header-nav--off-canvas
+  align-items: center; // mirror
   background-color: white;
   box-shadow: 0 2px 15px rgba(50, 50, 50, 0.74);
-  display: flex;
-  justify-content: space-between;
+  display: flex; // mirror
+  justify-content: space-between; // mirror
+  line-height: 1;
   margin-bottom: 2em;
   padding: .7em .5rem;
   position: sticky;
@@ -111,12 +114,6 @@
   @media (min-width: 40rem) {
     display: none;
   }
-}
-
-.header-nav--off-canvas {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
 }
 
 .header--print-pg {

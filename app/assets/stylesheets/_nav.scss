@@ -49,6 +49,12 @@ nav .a--gp-contact-info { color: c.$oil; }
 // LAYOUT
 // -----------------------------------------------------------------------------
 
+.header-nav--off-canvas { // mirror: _layout.scss::.header--interior-pg-mobile
+  align-items: center; // mirror
+  display: flex; // mirror
+  justify-content: space-between; // mirror
+}
+
 nav ul {
   list-style: none;
   margin: 0;

@@ -12,6 +12,4 @@
 
 ## Layout
 
-- Simplify `.header--interior-pg-mobile`: remove `.left--header-mobile` / `.right--header-mobile` wrappers, giving it the same two-child structure as `.header-nav--off-canvas`; align shared height/padding via unified CSS rules so both headers are visually consistent
-
 - Investigate removing `.gridfield`: evaluate whether CSS grid on `.canvas` alone can handle mobile-vs-desktop header switching (per device), eliminating the extra wrapper
