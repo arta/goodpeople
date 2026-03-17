@@ -41,7 +41,7 @@
 
 		.canvas-overlay{ data: { nav_mobile_target: "canvasOverlay", action: "click->nav-mobile#close" } }
 
-		.canvas
+		.canvas--interior-pg
 			%header.header--interior-pg-mobile{ data: { nav_mobile_target: "headerMobile" } }
 				%button.button--nav-burger{ type: 'button', data: { action: "nav-mobile#open" } }
 					= render 'svg_nav_burger'
@@ -50,19 +50,18 @@
 					= link_to '1-800-608-8003', 'tel:18006088003', class: 'a--gp-contact-info'
 					= link_to 'info@goodpeople.us', 'mailto:info@goodpeople.us', class: 'a--gp-contact-info'
 
-			.gridfield
-				%header.header--interior-pg-desktop
-					= render 'header_desktop'
-				%nav.nav--interior-pg-desktop
-					%ul{ data: { controller: "nav-current" } }
-						= render 'nav_items'
-						%li
-							= link_to print_path, class: 'a--print' do
-								%i.fas.fa-print &nbsp;
-								%span Print view
+			%header.header--interior-pg-desktop
+				= render 'header_desktop'
+			%nav.nav--interior-pg-desktop
+				%ul{ data: { controller: "nav-current" } }
+					= render 'nav_items'
+					%li
+						= link_to print_path, class: 'a--print' do
+							%i.fas.fa-print &nbsp;
+							%span Print view
 
-				%main.main--interior-pg
-					= yield
+			%main.main--interior-pg
+				= yield
 
-				%footer.footer--interior-pg
-					%p.p-footer &copy; 2001 - #{Date.today.year} Good People, LLC
+			%footer.footer--interior-pg
+				%p.p-footer &copy; 2001 - #{Date.today.year} Good People, LLC
