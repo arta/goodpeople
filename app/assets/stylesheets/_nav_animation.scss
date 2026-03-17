@@ -52,7 +52,7 @@
 
 // Animate mobile nav close burger [𝝣] into [x]
 // (but on 1st page load only; handled by nav_mobile Stimulus controller)
-.nav--off-canvas.is-open:not(.nav-close-x-has-animated) .rect-svg--nav-burger {
+.nav--mobile.is-open:not(.nav-close-x-has-animated) .rect-svg--nav-burger {
   // Animate each bar (rect) of the burger:
   &:nth-child(1) { animation-name: burger-top-bar-down-then-clockwise; }
   &:nth-child(2) { animation-name: burger-middle-bar-fade-out; }

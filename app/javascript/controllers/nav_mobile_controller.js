@@ -1,7 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ["headerMobile", "navOffCanvas", "canvasOverlay"]
+  static targets = ["headerMobile", "navMobile", "canvasOverlay"]
 
   connect() {
     // Nav animations, open burger [𝝣 MENU] and close [x], run once per session:
@@ -14,13 +14,13 @@ export default class extends Controller {
   }
 
   open() {
-    this.navOffCanvasTarget.classList.add("is-open")
+    this.navMobileTarget.classList.add("is-open")
     this.canvasOverlayTarget.classList.add("is-open")
     this.#flagNavCloseXAnimation() // idempotent
   }
 
   close() {
-    this.navOffCanvasTarget.classList.remove("is-open")
+    this.navMobileTarget.classList.remove("is-open")
     this.canvasOverlayTarget.classList.remove("is-open")
     this.#blockNavCloseXAnimation() // idempotent
   }
@@ -49,6 +49,6 @@ export default class extends Controller {
   }
 
   #blockNavCloseXAnimation() {
-    this.navOffCanvasTarget.classList.add("nav-close-x-has-animated")
+    this.navMobileTarget.classList.add("nav-close-x-has-animated")
   }
 }

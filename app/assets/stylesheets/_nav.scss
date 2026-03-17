@@ -19,17 +19,17 @@ nav ul a:hover { color: c.$a-color-hover; }
 
 nav .a--gp-contact-info { color: c.$oil; }
 
-.header-nav--off-canvas a {
+.header-nav--mobile a {
   flex-grow: 1;
   line-height: 1;
   padding: .7rem 1rem;
 }
 
-.header-nav--off-canvas button { margin: .7rem 1rem; }
+.header-nav--mobile button { margin: .7rem 1rem; }
 
 // Transform mobile nav burger [𝝣] into conventional mobile nav close [x]
 // (intercepted by _nav_animation.scss if :not(.nav-close-x-has-animated))
-.nav--off-canvas {
+.nav--mobile {
   // Transform each bar (rect) of the burger:
   .rect-svg--nav-burger {
     transform-box: fill-box;
@@ -49,7 +49,7 @@ nav .a--gp-contact-info { color: c.$oil; }
 // LAYOUT
 // -----------------------------------------------------------------------------
 
-.header-nav--off-canvas { // mirror: _layout.scss::.header--interior-pg-mobile
+.header-nav--mobile { // mirror: _layout.scss::.header--interior-pg-mobile
   align-items: center; // mirror
   display: flex; // mirror
   justify-content: space-between; // mirror
@@ -61,14 +61,14 @@ nav ul {
   padding: 0;
 }
 
-.nav--off-canvas.is-open {
+.nav--mobile.is-open {
   box-shadow: 2px 0 15px rgba(50, 50, 50, 0.74);
   transform: translateX(0);
 }
 
 .canvas-overlay.is-open { display: block; }
 
-.nav--off-canvas {
+.nav--mobile {
   background: white;
   bottom: 0;
   left: 0;
@@ -103,9 +103,9 @@ nav ul {
 
   // LAYOUT --------------------------------------------------------------------
 
-  .nav--off-canvas.is-open { box-shadow: 10px 0 20px 6px rgba(35, 43, 53, 0.84); }
+  .nav--mobile.is-open { box-shadow: 10px 0 20px 6px rgba(35, 43, 53, 0.84); }
 
-  .nav--off-canvas { background: c.$body-background-dm; }
+  .nav--mobile { background: c.$body-background-dm; }
 
   .canvas-overlay { background: rgba(35, 43, 53, 0.7); }
 }

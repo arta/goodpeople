@@ -26,8 +26,8 @@
 		= javascript_google_tag
 
 	%body.body--interior-pg{ data: { controller: "nav-mobile" } }
-		%nav.nav--off-canvas{ data: { nav_mobile_target: "navOffCanvas" } }
-			%header.header-nav--off-canvas
+		%nav.nav--mobile{ data: { nav_mobile_target: "navMobile" } }
+			%header.header-nav--mobile
 				= link_to root_path do
 					= render 'svg_gp_logo_logomark'
 				%button.button--nav-close{ type: 'button', data: { action: "nav-mobile#close" } }
@@ -41,7 +41,7 @@
 
 		.canvas-overlay{ data: { nav_mobile_target: "canvasOverlay", action: "click->nav-mobile#close" } }
 
-		.canvas--interior-pg
+		.canvas-interior-pg
 			%header.header--interior-pg-mobile{ data: { nav_mobile_target: "headerMobile" } }
 				%button.button--nav-burger{ type: 'button', data: { action: "nav-mobile#open" } }
 					= render 'svg_nav_burger'

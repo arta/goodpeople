@@ -113,7 +113,7 @@
 
   .svg--gp-logo-desktop,
   .svg--gp-logo-index-pg,
-  .svg--gp-logo-off-canvas { filter: drop-shadow(2px 4px 6px black); }
+  .svg--gp-logo--nav--mobile { filter: drop-shadow(2px 4px 6px black); }
 
   .g-svg--gp-logomark { fill: c.$gp-logomark-color-dm; }
 
@@ -143,7 +143,7 @@
     .path-svg--gp-tagline-ampresand { fill: #cf4b44; } //#d04d46; }
   }
 
-  .svg--gp-logo-off-canvas {
+  .svg--gp-logo--nav--mobile {
     .g-svg--gp-logomark { fill: #5d80cc; }
 
     .path-svg--gp-logomark-fill-stroke-width { stroke: #5d80cc; }

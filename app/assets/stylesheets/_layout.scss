@@ -3,7 +3,7 @@
 
 
 .body--index-pg,
-.canvas--interior-pg {
+.canvas-interior-pg {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   margin: 0 auto;
@@ -100,7 +100,7 @@
   }
 }
 
-.header--interior-pg-mobile { // mirror: _nav.scss::.header-nav--off-canvas
+.header--interior-pg-mobile { // mirror: _nav.scss::.header-nav--mobile
   align-items: center; // mirror
   background-color: white;
   box-shadow: 0 2px 15px rgba(50, 50, 50, 0.74);

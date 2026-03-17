@@ -4,7 +4,7 @@
 
 .svg--gp-logo-desktop,
 .svg--gp-logo-index-pg,
-.svg--gp-logo-off-canvas {
+.svg--gp-logo--nav--mobile {
   clip-rule: evenodd;
   fill-rule: evenodd;
   filter: drop-shadow(2px 4px 6px lightgray);
@@ -61,6 +61,6 @@
 
 .svg--gp-logo-index-pg { max-width: 490px; }
 
-.svg--gp-logo-off-canvas { width: 50px; }
+.svg--gp-logo--nav--mobile { width: 50px; }
 
 .svg--gp-logo-print-pg { width: 280px; }
