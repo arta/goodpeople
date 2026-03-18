@@ -28,32 +28,25 @@
 	%body.body--interior-pg{ data: { controller: "nav-mobile" } }
 		%nav.nav--mobile{ data: { nav_mobile_target: "navMobile" } }
 			%header.header-nav--mobile
-				= link_to root_path do
-					= render 'svg_gp_logo_logomark'
-				%button.button--nav-close{ type: 'button', data: { action: "nav-mobile#close" } }
-					= render 'svg_nav_burger' # [𝝣] animates into [x], once per session
-
+				= render 'header_nav_mobile' # has data: { action: "nav-mobile#close" }
 			%ul{ data: { controller: "nav-current" } }
-				= render 'nav_items'
-			= render 'nav_footer_mobile'
+				= render 'items_nav'
+			%footer.footer-nav--mobile
+				= render 'footer_nav_mobile'
 
 		.canvas-overlay{ data: { nav_mobile_target: "canvasOverlay", action: "click->nav-mobile#close" } }
 
 		.canvas-interior-pg
 			%header.header--interior-pg-mobile{ data: { nav_mobile_target: "headerMobile" } }
-				%button.button--nav-burger{ type: 'button', data: { action: "nav-mobile#open" } }
-					= render 'svg_nav_burger'
-					%span Menu
-				.gp-contact-info--header--mobile
-					= link_to '1-800-608-8003', 'tel:18006088003', class: 'a--gp-contact-info'
-					= link_to 'info@goodpeople.us', 'mailto:info@goodpeople.us', class: 'a--gp-contact-info'
+				= render 'header_mobile' # has  data: { action: "nav-mobile#open" } }
 
 			%header.header--interior-pg-desktop
 				= render 'header_desktop'
 			%nav.nav--desktop
 				%ul{ data: { controller: "nav-current" } }
-					= render 'nav_items'
-				= render 'nav_footer_desktop'
+					= render 'items_nav'
+				%footer.footer-nav--desktop
+					= render 'footer_nav_desktop'
 
 			%main.main--interior-pg
 				= yield
