@@ -6,18 +6,23 @@
 // INTERACTIVE
 // -----------------------------------------------------------------------------
 
-nav ul a,
-nav .a--gp-contact-info { line-height: 1; }
+nav .a--gp-contact-info:hover,
+nav .a--print:hover { color: c.$a-color-hover; }
 
+nav .a--print,
 nav ul a {
   color: c.$a-color;
   display: block;
+  line-height: 1;
   padding: .7rem 1rem;
 }
 
-nav ul a:hover { color: c.$a-color-hover; }
-
-nav .a--gp-contact-info { color: c.$oil; }
+nav .a--gp-contact-info {
+  color: c.$oil;
+  display: block;
+  line-height: 1;
+  padding: .7rem 1rem;
+}
 
 .header-nav--mobile a {
   flex-grow: 1;
@@ -61,6 +66,8 @@ nav ul {
   padding: 0;
 }
 
+.footer-nav--mobile { margin-top: 1.5rem; }
+
 .nav--mobile.is-open {
   box-shadow: 2px 0 15px rgba(50, 50, 50, 0.74);
   transform: translateX(0);
@@ -97,9 +104,10 @@ nav ul {
 
   // INTERACTIVE ---------------------------------------------------------------
 
-  nav ul a { color: c.$a-color-dm; }
-
   nav .a--gp-contact-info { color: c.$cloud-gray; }
+
+  nav .a--print,
+  nav ul a { color: c.$a-color-dm; }
 
   // LAYOUT --------------------------------------------------------------------
 

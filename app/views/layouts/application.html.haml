@@ -35,9 +35,7 @@
 
 			%ul{ data: { controller: "nav-current" } }
 				= render 'nav_items'
-				%li &nbsp;
-				%li= link_to '1-800-608-8003', 'tel:18006088003', class: 'a--gp-contact-info'
-				%li= link_to 'info@goodpeople.us', 'mailto:info@goodpeople.us', class: 'a--gp-contact-info'
+			= render 'nav_footer_mobile'
 
 		.canvas-overlay{ data: { nav_mobile_target: "canvasOverlay", action: "click->nav-mobile#close" } }
 
@@ -55,10 +53,7 @@
 			%nav.nav--desktop
 				%ul{ data: { controller: "nav-current" } }
 					= render 'nav_items'
-					%li
-						= link_to print_path, class: 'a--print' do
-							%i.fas.fa-print &nbsp;
-							%span Print view
+				= render 'nav_footer_desktop'
 
 			%main.main--interior-pg
 				= yield

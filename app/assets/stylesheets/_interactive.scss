@@ -2,9 +2,6 @@
 
 
 
-a:hover,
-.a--print:hover { color: c.$a-color-hover; }
-
 .a--print:link,
 .a--print:visited {
   color: c.$cloud-gray;
@@ -32,6 +29,8 @@ a {
   color: c.$a-color;
   text-decoration: none;
 }
+
+a:hover { color: c.$a-color-hover; }
 
 .a--full-testimonial {
   display: block;
