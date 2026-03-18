@@ -60,7 +60,7 @@
   //  do not set/override F6's $anchor-color nor $anchor-color-hover
   //  i.e. use our own a {}, and a:hover {} instead
   // was nav.show-for-medium a:hover
-  nav.nav--interior-pg-desktop a:not(.current):hover {
+  nav.nav--desktop a:not(.current):hover {
     color: #ffa216; // tad lighter than c.$a-color-hover (= c.$mandarin)
     text-shadow: 2px 4px 6px black; // #2d2d2d;
   }

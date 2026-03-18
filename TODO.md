@@ -9,7 +9,3 @@
 ## Templates
 
 - Evaluate HAML → ERB: convert a few representative views to ERB to feel out legibility trade-offs (explicit `end`-equivalents, nesting clarity) vs. HAML terseness; also consider `herb` gem (rich in-browser markup inspection, ERB-native) as a factor
-
-## Layout
-
-- Investigate removing `.gridfield`: evaluate whether CSS grid on `.canvas` alone can handle mobile-vs-desktop header switching (per device), eliminating the extra wrapper
