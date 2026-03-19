@@ -12,17 +12,19 @@
 
 .button--nav-burger,
 .button--nav-close {
-  align-items: center;
   border: 1px solid #777;
   border-radius: 3px;
   color: c.$oil;
   cursor: pointer;
-  display: flex;
   font-size: 1rem;
-  gap: .625rem;
-  justify-content: center;
   padding: .625rem .5rem;
   text-transform: uppercase;
+}
+
+.button--nav-burger.flexrow,
+.button--nav-close.flexrow {
+  align-items: center;
+  display: flex;
 }
 
 a {
@@ -94,11 +96,12 @@ button {
   padding: 0;
 }
 
+.button--nav-burger.flexrow { gap: .625rem; }
+
 .current {
   background-color: #e6e6e6; // make it beige ~#EAD29D;
   border-radius: 3px;
 }
-
 
 .span--tooltip {
   border-bottom: 1px dotted c.$oil;

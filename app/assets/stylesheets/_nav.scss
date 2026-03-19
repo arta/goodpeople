@@ -54,7 +54,7 @@ nav .a--gp-contact-info {
 // LAYOUT
 // -----------------------------------------------------------------------------
 
-.header-nav--mobile { // mirror: _layout.scss::.header--interior-pg-mobile
+.header-nav--mobile.flexrow { // mirror: _layout.scss::.header--interior-pg-mobile.flexrow
   align-items: center; // mirror
   display: flex; // mirror
   justify-content: space-between; // mirror

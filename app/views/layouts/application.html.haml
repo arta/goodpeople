@@ -27,7 +27,7 @@
 
 	%body.body--interior-pg{ data: { controller: "nav-mobile" } }
 		%nav.nav--mobile{ data: { nav_mobile_target: "navMobile" } }
-			%header.header-nav--mobile
+			%header.header-nav--mobile.flexrow
 				= render 'header_nav_mobile' # has data: { action: "nav-mobile#close" }
 			%ul{ data: { controller: "nav-current" } }
 				= render 'items_nav'
@@ -36,11 +36,11 @@
 
 		%div.div--canvas-overlay{ data: { nav_mobile_target: "canvasOverlay", action: "click->nav-mobile#close" } }
 
-		%div.div--canvas-interior-pg
-			%header.header--interior-pg-mobile{ data: { nav_mobile_target: "headerMobile" } }
+		%div.div--canvas-interior-pg.gridfield
+			%header.header--interior-pg-mobile.flexrow{ data: { nav_mobile_target: "headerMobile" } }
 				= render 'header_mobile' # has  data: { action: "nav-mobile#open" } }
 
-			%header.header--interior-pg-desktop
+			%header.header--interior-pg-desktop.flexrow
 				= render 'header_desktop'
 			%nav.nav--desktop
 				%ul{ data: { controller: "nav-current" } }
