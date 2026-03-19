@@ -26,13 +26,15 @@
 // font converted to paths for font independence:
 // .path-svg--gp-tagline { display: initial; } // semantic; assigned, unused
 
-.div--gp-signature-container {
-  background-position: left;
+.figure--gp-signature {
+  background-position: left top;
   background-repeat: no-repeat;
   background-size: contain;
   // Adjust per pic, orig pics too small, get better pics
+  margin-top: 2em;
+  padding-top: 42px;
+  text-align: center;
   width: 125px;
-  height: 42px;
 }
 
 .path-svg--gp-logomark-fill-nonzero { fill-rule: nonzero; }
