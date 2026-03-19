@@ -3,13 +3,13 @@
 
 
 .body--index-pg,
-.div--canvas-interior-pg {
+.div--canvas {
   margin: 0 auto;
   max-width: 75rem;
 }
 
 .body--index-pg.gridfield,
-.div--canvas-interior-pg.gridfield {
+.div--canvas.gridfield {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
 }
