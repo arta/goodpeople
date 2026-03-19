@@ -34,9 +34,9 @@
 			%footer.footer-nav--mobile
 				= render 'footer_nav_mobile'
 
-		.canvas-overlay{ data: { nav_mobile_target: "canvasOverlay", action: "click->nav-mobile#close" } }
+		%div.div--canvas-overlay{ data: { nav_mobile_target: "canvasOverlay", action: "click->nav-mobile#close" } }
 
-		.canvas-interior-pg
+		%div.div--canvas-interior-pg
 			%header.header--interior-pg-mobile{ data: { nav_mobile_target: "headerMobile" } }
 				= render 'header_mobile' # has  data: { action: "nav-mobile#open" } }
 

@@ -3,24 +3,24 @@
 
 
 .body--index-pg,
-.canvas-interior-pg {
+.div--canvas-interior-pg {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   margin: 0 auto;
   max-width: 75rem;
 }
 
-.cta-and-contact-info,
+.div--cta-and-contact-info,
 .footer--index-pg { grid-column: 3 / span 8; }
 
-.gp-contact-info--header--mobile,
-.gp-contact-info--header--desktop {
+.div--gp-contact-info--header--mobile,
+.div--gp-contact-info--header--desktop {
   align-items: flex-end;
   display: flex;
   flex-direction: column;
 }
 
-.gp-contact-info--header--mobile { font-size: .8em; }
+.div--gp-contact-info--header--mobile { font-size: .8em; }
 
 .article--testimonial {
   background: c.$testimonial-background;
@@ -49,9 +49,9 @@
   }
 }
 
-.gp-contact-info--header--desktop { margin-top: 3em; }
+.div--gp-contact-info--header--desktop { margin-top: 3em; }
 
-.gp-contact-info-index-pg {
+.div--gp-contact-info-index-pg {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -63,12 +63,12 @@
   };
 }
 
-.gp-signature {
+.div--gp-signature {
   margin-top: 2em;
   text-align: center;
 }
 
-.gp-signatures {
+.div--gp-signatures {
   display: flex;
   column-gap: 2em;
   flex-wrap: wrap;
@@ -167,7 +167,7 @@
 
 .section--testimonials-intro { margin-bottom: 3em; }
 
-.servicearea-map {
+.div--servicearea-map {
   height: 400px;
   margin-top: 2.6em;
 }

@@ -73,7 +73,7 @@ nav ul {
   transform: translateX(0);
 }
 
-.canvas-overlay.is-open { display: block; }
+.div--canvas-overlay.is-open { display: block; }
 
 .nav--mobile {
   background: white;
@@ -87,7 +87,7 @@ nav ul {
   z-index: 200;
 }
 
-.canvas-overlay {
+.div--canvas-overlay {
   background: rgba(0, 0, 0, 0.3);
   bottom: 0;
   display: none;
@@ -115,5 +115,5 @@ nav ul {
 
   .nav--mobile { background: c.$body-background-dm; }
 
-  .canvas-overlay { background: rgba(35, 43, 53, 0.7); }
+  .div--canvas-overlay { background: rgba(35, 43, 53, 0.7); }
 }
