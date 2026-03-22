@@ -10,6 +10,11 @@
   width: 9em; /* must define for margin centering to work */
 }
 
+.button--nav-burger.flexrow,
+.button--nav-close.flexrow {
+  align-items: center;
+  display: flex;
+}
 .button--nav-burger,
 .button--nav-close {
   border: 1px solid #777;
@@ -19,12 +24,6 @@
   font-size: 1rem;
   padding: .625rem .5rem;
   text-transform: uppercase;
-}
-
-.button--nav-burger.flexrow,
-.button--nav-close.flexrow {
-  align-items: center;
-  display: flex;
 }
 
 a {

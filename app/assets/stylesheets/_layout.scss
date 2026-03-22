@@ -2,16 +2,15 @@
 
 
 
-.body--index-pg,
-.div--canvas {
-  margin: 0 auto;
-  max-width: 75rem;
-}
-
 .body--index-pg.gridfield,
 .div--canvas.gridfield {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
+}
+.body--index-pg,
+.div--canvas {
+  margin: 0 auto;
+  max-width: 75rem;
 }
 
 .div--cta-and-contact-info,
@@ -46,6 +45,11 @@
 
 .div--gp-contact-info--header--mobile { font-size: .8em; }
 
+.div--gp-contact-info-index-pg.flexcolumn {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
 .div--gp-contact-info-index-pg {
   font-size: 1.4em;
   margin-bottom: 40px;
@@ -55,19 +59,12 @@
   };
 }
 
-.div--gp-contact-info-index-pg.flexcolumn {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-}
-
-.div--gp-signatures { margin-left: 1em; }
-
 .div--gp-signatures.flextrack {
   column-gap: 2em;
   display: flex;
   flex-wrap: wrap;
 }
+.div--gp-signatures { margin-left: 1em; }
 
 .figure--servicearea-map {
   height: 400px;
@@ -93,6 +90,12 @@
   }
 }
 
+.header--interior-pg-desktop.flexrow {
+  @media (min-width: 40rem) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
 .header--interior-pg-desktop {
   display: none;
 
@@ -105,13 +108,15 @@
   }
 }
 
-.header--interior-pg-desktop.flexrow {
+.header--interior-pg-mobile.flexrow { // mirror: _nav.scss::.header-nav--mobile.flexrow
+  align-items: center; // mirror
+  display: flex; // mirror
+  justify-content: space-between; // mirror
+
   @media (min-width: 40rem) {
-    display: flex;
-    justify-content: space-between;
+    display: none;
   }
 }
-
 .header--interior-pg-mobile { // mirror: _nav.scss::.header-nav--mobile
   background-color: white;
   box-shadow: 0 2px 15px rgba(50, 50, 50, 0.74);
@@ -124,24 +129,13 @@
   z-index: 100;
 }
 
-.header--interior-pg-mobile.flexrow { // mirror: _nav.scss::.header-nav--mobile.flexrow
-  align-items: center; // mirror
-  display: flex; // mirror
-  justify-content: space-between; // mirror
-
-  @media (min-width: 40rem) {
-    display: none;
-  }
-}
-
-.header--print-pg {
-  height: 180px;
-  margin-right: 20px;
-}
-
 .header--print-pg.flexrow {
   display: flex;
   justify-content: space-between;
+}
+.header--print-pg {
+  height: 180px;
+  margin-right: 20px;
 }
 
 .header--testimonial {
