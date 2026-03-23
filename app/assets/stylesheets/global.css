@@ -1,0 +1,29 @@
+/* #############################################################################
+   GLOBAL — resets & base normalization
+   --------------------------------------------------------------------------- */
+
+*,
+*::after,
+*::before {
+  /* border: 1px solid hotpink; */
+  box-sizing: border-box;
+  outline: 0; /* remove browser default focus ring */
+}
+
+body {
+  background: white;
+  color: #0a0a0a;
+  font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+  font-size: 100%;
+  line-height: 1.5;
+  margin: 0;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+figure { margin: 0; }
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
