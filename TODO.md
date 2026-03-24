@@ -12,4 +12,8 @@
 
 ## Templates
 
+- Refactor standalone page layouts: `index.html.haml` and `print.html.haml` are full-document views in `static_pages/` but should be proper Rails layouts in `app/views/layouts/` with `layout 'index'` / `layout 'print'` in the controller — makes structure obvious and stylesheet changes only need updating in one place
+
+- Print page content-sharing: interior page content currently lives in partials (e.g. `_intro.html.haml`) so both the individual pages and `print.html.haml` can share it — a side effect of the print page's non-idiomatic structure. If `print` is redesigned properly (e.g. a dedicated print controller action that renders all sections), content can move back into the individual view templates and the `_partial` indirection goes away
+
 - Evaluate HAML → ERB: convert a few representative views to ERB to feel out legibility trade-offs (explicit `end`-equivalents, nesting clarity) vs. HAML terseness; also consider `herb` gem (rich in-browser markup inspection, ERB-native) as a factor

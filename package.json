@@ -1,10 +1,4 @@
 {
-  "name": "your_project_name",
-  "version": "1.0.0",
-  "scripts": {
-    "build:css": "sass --load-path=node_modules ./app/assets/stylesheets/application.scss ./app/assets/builds/application.css"
-  },
-  "devDependencies": {
-    "sass": "^1.98.0"
-  }
+  "name": "goodpeople",
+  "version": "1.0.0"
 }

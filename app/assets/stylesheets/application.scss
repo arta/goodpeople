@@ -1,12 +1,4 @@
-/* Add imports of custom sass/scss files here */
-
-@use "global";
-@use "typography";
-@use "interactive";
-@use "layout";
-@use "images";
-
-@use "nav";
-@use "nav_animation";
-
-@use 'dark_mode';
+/* Superseded — sass → native CSS migration complete.
+   Stylesheets are now linked individually in application.html.haml.
+   This file and the sass build step have been removed.
+   Safe to delete. */

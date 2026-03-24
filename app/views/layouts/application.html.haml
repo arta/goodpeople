@@ -19,8 +19,15 @@
 		%link{ rel: "icon", href: "/icon.svg", type: "image/svg+xml" }
 		%link{ rel: "apple-touch-icon", href: "/icon.png" }
 
-		-# Includes all stylesheet files in app/assets/stylesheets
-		= stylesheet_link_tag :app, "data-turbo-track": "reload"
+		= stylesheet_link_tag "colors",        "data-turbo-track": "reload"
+		= stylesheet_link_tag "global",        "data-turbo-track": "reload"
+		= stylesheet_link_tag "typography",    "data-turbo-track": "reload"
+		= stylesheet_link_tag "interactive",   "data-turbo-track": "reload"
+		= stylesheet_link_tag "layout",        "data-turbo-track": "reload"
+		= stylesheet_link_tag "images",        "data-turbo-track": "reload"
+		= stylesheet_link_tag "nav",           "data-turbo-track": "reload"
+		= stylesheet_link_tag "nav_animation", "data-turbo-track": "reload"
+		= stylesheet_link_tag "dark_mode",     "data-turbo-track": "reload"
 		= javascript_importmap_tags
 		= javascript_fontawesome_kit_tag
 		= javascript_google_tag
