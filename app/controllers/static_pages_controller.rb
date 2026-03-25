@@ -18,7 +18,7 @@ class StaticPagesController < ApplicationController
 
 	# The root is routed here
 	def index
-		render layout: 'index'
+		render layout: "index"
 	end
 
 	def intro
@@ -27,7 +27,7 @@ class StaticPagesController < ApplicationController
 
 	def print
 		@body_id = 'print'
-		render :layout => false
+		render layout: "print"
 	end
 
 	def procedure
