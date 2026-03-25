@@ -1,0 +1,31 @@
+!!!
+%html
+	%head
+		%title= content_for(:title) || "Good People - Live-in caregivers & companions"
+		%meta{ name: "viewport", content: "width=device-width, initial-scale=1.0" }
+		%meta{ name: "apple-mobile-web-app-capable", content: "yes" }
+		%meta{ name: "mobile-web-app-capable", content: "yes" }
+		= csrf_meta_tags
+		= csp_meta_tag
+
+		= yield :head
+
+		-# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!)
+		-#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json)
+
+		%link{ rel: "icon", href: "/icon.png", type: "image/png" }
+		%link{ rel: "icon", href: "/icon.svg", type: "image/svg+xml" }
+		%link{ rel: "apple-touch-icon", href: "/icon.png" }
+
+		= stylesheet_link_tag "colors",        "data-turbo-track": "reload"
+		= stylesheet_link_tag "global",        "data-turbo-track": "reload"
+		= stylesheet_link_tag "typography",    "data-turbo-track": "reload"
+		= stylesheet_link_tag "interactive",   "data-turbo-track": "reload"
+		= stylesheet_link_tag "layout",        "data-turbo-track": "reload"
+		= stylesheet_link_tag "images",        "data-turbo-track": "reload"
+		= stylesheet_link_tag "dark_mode",     "data-turbo-track": "reload"
+		= javascript_importmap_tags
+		= javascript_google_tag
+
+	%body.body--index-pg.gridfield
+		= yield
