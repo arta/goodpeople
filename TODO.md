@@ -12,6 +12,4 @@
 
 ## Templates
 
-- Print page content-sharing: interior page content lives in partials (e.g. `_intro.html.haml`) so both individual pages and `print.html.haml` can share it. The partials are load-bearing: `print.html.haml` renders each section with its own `%h1.h1--print-pg` linked heading (linking back to the individual page — useful online navigation), then renders the partial beneath it. If content moved into view templates, `render template:` would bring each view's own h1, creating a duplicate. Options when revisiting: (a) `content_for(:page_title)` to separate heading from content across all views; (b) CSS suppression of the interior h1 inside `.main--print-pg`; (c) redesign print as a dedicated multi-section action. Not worth the complexity until print is reconsidered more broadly.
-
 - Evaluate HAML → ERB: convert a few representative views to ERB to feel out legibility trade-offs (explicit `end`-equivalents, nesting clarity) vs. HAML terseness; also consider `herb` gem (rich in-browser markup inspection, ERB-native) as a factor
