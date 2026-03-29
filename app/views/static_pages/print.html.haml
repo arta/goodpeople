@@ -1,30 +1,8 @@
 %header.header--print-pg.flexrow
-	= render partial: 'header_desktop', locals: { for_print: true }
+  = render partial: 'header_desktop', locals: { for_print: true }
 
 %main.main--print-pg
-	%h1.h1--print-pg= link_to 'Intro', :action => :intro
-	= render 'intro'
-	%br
-
-	%h1.h1--print-pg= link_to 'Care', :action => :type_of_care
-	= render 'type_of_care'
-	%br
-
-	%h1.h1--print-pg= link_to 'Caregivers', :action => :caregivers
-	= render 'caregivers'
-	%br
-
-	%h1.h1--print-pg= link_to 'Procedure', :action => :procedure
-	= render 'procedure'
-	%br
-
-	%h1.h1--print-pg= link_to 'Service area', :action => :servicearea
-	= render 'servicearea'
-	%br
-
-	%h1.h1--print-pg= link_to 'Cost', :action => :cost
-	= render 'cost'
-	%br
-
-	%h1.h1--print-pg= link_to 'Contact us', :action => :contactus
-	= render 'contactus'
+  - @pages_for_print.each do |page|
+    %h1.h1--print-pg= link_to page[:title], action: page[:link_action]
+    = render page[:partial], for_print: true
+    %br

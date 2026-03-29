@@ -11,5 +11,5 @@
 
 %p The map shows ZIP code areas where we've helped at least one family to find their live-in caregiver. Each dot is an approximate geographic center of the ZIP. Don't see yours? We'd love to add your area to the map!
 
-- unless controller.action_name == 'print'
+- unless local_assigns[:for_print]
   %figure.figure--servicearea-map{ data: { controller: "service-area-map" } }

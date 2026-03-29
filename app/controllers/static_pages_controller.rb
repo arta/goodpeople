@@ -1,45 +1,50 @@
 class StaticPagesController < ApplicationController
+  before_action :set_pages_for_print, only: :print
 
-	def type_of_care
-		@body_id = 'care'
-	end
+  # The root is routed here
+  def index
+    render layout: "index"
+  end
 
-	def caregivers
-		@body_id = 'caregivers'
-	end
+  def intro
+  end
 
-	def contactus
-		@body_id = 'contactus'
-	end
+  def type_of_care
+  end
 
-	def cost
-		@body_id = 'cost'
-	end
+  def caregivers
+  end
 
-	# The root is routed here
-	def index
-		render layout: "index"
-	end
+  def procedure
+  end
 
-	def intro
-		@body_id = 'intro'
-	end
+  def servicearea
+  end
 
-	def print
-		@body_id = 'print'
-		render layout: "print"
-	end
+  def cost
+  end
 
-	def procedure
-		@body_id = 'procedure'
-	end
+  def testimonials
+  end
 
-	def servicearea
-		@body_id = 'servicearea'
-	end
+  def contactus
+  end
 
-	def testimonials
-		@body_id = 'testimonials'
-	end
+  def print
+    render layout: "print"
+  end
 
+  private
+
+  def set_pages_for_print
+    @pages_for_print = [
+      { title: 'Intro', link_action: :intro, partial: 'intro' },
+      { title: 'Care', link_action: :type_of_care, partial: 'type_of_care' },
+      { title: 'Caregivers', link_action: :caregivers, partial: 'caregivers' },
+      { title: 'Procedure', link_action: :procedure, partial: 'procedure' },
+      { title: 'Service area', link_action: :servicearea, partial: 'servicearea' },
+      { title: 'Cost', link_action: :cost, partial: 'cost' },
+      { title: 'Contact us', link_action: :contactus, partial: 'contactus' }
+    ]
+  end
 end
