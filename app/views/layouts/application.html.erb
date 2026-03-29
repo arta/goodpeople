@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for(:title) || "Good People - Live-in caregivers & companions" %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="gp-gm-api-key" content="<%= ENV['GP_GOOGLE_MAPS_API_KEY'] %>">
+    <meta name="gp-gm-map-id" content="<%= ENV['GP_GOOGLE_MAPS_MAP_ID'] %>">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= yield :head %>
+
+    <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
+    <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
+
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+
+    <%= stylesheet_link_tag "colors", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "global", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "typography", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "interactive", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "layout", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "images", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "nav", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "nav_animation", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "dark_mode", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <%= javascript_fontawesome_kit_tag %>
+    <%= javascript_google_tag %>
+  </head>
+
+  <body class="body--interior-pg" data-controller="nav-mobile">
+    <nav class="nav--mobile" data-nav-mobile-target="navMobile">
+      <header class="header-nav--mobile flexrow">
+        <%= render "header_nav_mobile" %>
+      </header>
+      <ul data-controller="nav-current">
+        <%= render "items_nav" %>
+      </ul>
+      <footer class="footer-nav--mobile">
+        <%= render "footer_nav_mobile" %>
+      </footer>
+    </nav>
+
+    <div class="div--canvas-overlay" data-nav-mobile-target="canvasOverlay" data-action="click->nav-mobile#close"></div>
+
+    <div class="div--canvas gridfield">
+      <header class="header--interior-pg-mobile flexrow" data-nav-mobile-target="headerMobile">
+        <%= render "header_mobile" %>
+      </header>
+
+      <header class="header--interior-pg-desktop flexrow">
+        <%= render "header_desktop" %>
+      </header>
+
+      <nav class="nav--desktop">
+        <ul data-controller="nav-current">
+          <%= render "items_nav" %>
+        </ul>
+        <footer class="footer-nav--desktop">
+          <%= render "footer_nav_desktop" %>
+        </footer>
+      </nav>
+
+      <main class="main--interior-pg">
+        <%= yield %>
+      </main>
+
+      <footer class="footer--interior-pg">
+        <p class="p-footer">&copy; 2001 - <%= Date.today.year %> Good People, LLC</p>
+      </footer>
+    </div>
+  </body>
+</html>
