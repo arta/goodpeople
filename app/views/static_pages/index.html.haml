@@ -1,6 +1,6 @@
 %header.header--index-pg
 	= link_to intro_path do
-		= render 'svg_gp_logo_complete', class_name: 'svg--gp-logo-index-pg'
+		= render partial: "svg_gp_logo_complete", locals: { class_name: "svg--gp-logo-index-pg" }
 
 	%h1.h1--index-pg
 		If you require 24/7 assistance
@@ -13,7 +13,7 @@
 		%br
 		Good People can help
 
-= render 'cta_and_contact_info'
+= render partial: "cta_and_contact_info"
 
 %ul.ul--testimonials-excerpts
 	%li.li--testimonial-excerpt
@@ -196,7 +196,7 @@
 			%p.p--testimonial-signature ~Sue Nanstad
 		= link_to 'read the full letter', testimonials_path( anchor:4008 ), class: 'a--full-testimonial'
 
-= render 'cta_and_contact_info'
+	= render partial: "cta_and_contact_info"
 
 %footer.footer--index-pg
 	%p.p-footer &copy; 2001 - #{Date.today.year} Good People, LLC

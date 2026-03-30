@@ -36,13 +36,13 @@
   <body class="body--interior-pg" data-controller="nav-mobile">
     <nav class="nav--mobile" data-nav-mobile-target="navMobile">
       <header class="header-nav--mobile flexrow">
-        <%= render "header_nav_mobile" %>
+        <%= render partial: "header_nav_mobile" %>
       </header>
       <ul data-controller="nav-current">
-        <%= render "items_nav" %>
+        <%= render partial: "items_nav" %>
       </ul>
       <footer class="footer-nav--mobile">
-        <%= render "footer_nav_mobile" %>
+        <%= render partial: "footer_nav_mobile" %>
       </footer>
     </nav>
 
@@ -50,19 +50,19 @@
 
     <div class="div--canvas gridfield">
       <header class="header--interior-pg-mobile flexrow" data-nav-mobile-target="headerMobile">
-        <%= render "header_mobile" %>
+        <%= render partial: "header_mobile" %>
       </header>
 
       <header class="header--interior-pg-desktop flexrow">
-        <%= render "header_desktop" %>
+        <%= render partial: "header_desktop" %>
       </header>
 
       <nav class="nav--desktop">
         <ul data-controller="nav-current">
-          <%= render "items_nav" %>
+          <%= render partial: "items_nav" %>
         </ul>
         <footer class="footer-nav--desktop">
-          <%= render "footer_nav_desktop" %>
+          <%= render partial: "footer_nav_desktop" %>
         </footer>
       </nav>
 
