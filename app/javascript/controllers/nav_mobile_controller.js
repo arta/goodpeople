@@ -49,6 +49,6 @@ export default class extends Controller {
   }
 
   #blockNavCloseXAnimation() {
-    this.navMobileTarget.classList.add("nav-close-x-has-animated")
+    this.navMobileTarget.classList.add("js-nav-close-x-has-animated")
   }
 }

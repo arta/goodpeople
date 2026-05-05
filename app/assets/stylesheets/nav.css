@@ -29,7 +29,7 @@ nav .a--gp-contact-info {
 .header-nav--mobile button { margin: .7rem 1rem; }
 
 /* Transform mobile nav burger [𝝣] into conventional mobile nav close [x]
-   (intercepted by nav_animation.css if :not(.nav-close-x-has-animated)) */
+   (intercepted by nav_animation.css if :not(.js-nav-close-x-has-animated)) */
 .nav--mobile {
   /* Transform each bar (rect) of the burger: */
   .rect-svg--nav-burger {
