@@ -15,6 +15,10 @@ Read `docs/ai/css-authoring.md` before writing any CSS — naming scheme, file o
 ## Phased changes
 When creating or updating a feature touches many files, break into testable phases — each leaving the app functional. 3 files per phase, 4 max.
 
+## Agent memory
+- Project context (current work, decisions, migration state): `docs/ai/memory/MEMORY.md`
+- Cross-project behavior preferences: `~/dev-git/memory/MEMORY.md`
+
 ## Workflow
 - Commits are handled by the user via GitHub Desktop — draft messages when asked, never run `git add` or `git commit`.
 - Commit conventions: `~/dev-git/gitmessage-conventions.md` — review before drafting, extend when introducing new types/scopes.
