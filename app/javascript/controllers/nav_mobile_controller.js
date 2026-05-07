@@ -16,7 +16,7 @@ export default class extends Controller {
   open() {
     this.navMobileTarget.classList.add("is-open")
     this.canvasOverlayTarget.classList.add("is-open")
-    this.#flagNavCloseXAnimation() // idempotent
+    this.#flagNavCloseXAnimationForOptOut() // idempotent
   }
 
   close() {
@@ -44,7 +44,7 @@ export default class extends Controller {
     sessionStorage.setItem("navBurgerHasAnimated", "1")
   }
 
-  #flagNavCloseXAnimation() {
+  #flagNavCloseXAnimationForOptOut() {
     sessionStorage.setItem("navCloseXHasAnimated", "1")
   }
 
