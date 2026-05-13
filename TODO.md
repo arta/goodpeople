@@ -10,6 +10,22 @@
 
 - During SCSS → CSS migration: sweeping convention cleanup across all CSS partials — alphabetical order, shared lists first
 
+- Replace the Stimulus controller `nav_current` with a Rails `nav_link_to` helper using `current_page?` and `class_names(...)`; remove the client-side path comparison / `.current` toggling because Rails already knows the active page at render time. Inspited by Andry Croll's "Use class_names to Conditionally Apply CSS Classes"
+email.
+
+```ruby
+def nav_link_to(page, path)
+  link_to page, path, class: class_names("current": current_page?(path))
+end
+```
+
+```haml 
+%li= nav_link_to "Welcome", intro_path
+%li= nav_link_to "Type of Care", type_of_care_path
+%li= nav_link_to "Caregivers", caregivers_path
+...
+```
+
 ## Templates
 
 - Evaluate HAML → ERB: convert a few representative views to ERB to feel out legibility trade-offs (explicit `end`-equivalents, nesting clarity) vs. HAML terseness; also consider `herb` gem (rich in-browser markup inspection, ERB-native) as a factor
