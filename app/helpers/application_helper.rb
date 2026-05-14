@@ -1,4 +1,12 @@
 module ApplicationHelper
+
+  def nav_link_to(page_name, path)
+    content_tag(:a, page_name,
+      href: path,
+      class: class_names("current": current_page?(path))
+    )
+  end
+
   def javascript_google_tag
     return unless ENV['GA_MEASUREMENT_ID']
 
