@@ -1,6 +1,6 @@
 # CSS Authoring — goodpeople
 
-Read `~/dev-git/css-authoring.md` first for the universal scheme (naming, organization, formatting).
+Read `~/Documents/LAYEREDCODE/dev-ai/css-authoring.md` first for the universal scheme (naming, organization, formatting).
 
 ## Project-specific: file structure
 

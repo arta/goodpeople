@@ -10,16 +10,16 @@ Ruby on Rails static informational site for a home care employment agency (no da
 Rails-first always. New UI: Stimulus + Turbo (not jQuery). CSS: modern vanilla CSS (Foundation is being replaced — no framework preference; prefer raw standard tools over utility libraries like Tailwind).
 
 ## CSS
-Read `docs/ai/css-authoring.md` before writing any CSS — naming scheme, file organization, and formatting conventions. (Claude Code: also invocable as `/css`.)
+Read `docs/ai/css-authoring.md` before writing any CSS. Note: it references a universal canonical guide at `~/Documents/LAYEREDCODE/dev-ai/css-authoring.md`; Gemini only: read it using shell commands (e.g. `cat`) to bypass sandbox restrictions; other agents: can access it directly; Claude Code: also invocable as `/css`.
 
 ## Phased changes
 When creating or updating a feature touches many files, break into testable phases — each leaving the app functional. 3 files per phase, 4 max.
 
 ## Agent memory
 - Project context (current work, decisions, migration state): `docs/ai/memory/MEMORY.md`
-- Cross-project behavior preferences: `~/dev-git/memory/MEMORY.md`
+- Cross-project behavior preferences: `~/Documents/LAYEREDCODE/dev-ai/memory/MEMORY.md`
 
 ## Workflow
 - Commits are handled by the user via GitHub Desktop — draft messages when asked, never run `git add` or `git commit`.
-- Commit conventions: `~/dev-git/gitmessage-conventions.md` — review before drafting, extend when introducing new types/scopes.
+- Commit conventions: `~/Documents/LAYEREDCODE/dev-ai/gitmessage-conventions.md` — review before drafting, extend when introducing new types/scopes.
 - When a new tool or config generates files at the project root, check whether they belong in `.gitignore` before committing.
