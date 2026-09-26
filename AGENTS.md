@@ -1,6 +1,6 @@
 # AGENTS.md
 
-The contents and structure of these four files are kept identical: `CLAUDE.md`, `AGENTS.md`, `GEMINI.md`, `.github/copilot-instructions.md` — when any is updated, apply the same change to all others.
+The contents and structure of these three files are kept identical: `AGENTS.md`, `GEMINI.md`, `.github/copilot-instructions.md` — when any is updated, apply the same change to all others.
 
 These files are minimal by design. Only include what an agent would get wrong without being told. Discoverable information (commands, file structure, standard Rails/Ruby conventions) is noise — omit it.
 
@@ -16,8 +16,12 @@ Read `docs/ai/css-authoring.md` before writing any CSS. Note: it references a un
 When creating or updating a feature touches many files, break into testable phases — each leaving the app functional. 3 files per phase, 4 max.
 
 ## Agent memory
+Read both indexes at the start of every session, and open a linked note when its topic comes up.
+
 - Project context (current work, decisions, migration state): `docs/ai/memory/MEMORY.md`
 - Cross-project behavior preferences: `~/Documents/LAYEREDCODE/dev-ai/memory/MEMORY.md`
+
+**Claude Code:** Do not use the built-in auto-memory system (`~/.claude/projects/…`). Write all memory exclusively to the paths above.
 
 ## Workflow
 - Commits are handled by the user via GitHub Desktop — draft messages when asked, never run `git add` or `git commit`.
